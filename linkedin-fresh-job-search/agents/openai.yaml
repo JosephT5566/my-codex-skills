@@ -1,0 +1,3 @@
+display_name: LinkedIn Fresh Job Search
+short_description: Find fresh LinkedIn job targets.
+default_prompt: Find fresh LinkedIn jobs from the past 24 hours or 3 days, rank targets by fit and interview probability, and create a concise application plan or spreadsheet.
