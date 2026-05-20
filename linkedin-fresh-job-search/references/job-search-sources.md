@@ -48,6 +48,8 @@ Access note:
 - Do not add `Role Family` to dated daily results tabs unless the existing workbook has that column. The current `2026 interview` daily-tab format mirrors `2026-05-19 Results` and uses the 12 columns above.
 - When adding a new dated tab, inspect the previous dated results tab first and mirror its column order, width, concise notes style, and decisions such as `Search pool` / `Fallback pool`.
 - Keep `Fit Notes` short enough to scan in-sheet. Long reasoning can go in chat or a separate summary, not in every row.
+- For screened individual jobs, `LinkedIn URL` must be the direct job description/posting URL, not a generic LinkedIn search URL. Use search URLs only for unscreened search-pool rows.
+- Default the geographic focus to Taiwan/Taipei, especially `Taipei City, Taiwan`. Add broader remote searches only when they are plausibly Taiwan-friendly or the user asks for broader geography.
 - Keep role-priority rows stable unless the user's positioning changes.
 - Refresh LinkedIn search counts when running a new job-search session.
 - Add individual job leads to the sheet only when they pass the freshness screen:

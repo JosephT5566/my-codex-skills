@@ -41,6 +41,8 @@ Use this skill to prioritize jobs where the user can apply before applicant volu
 3. Search freshness windows.
    - First run LinkedIn searches with `f_TPR=r86400` for past 24 hours.
    - Then run `f_TPR=r259200` for past 3 days if the 24-hour pool is too small.
+   - For Joseph Tseng, default the location focus to Taiwan/Taipei first, especially `Taipei City, Taiwan`, unless the user asks for another geography.
+   - Include remote roles only when they are Taiwan-friendly or clearly open to Taiwan-based candidates. Do not treat United States-only remote searches as the default.
    - Keep location, remote, hybrid, and onsite preferences aligned with the user's profile or request.
 
 4. Screen and rank.
@@ -79,6 +81,7 @@ Use this skill to prioritize jobs where the user can apply before applicant volu
      - `LinkedIn URL`
      - `Decision`
    - Keep daily-tab notes short and scannable. Put stable role-family context in `Role Priorities` or `Job Leads Summary`, not as an extra column in dated result tabs unless the sheet already has that column.
+   - In screened job rows, paste the direct LinkedIn job description URL for the posting, not the generic search-result URL. Search-result URLs are acceptable only for unscreened search-pool rows where no specific job has been selected yet.
    - When using Chrome to update the sheet, claim an existing open tab titled `2026 interview` when available. Add or rename today's `<YYYY-MM-DD> Results` tab, and use the previous dated tab as the visual/template reference.
 
 ## Ranking Labels
