@@ -20,7 +20,9 @@ Use this skill to prioritize jobs where the user can apply before applicant volu
    - Prefer the user's resume, LinkedIn profile, or stated background.
    - If available, read `references/candidate-profile.md` for a compact maintained profile snapshot.
    - If available, read `references/job-search-sources.md` for the canonical tracking sheet or source links.
-   - If using LinkedIn, use the Chrome skill/plugin when logged-in context is needed.
+   - For live LinkedIn searching or updates to the existing `2026 interview` Google Sheet, prefer the Chrome skill/plugin first because both depend on the user's logged-in browser account.
+   - Use the Google Drive/Sheets connector only when the user explicitly wants API-based edits, Chrome is unavailable, or the sheet is not accessible in Chrome.
+   - If a connector is used and returns `403`, `404`, or cannot find the canonical tracker, stop using the connector for this run and check Chrome for an already-open `2026 interview` sheet before creating a replacement.
    - Do not inspect cookies, local storage, passwords, or private session stores.
 
 2. Build target role searches.
@@ -63,6 +65,21 @@ Use this skill to prioritize jobs where the user can apply before applicant volu
      - `Role Priorities`: rank, role target, interview probability, freshness rule, best queries, count, why it fits, action
      - one dated daily results tab per run, for example `2026-05-19 Results`
    - In Google Sheets, keep `Role Priorities` as an isolated reference tab and add a new dated search-result tab each day.
+   - When updating the existing `2026 interview` Google Sheet, mirror the previous dated results tab's columns and formatting instead of imposing a new schema. The daily results tab should normally use:
+     - `Search Date`
+     - `Search Query`
+     - `Freshness Filter`
+     - `Result Count`
+     - `Company Name`
+     - `Role Title`
+     - `Role Location`
+     - `Post Date / Age`
+     - `Ranking Label`
+     - `Fit Notes`
+     - `LinkedIn URL`
+     - `Decision`
+   - Keep daily-tab notes short and scannable. Put stable role-family context in `Role Priorities` or `Job Leads Summary`, not as an extra column in dated result tabs unless the sheet already has that column.
+   - When using Chrome to update the sheet, claim an existing open tab titled `2026 interview` when available. Add or rename today's `<YYYY-MM-DD> Results` tab, and use the previous dated tab as the visual/template reference.
 
 ## Ranking Labels
 
