@@ -1,22 +1,26 @@
 ## Symlink the skills
-Link the skills in this repo to local agents.
+Link the skills in this repo to Codex:
 
-For Codex:
 ```
-for skill_dir in /Users/joseph/Documents/Git/my-codex-skills/*; do
-  if [ -d "$skill_dir" ] && [ -f "$skill_dir/SKILL.md" ]; then
-    ln -sfn "$skill_dir" "$HOME/.codex/skills/$(basename "$skill_dir")"
-  fi
-done
+python3 scripts/symlink_skills.py
 ```
 
-For agents that read `~/.agents/skills`:
+Preview changes first:
+
 ```
-for skill_dir in /Users/joseph/Documents/Git/my-codex-skills/*; do
-  if [ -d "$skill_dir" ] && [ -f "$skill_dir/SKILL.md" ]; then
-    ln -sfn "$skill_dir" "$HOME/.agents/skills/$(basename "$skill_dir")"
-  fi
-done
+python3 scripts/symlink_skills.py --dry-run
+```
+
+If a non-symlink skill already exists at the destination, back it up and replace it with a symlink:
+
+```
+python3 scripts/symlink_skills.py --backup-existing
+```
+
+To link skills for agents that read `~/.agents/skills`:
+
+```
+python3 scripts/symlink_skills.py --target ~/.agents/skills
 ```
 
 ## Install the skill
