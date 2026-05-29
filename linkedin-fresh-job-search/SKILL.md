@@ -20,6 +20,7 @@ Use this skill to prioritize jobs where the user can apply before applicant volu
    - Prefer the user's resume, LinkedIn profile, or stated background.
    - If available, read `references/candidate-profile.md` for a compact maintained profile snapshot.
    - If available, read `references/job-search-sources.md` for the canonical tracking sheet or source links.
+   - If available, read `references/github-project-signals.md` for side-project evidence that can strengthen fit notes and resume targeting.
    - Use the Chrome skill/plugin for live LinkedIn searching and for updates to the existing `2026 interview` Google Sheet because both depend on the user's logged-in browser account.
    - Keep this workflow browser-only. If Chrome cannot access the tracker, stop and report the Chrome blocker instead of creating or updating a replacement through another account.
    - Do not inspect cookies, local storage, passwords, or private session stores.

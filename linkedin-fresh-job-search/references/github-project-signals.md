@@ -1,6 +1,6 @@
 # GitHub / Side Project Signals
 
-Use Joseph's public GitHub profile as supporting evidence when screening roles and writing fit notes:
+Use Joseph's public GitHub profile as supporting evidence when screening roles, tailoring resumes, and writing fit notes:
 
 ```text
 https://github.com/JosephT5566
@@ -18,12 +18,12 @@ Current public repo signals checked on 2026-05-22:
 
 Do not overstate side projects as production-scale work unless the repo itself clearly shows that. Treat them as interview conversation starters and proof of initiative, not as primary work experience.
 
-When a promising role overlaps with a side project, add a short `Fit Notes` mention such as:
+When a promising role overlaps with a side project, add a short fit note such as:
 
-- `Side-project proof: Svelte/TS expense app + Houzz frontend product work.`
-- `Side-project proof: TravelSplit shows Apps Script/workflow automation.`
-- `Side-project proof: musicFest shows mobile-first RWD planning UX.`
-- `Side-project proof: my-codex-skills shows AI-assisted workflow design.`
+- Side-project proof: Svelte/TS expense app + Houzz frontend product work.
+- Side-project proof: TravelSplit shows Apps Script/workflow automation.
+- Side-project proof: musicFest shows mobile-first RWD planning UX.
+- Side-project proof: my-codex-skills shows AI-assisted workflow design.
 
 ## Project Leverage Plan
 
@@ -40,11 +40,11 @@ High-leverage project upgrades:
 
 Use this project evidence to boost roles involving:
 
-- frontend product engineering
+- Frontend product engineering
 - React/Svelte/TypeScript web apps
-- workflow/productivity tools
-- consumer mobile-web/RWD UX
-- spreadsheet, Apps Script, or lightweight automation integrations
+- Workflow/productivity tools
+- Consumer mobile-web/RWD UX
+- Spreadsheet, Apps Script, or lightweight automation integrations
 - AI-assisted product engineering or developer tooling
 
 Do not boost roles primarily focused on backend infrastructure, hardware, QA/testing-only, pure ML research, or data engineering solely because a side project exists.
