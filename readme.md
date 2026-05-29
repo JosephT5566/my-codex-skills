@@ -17,6 +17,8 @@ If a non-symlink skill already exists at the destination, back it up and replace
 python3 scripts/symlink_skills.py --backup-existing
 ```
 
+The script also maintains shared `references/` links for skills that use the common candidate/job-search reference files.
+
 To link skills for agents that read `~/.agents/skills`:
 
 ```

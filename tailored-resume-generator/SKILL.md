@@ -155,12 +155,12 @@ When a user requests resume tailoring:
 
 ### 0. Check for Local Candidate Sources
 
-Before asking the user for background details, check the current working folder for local source-of-truth files such as `resume-2026.md`, `candidate-profile.md`, and `project-signals.md`. When present, use those local files as the candidate background source instead of storing personal details inside this skill folder.
+Before asking the user for background details, check the current working folder for local source-of-truth files such as `resume-2026.md`, `candidate-profile.md`, and `project-signals.md`. When present, use those local files as the candidate background source.
 
-For Joseph's `Interview 2026` workspace, prefer:
-- `/Users/joseph/Documents/Interview 2026/resume-2026.md`
-- `/Users/joseph/Documents/Interview 2026/candidate-profile.md`
-- `/Users/joseph/Documents/Interview 2026/project-signals.md`
+If available, also read shared skill references:
+- `references/resume-2026.md`
+- `references/candidate-profile.md`
+- `references/github-project-signals.md`
 
 Keep this skill reusable. Do not add private candidate details, resume bullets, contact details, or project proof points directly to `SKILL.md`.
 

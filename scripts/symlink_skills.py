@@ -9,6 +9,12 @@ from datetime import datetime
 from pathlib import Path
 
 
+SHARED_REFERENCE_SKILLS = (
+    "linkedin-fresh-job-search",
+    "tailored-resume-generator",
+)
+
+
 def repo_root() -> Path:
     return Path(__file__).resolve().parents[1]
 
@@ -26,9 +32,8 @@ def backup_path(path: Path) -> Path:
     return path.with_name(f"{path.name}.backup-{stamp}")
 
 
-def link_skill(skill_dir: Path, target_dir: Path, *, dry_run: bool, backup_existing: bool) -> str:
-    destination = target_dir / skill_dir.name
-    source = skill_dir.resolve()
+def link_path(source: Path, destination: Path, *, dry_run: bool, backup_existing: bool) -> str:
+    source = source.resolve()
 
     if destination.is_symlink():
         current = destination.resolve()
@@ -37,7 +42,7 @@ def link_skill(skill_dir: Path, target_dir: Path, *, dry_run: bool, backup_exist
         if dry_run:
             return f"link  {destination} -> {source} (replace symlink to {current})"
         destination.unlink()
-        destination.symlink_to(source, target_is_directory=True)
+        destination.symlink_to(source, target_is_directory=source.is_dir())
         return f"link  {destination} -> {source} (replaced symlink to {current})"
 
     if destination.exists():
@@ -50,13 +55,44 @@ def link_skill(skill_dir: Path, target_dir: Path, *, dry_run: bool, backup_exist
         if dry_run:
             return f"link  {destination} -> {source} (backup existing to {backup})"
         destination.rename(backup)
-        destination.symlink_to(source, target_is_directory=True)
+        destination.symlink_to(source, target_is_directory=source.is_dir())
         return f"link  {destination} -> {source} (backed up existing to {backup})"
 
     if dry_run:
         return f"link  {destination} -> {source}"
-    destination.symlink_to(source, target_is_directory=True)
+    destination.symlink_to(source, target_is_directory=source.is_dir())
     return f"link  {destination} -> {source}"
+
+
+def link_shared_references(root: Path, *, dry_run: bool, backup_existing: bool) -> list[str]:
+    shared_references = root / "references"
+    if not shared_references.is_dir():
+        return [f"skip  {shared_references} does not exist"]
+
+    results = []
+    for skill_name in SHARED_REFERENCE_SKILLS:
+        skill_dir = root / skill_name
+        if not skill_dir.is_dir():
+            results.append(f"skip  {skill_dir} does not exist")
+            continue
+        results.append(
+            link_path(
+                shared_references,
+                skill_dir / "references",
+                dry_run=dry_run,
+                backup_existing=backup_existing,
+            )
+        )
+    return results
+
+
+def link_skill(skill_dir: Path, target_dir: Path, *, dry_run: bool, backup_existing: bool) -> str:
+    return link_path(
+        skill_dir,
+        target_dir / skill_dir.name,
+        dry_run=dry_run,
+        backup_existing=backup_existing,
+    )
 
 
 def parse_args() -> argparse.Namespace:
@@ -78,6 +114,11 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Move existing non-symlink paths aside before linking.",
     )
+    parser.add_argument(
+        "--skip-shared-references",
+        action="store_true",
+        help="Do not repair skill-local references symlinks to the shared references folder.",
+    )
     return parser.parse_args()
 
 
@@ -97,6 +138,16 @@ def main() -> int:
     print(f"Repo:   {root}")
     print(f"Target: {target_dir}")
 
+    if not args.skip_shared_references:
+        print("Shared references:")
+        for result in link_shared_references(
+            root,
+            dry_run=args.dry_run,
+            backup_existing=args.backup_existing,
+        ):
+            print(result)
+
+    print("Skills:")
     for skill_dir in skills:
         print(link_skill(skill_dir, target_dir, dry_run=args.dry_run, backup_existing=args.backup_existing))
 
