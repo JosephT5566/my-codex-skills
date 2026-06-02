@@ -1,0 +1,152 @@
+@page {
+  size: A4;
+  margin: 9.5mm 11mm;
+}
+
+:root {
+  --ink: #1f2933;
+  --muted: #52616b;
+  --accent: #1f6f78;
+  --accent-soft: #e4f1f2;
+  --line: #d8e2e6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #eef2f5;
+}
+
+body {
+  max-width: 210mm;
+  margin: 0 auto;
+  padding: 0;
+  color: var(--ink);
+  background: #ffffff;
+  font-family: "Avenir Next", Avenir, "Helvetica Neue", Arial, sans-serif;
+  font-size: 8.8pt;
+  line-height: 1.26;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin-top: 0;
+}
+
+h1 {
+  margin: 0 0 1.8mm;
+  padding-bottom: 1.6mm;
+  border-bottom: 2px solid var(--accent);
+  color: #111827;
+  font-size: 22pt;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.05;
+}
+
+h1 + p {
+  margin: 0 0 3.2mm;
+  color: var(--muted);
+  font-size: 8.5pt;
+  line-height: 1.35;
+}
+
+h2 {
+  margin: 3.4mm 0 1.6mm;
+  padding: 1mm 1.8mm;
+  border-left: 4px solid var(--accent);
+  background: var(--accent-soft);
+  color: #12343b;
+  font-size: 10pt;
+  font-weight: 750;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+h3 {
+  margin: 2.4mm 0 0.5mm;
+  color: #111827;
+  font-size: 9.6pt;
+  font-weight: 750;
+  line-height: 1.18;
+  break-after: avoid;
+}
+
+h3 + p {
+  margin-bottom: 0.8mm;
+  color: #334e5c;
+  font-size: 8.5pt;
+  break-after: avoid;
+}
+
+p {
+  margin-bottom: 1.3mm;
+}
+
+ul {
+  margin-bottom: 1.4mm;
+  padding-left: 3.8mm;
+}
+
+li {
+  margin-bottom: 0.65mm;
+  padding-left: 0.5mm;
+}
+
+strong {
+  color: #101820;
+  font-weight: 750;
+}
+
+a {
+  color: #165d66;
+  text-decoration: none;
+}
+
+body > p:first-of-type {
+  display: block;
+}
+
+#title-block-header {
+  display: none;
+}
+
+h2:nth-of-type(2) + ul {
+  columns: 2;
+  column-gap: 8mm;
+  padding-left: 0;
+  list-style: none;
+}
+
+h2:nth-of-type(2) + ul li {
+  break-inside: avoid;
+  margin-bottom: 1.8mm;
+  padding-left: 0;
+}
+
+h2:nth-of-type(3) ~ h3,
+h2:nth-of-type(4) ~ h3 {
+  break-inside: avoid;
+}
+
+li,
+h3 + p,
+h3 + p + ul {
+  break-inside: avoid;
+}
+
+@media print {
+  html,
+  body {
+    background: #ffffff;
+  }
+
+  body {
+    max-width: none;
+  }
+}

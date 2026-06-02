@@ -16,6 +16,7 @@ CHROME_PATHS = (
     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
     "/Applications/Chromium.app/Contents/MacOS/Chromium",
 )
+DEFAULT_CSS_NAME = "resume-pandoc.css"
 
 
 def run(cmd: list[str]) -> subprocess.CompletedProcess[str]:
@@ -30,8 +31,14 @@ def require_pandoc() -> str:
 
 
 def default_css(source: Path) -> Path | None:
-    candidate = source.parent / "resume-pandoc.css"
-    return candidate if candidate.exists() else None
+    candidates = (
+        source.parent / DEFAULT_CSS_NAME,
+        Path(__file__).resolve().parent / DEFAULT_CSS_NAME,
+    )
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+    return None
 
 
 def output_path(source: Path, fmt: str, explicit: str | None) -> Path:

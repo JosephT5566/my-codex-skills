@@ -18,7 +18,13 @@ Keep this skill separate from resume-writing skills. This skill handles file exp
    python3 /Users/joseph/.agents/skills/markdown-resume-exporter/scripts/export_resume.py SOURCE.md --format pdf
    ```
 
-3. If a workspace CSS file is available, especially `resume-pandoc.css`, pass it explicitly:
+3. The helper automatically uses CSS in this order:
+
+   - `--css PATH` when explicitly provided.
+   - `resume-pandoc.css` next to the source Markdown file.
+   - Bundled `scripts/resume-pandoc.css` from this skill.
+
+   Pass `--css` only when a specific export needs to override the reusable bundled style:
 
    ```bash
    python3 /Users/joseph/.agents/skills/markdown-resume-exporter/scripts/export_resume.py SOURCE.md --format pdf --css resume-pandoc.css
@@ -36,7 +42,7 @@ The helper script:
 - For PDF, tries available engines in this order: `pdflatex`, `xelatex`, `lualatex`, `tectonic`.
 - If no LaTeX-style engine is available, tries HTML-to-PDF paths with `weasyprint`, then headless Chrome.
 - If PDF is unavailable, can still produce `html`, `docx`, or `txt` outputs through Pandoc.
-- Uses `resume-pandoc.css` from the source file directory by default when present.
+- Uses `resume-pandoc.css` from the source file directory when present, otherwise falls back to the bundled `scripts/resume-pandoc.css`.
 
 ## Common Commands
 
