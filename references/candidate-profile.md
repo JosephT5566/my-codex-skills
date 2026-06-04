@@ -6,6 +6,8 @@ Use this as the application-folder source of truth for resume tailoring, role ta
 
 Joseph Tseng is a software engineer with strongest evidence in frontend product development, marketplace search/browse, e-commerce UX, CMS-driven pages, experimentation, and emerging 3D/AI workflow integrations.
 
+Secondary positioning for semiconductor, hardware-adjacent, QA, validation, application engineering, and communication-heavy engineering roles: Joseph can be positioned as a product-minded engineer with international product-team experience, production quality ownership, cross-functional delivery, root-cause debugging, QA planning, release monitoring, and prior firmware/application engineering background.
+
 ## Strongest Role Families
 
 - Frontend Engineer / Frontend Developer
@@ -16,6 +18,56 @@ Joseph Tseng is a software engineer with strongest evidence in frontend product 
 - Search / Marketplace Frontend Engineer
 - AI Product / AI-Native Web Engineer
 - CMS / Campaign Frontend Engineer
+- Product Engineer / Full Stack Product Engineer where React, TypeScript, and product-web delivery are central
+- Developer Experience / Developer Tools Engineer with frontend tooling or workflow automation scope
+- Internal Tools Engineer for React/TypeScript dashboards, productivity tools, CMS, or operations workflows
+- Solutions Engineer / Implementation Engineer for web, SaaS, CMS, e-commerce, or automation products
+- Forward Deployed Engineer when the role involves hands-on TypeScript/web product integration
+- Software QA Engineer / QA Engineer when the role values test planning, release quality, issue investigation, and engineering coordination more than repetitive manual testing
+- Validation Engineer / System Validation Engineer when the role values debugging, test planning, firmware/application background, and cross-functional issue closure
+- Application Engineer / Field Application Engineer for semiconductor, hardware, SaaS, or technical product roles that need customer-facing debugging and communication
+- Technical Project Engineer / Technical Program Engineer when hands-on engineering coordination, Jira breakdown, QA planning, release execution, and stakeholder communication are central
+
+## Adjacent Role Searches
+
+Use these as supporting LinkedIn queries when the user asks for roles beyond software engineer:
+
+- `Product Engineer React`
+- `Full Stack Product Engineer React`
+- `Web Engineer TypeScript`
+- `Developer Experience Engineer Frontend`
+- `Developer Tools Engineer TypeScript`
+- `Internal Tools Engineer React`
+- `Solutions Engineer JavaScript`
+- `Implementation Engineer React`
+- `Forward Deployed Engineer TypeScript`
+- `Technical Product Manager Web Platform`
+
+Use these as supporting LinkedIn queries for semiconductor, QA, validation, application engineering, or communication-heavy engineering searches:
+
+- Prefer these high-signal adjacent searches first:
+  - `ATE Testing Software Engineer C#`
+  - `ATE Software Engineer C++ C#`
+  - `Software Engineer ATE Testing`
+  - `QA Automation Engineer SQL`
+  - `Software Quality Engineer Automation SQL`
+  - `AI Application Architect`
+  - `AI Application Engineer Workflow`
+  - `Digital Transformation AI Application`
+  - `Application Engineer Test Equipment`
+  - `Application Engineer Power Supply C++`
+
+- Use these broad searches as discovery pools only, then screen individual jobs carefully:
+  - `QA Engineer Software`
+  - `Software QA Engineer`
+  - `Validation Engineer Software`
+  - `System Validation Engineer`
+  - `Application Engineer Semiconductor`
+  - `Field Application Engineer Software`
+  - `Technical Project Engineer`
+  - `Technical Program Engineer`
+  - `Customer Quality Engineer Software`
+  - `Product Quality Engineer Software`
 
 ## Proof Points To Reuse
 
@@ -26,6 +78,24 @@ Joseph Tseng is a software engineer with strongest evidence in frontend product 
 - Worked with PMs, designers, backend/platform engineers, personalization engineers, and cross-functional stakeholders.
 - Expanded into 3D workflow development, 2D-to-3D clipper automation, dimension parsing/transformation, GraphQL integration, and external AI services.
 - Uses Amplitude and Redash for dashboards, monitoring, and product analysis.
+- Improved release quality through feature switches, QA guides, bug bash organization, code reviews, debugging, and release monitoring with Coralogix, Amplitude, and Redash.
+- Investigated production issues by tracing frontend flows, API dependencies, feature switches, logs, and product metrics to identify root causes and coordinate safe fixes.
+- Has earlier firmware/application engineering experience in hardware-adjacent environments, including embedded firmware, memory controller testing patterns, production application tooling, C/C++/C#, and unit testing with Ceedling.
+- Fresh LinkedIn search evidence from 2026-06-04 showed the best adjacent targets were ATE/software-test roles, QA automation roles with SQL/test planning, AI application/digital transformation roles, and application engineer roles with a clear software/test-equipment bridge. Broad semiconductor/application/validation searches produced useful leads but also many noisy hardware, manufacturing, cybersecurity, and industrial project roles.
+
+## Resume Positioning Variants
+
+Use separate resume versions instead of diluting one resume:
+
+- Frontend / Product Engineer resume: lead with React, TypeScript, marketplace search, CMS, A/B testing, GraphQL, and product-web delivery.
+- Application / Validation / QA Engineer resume: lead with international-team communication, production debugging, QA planning, release quality, root-cause analysis, prior firmware/application engineering, and cross-functional issue closure.
+- Solutions / Implementation Engineer resume: lead with stakeholder communication, requirements clarification, technical integration, customer/product workflows, CMS/e-commerce/SaaS context, and hands-on web/API implementation.
+
+For QA, validation, application, and technical project roles, prefer wording like:
+
+`Product-minded engineer with international product engineering experience, production quality ownership, cross-functional delivery, root-cause debugging, QA planning, and release monitoring.`
+
+Do not present Joseph as a pure manual QA candidate. Favor roles where engineering judgment, debugging, communication, and quality ownership are central.
 
 ## Screen Out By Default
 
@@ -33,6 +103,12 @@ Joseph Tseng is a software engineer with strongest evidence in frontend product 
 - Data engineering roles with no product-web scope.
 - Backend/platform roles where frontend is not central.
 - Hardware/product-engineer roles unrelated to web product engineering.
+- Solutions, implementation, or TPM roles that are mostly account management, project coordination, or support without meaningful technical/product-building scope.
+- Manual QA roles focused mainly on scripted repetitive testing with little technical debugging, release ownership, automation, or engineering coordination.
+- Semiconductor validation or customer quality roles requiring deep device physics, wafer process ownership, or hardware lab specialization without a software/application bridge.
+- Principal/staff application roles requiring 10+ years of deep semiconductor power-electronics expertise, SiC/GaN device mastery, circuit design, PCB layout, or lab-heavy power validation.
+- Cybersecurity testing roles requiring penetration-testing specialization, IEC 62443/RED/CRA ownership, OSCP/CPENT-style credentials, or security domain depth unless explicitly targeting cybersecurity.
+- Technical project roles dominated by industrial automation project delivery, process-industry site management, heavy travel, BOM/pre-sales support, or schedule/budget ownership with limited software/product-building scope.
 
 ## Houzz Interview Story Bank
 

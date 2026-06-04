@@ -69,6 +69,18 @@ My transferable experience:
 - Data analysis and A/B testing
 ```
 
+### Engineering Role Variants
+
+When tailoring for a software engineer whose background can support multiple engineering lanes, choose the resume angle based on the target job rather than mixing every strength into one version.
+
+For QA Engineer, Software QA Engineer, Validation Engineer, System Validation Engineer, Application Engineer, Field Application Engineer, Customer Quality Engineer, Product Quality Engineer, Technical Project Engineer, or communication-heavy engineering roles:
+- Lead the summary with production quality, root-cause debugging, release ownership, QA planning, cross-functional delivery, stakeholder communication, and international product-team experience.
+- Reorder experience bullets so debugging, feature flags, QA guides, bug bash coordination, release monitoring, logs/metrics, Jira breakdown, and cross-team issue closure appear before pure feature-building bullets.
+- Reframe software product work as evidence of quality ownership and ambiguity handling, not only UI delivery.
+- Use prior firmware/application engineering experience as supporting evidence for hardware-adjacent, semiconductor, validation, or field application roles.
+- Keep technical credibility visible with programming languages, APIs, logs, analytics, CI/CD, testing, and debugging tools.
+- Do not position the candidate as pure manual QA unless the user explicitly requests that direction.
+
 ## Example
 
 **User Request:**
@@ -315,6 +327,14 @@ Ask if user wants to:
 - Emphasize transferable skills
 - Create compelling narrative in summary
 - Focus on relevant projects and coursework
+
+**QA / Validation / Application Engineering Transitions**:
+- Use a hybrid but still reverse-chronological resume.
+- Add a summary line such as: "Product-minded engineer with international product engineering experience, production quality ownership, cross-functional delivery, root-cause debugging, QA planning, and release monitoring."
+- Prefer sections such as "Core Engineering Strengths" or "Quality, Debugging & Delivery" when the job emphasizes communication and quality more than a single programming stack.
+- Highlight evidence for test planning, release quality, root-cause analysis, issue triage, stakeholder updates, production monitoring, feature flags, rollout/rollback, Jira coordination, and documentation.
+- For semiconductor or hardware-adjacent roles, connect prior firmware/application engineering experience with current production debugging and cross-functional product delivery.
+- Screen out or de-emphasize roles that require deep hardware lab specialization, device physics, wafer process ownership, or repetitive manual QA if the candidate's evidence is primarily software/product quality.
 
 **Recent Graduates**:
 - Lead with education

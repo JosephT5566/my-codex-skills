@@ -37,6 +37,66 @@ Use this skill to prioritize jobs where the user can apply before applicant volu
      - Search / Marketplace Frontend Engineer
      - AI Product / AI-Native Web Engineer
      - CMS / Campaign Frontend Engineer
+     - Product Engineer with React/TypeScript product-web scope
+     - Developer Experience / Internal Tools Engineer with frontend tooling scope
+     - Solutions Engineer / Implementation Engineer for web, SaaS, CMS, e-commerce, or workflow automation products
+   - For Joseph Tseng, default adjacent role families are:
+     - Product Engineer / Full Stack Product Engineer
+     - Web Platform UI Engineer
+     - Developer Tools / Developer Experience Engineer
+     - Internal Tools Engineer
+     - Solutions Engineer
+     - Implementation Engineer / Forward Deployed Engineer
+     - Technical Product Manager only when the posting values hands-on engineering/product delivery evidence
+     - Software QA Engineer / QA Engineer only when the role emphasizes test planning, release quality, debugging, automation, or engineering coordination
+     - Validation Engineer / System Validation Engineer with software, firmware, application, or product-quality scope
+     - Application Engineer / Field Application Engineer for semiconductor, hardware, SaaS, CMS, e-commerce, or technical product roles
+     - Technical Project Engineer / Technical Program Engineer when engineering coordination and quality ownership are central
+   - For Joseph Tseng, default LinkedIn query set:
+     - `Frontend Engineer React TypeScript`
+     - `Frontend Developer React TypeScript`
+     - `Software Engineer Frontend React`
+     - `Web Engineer TypeScript`
+     - `Product Engineer React`
+     - `Full Stack Product Engineer React`
+     - `Frontend-heavy Full Stack Engineer`
+     - `React TypeScript Engineer`
+     - `Marketplace Frontend Engineer`
+     - `Search Frontend Engineer`
+     - `E-commerce Frontend Engineer`
+     - `CMS Frontend Engineer`
+     - `Campaign Frontend Engineer`
+     - `AI Product Engineer React`
+     - `AI Native Web Engineer`
+     - `Developer Experience Engineer Frontend`
+     - `Developer Tools Engineer TypeScript`
+     - `Internal Tools Engineer React`
+     - `Solutions Engineer JavaScript`
+     - `Implementation Engineer React`
+     - `Forward Deployed Engineer TypeScript`
+     - `Technical Product Manager Web Platform`
+     - `QA Engineer Software`
+     - `Software QA Engineer`
+     - `Validation Engineer Software`
+     - `System Validation Engineer`
+     - `Application Engineer Semiconductor`
+     - `Field Application Engineer Software`
+     - `Technical Project Engineer`
+     - `Technical Program Engineer`
+     - `Customer Quality Engineer Software`
+     - `Product Quality Engineer Software`
+   - For Joseph Tseng, prioritize these high-signal adjacent queries before broad semiconductor/QA searches:
+     - `ATE Testing Software Engineer C#`
+     - `ATE Software Engineer C++ C#`
+     - `Software Engineer ATE Testing`
+     - `QA Automation Engineer SQL`
+     - `Software Quality Engineer Automation SQL`
+     - `AI Application Architect`
+     - `AI Application Engineer Workflow`
+     - `Digital Transformation AI Application`
+     - `Application Engineer Test Equipment`
+     - `Application Engineer Power Supply C++`
+   - Treat broad queries such as `Application Engineer Semiconductor`, `Validation Engineer Software`, and `Technical Project Engineer` as discovery pools only. Screen individual jobs carefully before ranking them.
 
 3. Search freshness windows and geographies.
    - First run LinkedIn searches with `f_TPR=r86400` for past 24 hours.
@@ -52,6 +112,10 @@ Use this skill to prioritize jobs where the user can apply before applicant volu
      - exact or near-exact title match
      - React/TypeScript/frontend/product-web requirements
      - marketplace, e-commerce, search, CMS, experimentation, GraphQL, or AI-product overlap
+     - product engineering, developer tooling, internal tooling, implementation, or solutions-engineering roles where React/TypeScript/web integration remains central
+     - QA, validation, application engineering, field application, customer quality, or technical project roles where test planning, root-cause debugging, release quality, production issue investigation, external/customer communication, or cross-functional engineering coordination are central
+     - ATE/software-test roles using C/C++/C#, .NET, REST/WebSockets, data acquisition, device communication, debugging, documentation, and cross-functional hardware/test/system collaboration
+     - AI application or digital transformation roles focused on workflow design, AI use-case definition, enterprise application patterns, stakeholder communication, delivery quality, and practical product outcomes
      - posted within 24 hours
      - low applicant count
      - remote eligibility for Taiwan/APAC/global candidates when outside Taiwan
@@ -59,6 +123,12 @@ Use this skill to prioritize jobs where the user can apply before applicant volu
    - Penalize:
      - pure ML/data/AI research roles when the user's proof is frontend/product
      - backend/platform/infra roles unless clearly frontend-heavy
+     - solutions, implementation, or TPM roles that are mostly account management, project coordination, or support without meaningful technical/product-building scope
+     - manual QA roles focused mainly on repetitive scripted testing without technical debugging, automation, release ownership, or engineering coordination
+     - semiconductor validation or customer quality roles requiring deep device physics, wafer process ownership, or hardware lab specialization without a software/application bridge
+     - principal/staff application roles requiring 10+ years of deep semiconductor power-electronics expertise, SiC/GaN device mastery, circuit design, PCB layout, or lab-heavy power validation
+     - cybersecurity testing roles requiring penetration-testing specialization, IEC 62443/RED/CRA ownership, OSCP/CPENT-style credentials, or security domain depth unless the user explicitly targets cybersecurity
+     - technical project roles dominated by industrial automation project delivery, process-industry site management, heavy travel, BOM/pre-sales support, or schedule/budget ownership with limited software/product-building scope
      - hardware/product-engineer roles that are not web product engineering
      - remote roles that are United States-only, require US work authorization, or require US payroll unless the fit is exceptional
      - postings older than 3 days
