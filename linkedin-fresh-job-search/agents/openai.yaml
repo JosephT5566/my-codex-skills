@@ -1,3 +1,3 @@
-display_name: LinkedIn Fresh Job Search
-short_description: Find fresh LinkedIn job targets.
-default_prompt: Find fresh LinkedIn jobs from the past 24 hours or 3 days, rank targets by fit and interview probability, and create a concise application plan or spreadsheet.
+display_name: LinkedIn-First Fresh Job Search
+short_description: Find fresh LinkedIn and supplemental CakeResume roles.
+default_prompt: Run today's light job search: use 3-5 focused LinkedIn queries, target 10 screened roles, use CakeResume only if LinkedIn yields fewer than 8 qualified leads, rank by interview probability, and update today's tracker tab.
