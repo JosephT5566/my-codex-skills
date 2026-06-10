@@ -1,3 +1,9 @@
+## Skill Registry
+
+Portable notes for installed skills and suggested prompt patterns:
+
+- [docs/codex-skills.md](docs/codex-skills.md)
+
 ## Symlink the skills
 Link the skills in this repo to Codex:
 
