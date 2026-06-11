@@ -82,6 +82,8 @@ Use these as supporting LinkedIn queries for semiconductor, QA, validation, appl
 - Investigated production issues by tracing frontend flows, API dependencies, feature switches, logs, and product metrics to identify root causes and coordinate safe fixes.
 - Has earlier firmware/application engineering experience in hardware-adjacent environments, including embedded firmware, memory controller testing patterns, production application tooling, C/C++/C#, and unit testing with Ceedling.
 - Fresh LinkedIn search evidence from 2026-06-04 showed the best adjacent targets were ATE/software-test roles, QA automation roles with SQL/test planning, AI application/digital transformation roles, and application engineer roles with a clear software/test-equipment bridge. Broad semiconductor/application/validation searches produced useful leads but also many noisy hardware, manufacturing, cybersecurity, and industrial project roles.
+- Built `wedding-table-service`, a responsive Next.js and Firebase operations app with real-time guest/table data, fuzzy search, check-in/check-out, Google authentication, email-allowlisted writes, strict Firestore rules, transactional updates, and dry-run-first schema migration tooling.
+- Built `my-actions-runner`, a self-hosted GitHub Actions system with four Codex-powered workflows for repository tasks, weekday job search, JD/resume fit scoring, and tailored resume generation through PDF export and verified Google Drive upload.
 
 ## Resume Positioning Variants
 
@@ -410,3 +412,29 @@ Search/navigation metric surprises:
 - Lesson: analytics correctness is part of product correctness.
 
 Interview angle: shows ownership after launch, practical debugging discipline, and the ability to turn production issues into better engineering process.
+
+## Side Project STAR Story Bank
+
+### Wedding Operations App: Real-Time Check-In With Controlled Access
+
+**Situation:** A wedding needed one mobile-friendly source of truth for helping guests find tables and for allowing trusted staff to update attendance. The seat finder needed to remain publicly readable, while check-in and guest-list changes could not be open to every visitor.
+
+**Task:** Build and deploy the complete operational tool in a short project window, including responsive table views, fast guest lookup, real-time updates, authenticated staff actions, and a safe path for evolving the existing Firestore data.
+
+**Action:** Built the app with Next.js, React, TypeScript, Tailwind CSS, Firebase Authentication, and Firestore. Added normalized fuzzy search, table-capacity indicators, check-in/check-out, transactional guest creation, and real-time listeners. Implemented Google Sign-In with an email allowlist and defense-in-depth Firestore rules that restrict updates to a single valid guest record while keeping seat lookup public. Wrote dry-run-first migration scripts to convert guest arrays and separate check-in data into keyed guest records while preserving state and reporting mismatches.
+
+**Result:** Delivered a deployable mobile and desktop operations app that supports public seat lookup and controlled real-time event updates. The project demonstrates end-to-end product delivery, security-rule design, transactional data handling, and schema migration without claiming unmeasured traffic or performance gains.
+
+Use for: full-stack ownership, Firebase security, real-time systems, data migration, responsive UX, or delivering under a fixed event deadline.
+
+### Codex Actions Runner: Automating the Job-Search Pipeline
+
+**Situation:** Job discovery, resume-fit analysis, resume tailoring, PDF export, and Drive organization were repeatable but disconnected manual tasks. They also depended on local Codex skills, an authenticated Chrome session, and Google Drive access that standard hosted runners could not use directly.
+
+**Task:** Create a controlled automation layer that could run those workflows on demand or on a weekday schedule, preserve useful outputs, and avoid exposing API keys or automatically pushing generated code.
+
+**Action:** Configured a self-hosted GitHub Actions runner and created four workflows: general Codex execution, weekday LinkedIn fresh-job search, JD/resume fit scoring, and tailored resume generation. Orchestrated reusable Codex skills, URL validation, Markdown generation, deterministic PDF fallback, dated Google Drive upload, workflow summaries, and retained artifacts. Added least-privilege permissions, concurrency and timeout controls, setup checks, and instructions that treat job pages as untrusted input.
+
+**Result:** Converted the workflow into repeatable GitHub Actions entry points, including an end-to-end resume pipeline from a job URL to a verified Drive file. The system retains outputs for 7 or 14 days for review and debugging and reuses the runner account's existing Codex login rather than storing an OpenAI API key in GitHub.
+
+Use for: developer tooling, CI/CD, AI workflow orchestration, automation reliability, security-conscious design, or identifying and removing repetitive work.

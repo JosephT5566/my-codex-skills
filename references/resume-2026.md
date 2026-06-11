@@ -5,7 +5,7 @@ chunlinjoseph@gmail.com | 0928-746-335
 
 ## Summary
 
-Software Engineer focused on frontend and full-stack product development, with experience building marketplace search, CMS-driven page platforms, experimentation workflows, and modern web applications. Strong in TypeScript, React, Next.js, SvelteKit, GraphQL, Supabase, and frontend architecture.
+Software Engineer focused on frontend and full-stack product development, with experience building marketplace search, CMS-driven page platforms, experimentation workflows, real-time operational tools, and developer automation. Strong in TypeScript, React, Next.js, SvelteKit, GraphQL, Firebase, Supabase, and frontend architecture.
 
 At Houzz, delivered search and browse improvements, Prismic-powered landing and event pages, GraphQL schema/resolver work, A/B-tested product changes, and frontend integrations across Marketplace, Lead Nurture, and 3D teams. Comfortable working through ambiguous product requirements with PM, design, backend, platform, personalization, and data stakeholders. Also experienced in large production codebases, tracing issues across frontend flows, API integrations, feature switches, logs, and analytics tools.
 
@@ -13,9 +13,9 @@ At Houzz, delivered search and browse improvements, Prismic-powered landing and 
 
 - **Languages:** TypeScript, JavaScript, HTML, CSS, SQL, C, C#
 - **Frontend:** React, Next.js, SvelteKit, Tailwind CSS, responsive web development, PWA development, frontend state management, frontend architecture
-- **Backend / Data:** GraphQL schema and resolvers, Supabase, PostgreSQL, API integration, row-level security, serverless function integration
+- **Backend / Data:** GraphQL schema and resolvers, Firebase Authentication, Firestore, Supabase, PostgreSQL, API integration, row-level security, serverless function integration
 - **Product / Platform:** Prismic CMS, Amplitude, Redash, Coralogix, Jira, feature switches, A/B testing, QA planning, bug bash coordination
-- **Cloud / Tooling:** GitHub Actions, GitHub Pages, GCP, Cloudflare Workers, CI/CD, Kubernetes collaboration, AI API integration
+- **Cloud / Tooling:** GitHub Actions, self-hosted runners, GitHub Pages, Firebase Hosting, GCP, Cloudflare Workers, CI/CD, Kubernetes collaboration, Codex CLI, AI API integration
 
 ## Professional Experience
 
@@ -53,6 +53,22 @@ Teams: Marketplace, Lead Nurture, 3D
 
 ## Selected Projects
 
+### Wedding Guest Seating and Check-In Service
+
+**Tech:** Next.js, React, TypeScript, Firebase Authentication, Firestore, Tailwind CSS, Firebase Hosting
+
+- Built a responsive, real-time wedding operations app for guest lookup, table visualization, check-in/check-out tracking, and guest-list updates across mobile and desktop.
+- Implemented Google Sign-In plus email-allowlisted write access, backed by Firestore security rules that allow public seat lookup while restricting check-in and guest-management changes.
+- Designed fuzzy guest search, transactional guest creation, capacity validation, and dry-run-first migration scripts to move existing Firestore records to a guest-keyed data model without losing check-in state.
+
+### Codex Workflow Automation Runner
+
+**Tech:** GitHub Actions, self-hosted runner, Codex CLI, Bash, Chrome integration, Google Drive
+
+- Built four manually triggered or scheduled GitHub Actions workflows for repository tasks, weekday LinkedIn job searches, job-description fit scoring, and tailored resume generation.
+- Automated a multi-step resume pipeline that validates job URLs, invokes reusable Codex skills, exports ATS-friendly Markdown to PDF, uploads verified output to dated Google Drive folders, and retains workflow artifacts for diagnosis.
+- Added runner prerequisite checks, timeouts, concurrency controls, least-privilege repository permissions, prompt-boundary guidance for untrusted job pages, and patch/result artifacts without automatically pushing generated changes.
+
 ### Personal Expense Tracking PWA
 
 **Tech:** SvelteKit, TypeScript, Supabase, Tailwind CSS, IndexedDB, GitHub Actions, GitHub Pages
@@ -64,16 +80,6 @@ Teams: Marketplace, Lead Nurture, 3D
 - Designed normalized expense-sharing data models and monthly balance aggregation flows.
 - Built a CI/CD pipeline with GitHub Actions for automated deployment and preview validation.
 - Integrated an AI-powered receipt parsing flow through serverless cloud function endpoints.
-
-### CMS-Driven Landing and Event Pages
-
-- Built reusable Prismic-powered page patterns at Houzz by modeling content, implementing GraphQL schema/resolver support, and rendering frontend experiences for landing pages and event pages.
-- Shipped an event/contest experience that reached around 21,000 unique visitors and drove around 1,700 signed-in voting users.
-
-### Marketplace Search and Browse Improvements
-
-- Implemented desktop and mobile search UX improvements, including search dropdown recommendation pills, filter/navigation updates, and mobile layout improvements.
-- Supported A/B-tested product changes and monitored release outcomes with Amplitude and Redash.
 
 ## Education
 

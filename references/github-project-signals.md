@@ -6,12 +6,13 @@ Use Joseph's public GitHub profile as supporting evidence when screening roles, 
 https://github.com/JosephT5566
 ```
 
-Current public repo signals checked on 2026-05-22:
+Current repo signals checked on 2026-06-11:
 
+- `wedding-table-service` - Next.js/React/TypeScript wedding operations app with real-time Firestore data, responsive table visualization, fuzzy guest search, check-in/check-out, guest management, Google authentication, email-allowlisted writes, strict Firestore rules, and dry-run-first data migrations. Use as evidence for end-to-end product ownership, operational UX, Firebase security, real-time state, and schema migration work.
+- `my-actions-runner` - GitHub Actions automation on a self-hosted runner for Codex CLI tasks, scheduled LinkedIn job search, JD/resume fit scoring, and tailored resume generation/export/upload to Google Drive. Use as evidence for developer tooling, workflow automation, reusable AI-agent skills, security-conscious prompt boundaries, artifact handling, and cross-tool orchestration.
 - `expense-app` - Svelte app, recently active in May 2026. Use as evidence for modern frontend app ownership, product UI, and personal finance/tooling workflows.
 - `TravelSplit` - TypeScript app with Google Apps Script integration, recently active in May 2026. Use as evidence for travel/productivity tooling, spreadsheet/workflow automation, and lightweight full-stack product execution.
 - `my-codex-skills` - Codex skill repo, active in May 2026. Use as evidence for AI-assisted workflow design, agent instruction design, and practical Codex/Gemini leverage.
-- `dog-api` - React-powered app. Use as supporting React/API integration evidence when the role asks for small product apps, frontend data fetching, or UI/API integration.
 - `my-oauth` - TypeScript auth/OAuth project. Use as supporting evidence for auth flows, integrations, and web security basics when relevant.
 - `musicFest` - TypeScript RWD mobile-first planning tool for music festivals. Use as evidence for responsive UX, mobile workflow design, and consumer-facing scheduling/planning tools.
 - `english-learning` - Svelte learning app. Use as evidence for personal productivity, learning workflows, and durable app ownership.
@@ -21,6 +22,8 @@ Do not overstate side projects as production-scale work unless the repo itself c
 When a promising role overlaps with a side project, add a short fit note such as:
 
 - Side-project proof: Svelte/TS expense app + Houzz frontend product work.
+- Side-project proof: wedding-table-service shows real-time Firebase operations, access control, schema migration, and responsive UX.
+- Side-project proof: my-actions-runner shows GitHub Actions, self-hosted automation, Codex skill orchestration, and Google Drive delivery.
 - Side-project proof: TravelSplit shows Apps Script/workflow automation.
 - Side-project proof: musicFest shows mobile-first RWD planning UX.
 - Side-project proof: my-codex-skills shows AI-assisted workflow design.
@@ -31,7 +34,7 @@ Joseph can use Gemini/Codex to polish side projects into stronger application as
 
 High-leverage project upgrades:
 
-- Add concise READMEs with problem, user workflow, tech stack, architecture notes, screenshots/GIFs, and deployment links.
+- Add concise READMEs with problem, user workflow, tech stack, architecture notes, screenshots/GIFs, and deployment links; prioritize `wedding-table-service`, whose current README focuses mostly on setup.
 - Add small test coverage or typed validation for the core workflow.
 - Add one polished demo path per repo, especially for `expense-app`, `TravelSplit`, `musicFest`, and `english-learning`.
 - Add AI/Codex notes only when relevant: describe how AI accelerated implementation, testing, refactoring, or workflow design without implying the project was not personally owned.
@@ -46,5 +49,7 @@ Use this project evidence to boost roles involving:
 - Consumer mobile-web/RWD UX
 - Spreadsheet, Apps Script, or lightweight automation integrations
 - AI-assisted product engineering or developer tooling
+- Firebase/Firestore operational tools with authenticated writes
+- GitHub Actions and self-hosted workflow automation
 
 Do not boost roles primarily focused on backend infrastructure, hardware, QA/testing-only, pure ML research, or data engineering solely because a side project exists.
