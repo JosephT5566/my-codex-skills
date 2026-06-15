@@ -1,11 +1,13 @@
 ---
 name: linkedin-fresh-job-search
-description: LinkedIn-first fresh job-search workflow with optional CakeResume coverage for Taiwan roles. Use when the user asks to identify newly posted high-probability roles, filter out old postings, rank jobs by interview likelihood, create a job-search sheet, or run a daily job-search workflow using LinkedIn, CakeResume, and Chrome.
+description: LinkedIn-first fresh job-search and application-prioritization workflow with optional CakeResume coverage for Taiwan roles. Use when the user asks to identify newly posted high-probability roles, decide which jobs deserve limited application time, rank jobs by interview likelihood and career upside, identify market skill signals, create a job-search sheet, or run a daily job-search workflow using LinkedIn, CakeResume, and Chrome.
 ---
 
 # LinkedIn Fresh Job Search
 
-Use this skill to prioritize jobs where the user can apply before applicant volume builds up. Optimize for interview probability, not just raw job count. LinkedIn is the primary source; CakeResume is a supplemental Taiwan-focused source.
+Use this skill as a lightweight personal recruiter and career coach. Prioritize jobs where the user can apply before applicant volume builds up, then identify the five roles most deserving of limited application time. Optimize for interview probability, career growth, and market awareness, not raw job count. LinkedIn is the primary source; CakeResume is a supplemental Taiwan-focused source.
+
+Do not add searches, open extra job pages, browse company websites, or introduce research steps for scoring or coaching. Derive all recommendations from information already collected during the normal search workflow and, when available, existing historical tracker outputs.
 
 ## Run Modes
 
@@ -52,6 +54,8 @@ Use when the user explicitly requests a comprehensive search, comparison across 
    - Use the Chrome skill/plugin for live LinkedIn and CakeResume searching and for updates to the existing `2026 interview` Google Sheet because these workflows may depend on the user's logged-in browser account.
    - Keep this workflow browser-only. If Chrome cannot access the tracker, stop and report the Chrome blocker instead of creating or updating a replacement through another account.
    - Do not inspect cookies, local storage, passwords, or private session stores.
+   - Unless the user's current materials indicate otherwise, evaluate Joseph Tseng as a Senior Frontend / Product Engineer with strengths in React, TypeScript, GraphQL, frontend architecture, product engineering, marketplaces, growth experimentation, large-scale production systems, and cross-functional collaboration.
+   - Treat international companies, Europe opportunities, remote-first culture, product-focused organizations, and an L4/L5 growth trajectory as career-upside signals.
 
 2. Build target role searches.
    - Start from role labels that match the user's strongest evidence.
@@ -186,9 +190,38 @@ Use when the user explicitly requests a comprehensive search, comparison across 
      - remote roles that are United States-only, require US work authorization, or require US payroll unless the fit is exceptional
      - postings older than 3 days
      - CakeResume listings with no visible freshness signal when enough verified-fresh roles are available
+   - After screening, rank every reviewed role using only captured evidence across four dimensions:
+     - `Skill Match`: React, TypeScript, GraphQL, frontend architecture, product engineering, web platform development, marketplaces, experimentation, and production-scale systems.
+     - `Career Growth Match`: ownership, leadership, technical scope, seniority trajectory, product influence, and cross-functional collaboration.
+     - `Location Match`: Europe eligibility, international hiring, remote-first or remote-friendly culture, and plausible Taiwan/APAC eligibility.
+     - `Company Quality Signals`: visible evidence in the posting or search results that the employer is product-led, SaaS-oriented, engineering-driven, or operating at meaningful scale. Do not research the company separately.
+   - Use qualitative evidence rather than fabricated precision. Do not show a numeric score unless the user explicitly requests one.
+   - Assign one opportunity tier:
+     - `Target`: high career upside with strong engineering/product signals plus international, Europe-friendly, or remote-friendly exposure. Action: apply immediately, customize the resume, and seek a referral when a visible path exists.
+     - `Strong Fit`: strong skill alignment, credible interview probability, good compensation potential, or relevant technical scope. Action: apply normally.
+     - `Practice`: moderate alignment that is useful for interview practice or market calibration. Action: apply only if bandwidth allows.
+     - `Skip`: weak fit, limited growth, location friction, or low interview probability. Action: do not apply.
+   - Keep freshness labels separate from opportunity tiers:
+     - `Apply Today`, `Maybe`, and `Skip` describe urgency and plausibility.
+     - `Target`, `Strong Fit`, `Practice`, and `Skip` describe career priority.
+   - Select a maximum of five daily application priorities from `Target` and `Strong Fit` roles. Rank them by:
+     1. plausible interview probability
+     2. career upside
+     3. freshness and applicant timing
+     4. application effort required
+   - Prefer five strong choices over filling the quota. If fewer than five roles deserve an application, say so explicitly.
 
 5. Produce the output.
-   - For a quick answer, list role targets with source, freshness window, direct job URL, fit, and action.
+   - Lead with `Today's Application Shortlist`, containing at most five roles in priority order.
+   - For each recommended role, report:
+     - `Company`
+     - `Role`
+     - `Tier`: `Target`, `Strong Fit`, or `Practice`
+     - `Why It Matches`: 2-4 concise evidence bullets
+     - `Suggested Action`: one or more of `Apply today`, `Customize resume first`, `Find referral`, or `Practice interview opportunity`
+     - source, freshness, location, and direct job URL
+   - State which shortlisted roles deserve resume customization. Reserve customization for `Target` roles or roles where a specific JD requirement can be addressed with existing candidate evidence.
+   - List remaining reviewed roles compactly by tier so the user can see what was deprioritized without receiving another long job list.
    - For a local sheet artifact, use the Spreadsheets skill to create an `.xlsx` with:
      - `Job Leads Summary`: company name, role title, role location, post date/age, ranking label, role family, fit notes, URL, status, next action
      - `Role Priorities`: rank, role target, interview probability, freshness rule, best queries, count, why it fits, action
@@ -208,17 +241,47 @@ Use when the user explicitly requests a comprehensive search, comparison across 
      - `Fit Notes`
      - `LinkedIn URL`
      - `Decision`
+   - Preserve an existing daily-tab schema instead of adding columns solely for the new analysis. Put the top-five shortlist and coaching analysis in the written completion report or an existing summary area when one is available.
    - Keep daily-tab notes short and scannable. Put stable role-family context in `Role Priorities` or `Job Leads Summary`, not as an extra column in dated result tabs unless the sheet already has that column.
    - In screened job rows, paste the direct LinkedIn or CakeResume job-description URL, not the generic search-result URL. Search-result URLs are acceptable only for unscreened search-pool rows where no specific job has been selected yet.
    - Keep the existing `LinkedIn URL` column name for workbook compatibility even when a CakeResume URL is stored there. Prefix CakeResume search-query values with `CakeResume:` so the source remains unambiguous without changing the 12-column schema.
    - When using Chrome to update the sheet, claim an existing open tab titled `2026 interview` when available. Add or rename today's `<YYYY-MM-DD> Results` tab, and use the previous dated tab as the visual/template reference.
    - If Chrome paste shortcuts do not work in Google Sheets, use the Chrome-accessible sheet UI plus the system clipboard as needed, then verify visually that the data landed in the grid.
 
+6. Produce career coaching from reviewed evidence.
+   - Perform this analysis after all jobs in the existing run are reviewed. Do not collect additional jobs or open additional pages.
+   - `Market Gap Analysis`:
+     - Identify only recurring requirements relevant to the candidate's target frontend/product career path that are less represented in the candidate profile.
+     - Show at most three gaps.
+     - For each gap report `Gap`, `Why it matters`, `Observed frequency`, and `Potential interview impact`.
+     - Calculate observed frequency from the reviewed-job set when the evidence is countable, for example `4 of 10 reviewed jobs (40%)`. Otherwise use a bounded qualitative description such as `Repeated across several reviewed roles`; do not invent percentages.
+     - Do not frame gaps as personal weaknesses.
+   - `Homework Recommendations`:
+     - Provide one practical recommendation per reported gap.
+     - Report `Priority` (`High`, `Medium`, or `Low`), `Suggested learning topics`, `Suggested project or exercise`, `Estimated effort`, and `Interview relevance` (`High`, `Medium`, or `Low`).
+     - Make exercises interview-oriented and reusable, such as a focused system-design walkthrough, architecture extension to an existing project, or concise implementation exercise. Avoid generic course lists.
+   - `Interview Readiness`:
+     - Assess `Frontend Engineering`, `Product Engineering`, `System Design`, `Cloud Infrastructure`, `AI / LLM Knowledge`, and `Leadership & Collaboration`.
+     - For each category report `Current Assessment` (`Strong`, `Good`, or `Needs Improvement`), `Reasoning`, and `Suggested Next Step`.
+     - Base reasoning on the candidate profile plus requirements observed in this run. Use `Good` rather than overclaiming when evidence is incomplete.
+   - `Career Signal Watch`:
+     - Use only historical outputs already available in the tracker or supplied by the user.
+     - Report a trend only when the same directional signal appears across at least three distinct runs. Examples include increasing AI requirements, Python frequency, system-design expectations, Europe opportunities, or decreasing remote availability.
+     - State the runs or dates supporting each trend when available.
+     - If fewer than three comparable runs exist or no trend is consistent, say `Insufficient history for a reliable trend` and omit speculation.
+
 ## Ranking Labels
 
 - `Apply Today`: fresh, strong title/skill fit, plausible interview path.
 - `Maybe`: fresh but noisy, partial fit, or broader role.
 - `Skip`: older than 3 days, poor fit, wrong discipline, or high-friction with weak match.
+
+## Opportunity Tiers
+
+- `Target`: highest priority for career upside and fit; customize the resume and pursue a referral when practical.
+- `Strong Fit`: credible interview opportunity with strong alignment; apply normally.
+- `Practice`: useful for interview practice or market calibration; apply only with spare bandwidth.
+- `Skip`: do not invest application time.
 
 ## Completion Report
 
@@ -230,6 +293,10 @@ At the end of a run, report:
 - number of direct postings screened
 - number of qualified roles saved
 - whether CakeResume fallback was triggered and why
-- top 3-5 application priorities
+- ranked application shortlist of up to five roles
+- roles requiring resume customization
+- top three market gaps and practical homework
+- interview-readiness assessment
+- career signal watch, or an explicit insufficient-history note
 
 Read `references/linkedin-filters.md` when constructing LinkedIn search URLs or explaining freshness counts.
