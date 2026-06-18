@@ -21,7 +21,7 @@ At Houzz, delivered search and browse improvements, Prismic-powered landing and 
 
 ### Software Engineer
 
-**Houzz** | May 2022 - Present  
+**Houzz** | May 2022 - May 2026  
 Teams: Marketplace, Lead Nurture, 3D
 
 - Owned CMS-driven page platform work using Prismic, including content and data modeling, GraphQL schema and resolver implementation, and frontend rendering for reusable landing page and event page patterns.

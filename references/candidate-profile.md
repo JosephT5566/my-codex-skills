@@ -4,7 +4,7 @@ Use this as the application-folder source of truth for resume tailoring, role ta
 
 ## Current Positioning
 
-Joseph Tseng is a software engineer with strongest evidence in frontend product development, marketplace search/browse, e-commerce UX, CMS-driven pages, experimentation, and emerging 3D/AI workflow integrations.
+Joseph Tseng is a software engineer, most recently at Houzz through May 2026, with strongest evidence in frontend product development, marketplace search/browse, e-commerce UX, CMS-driven pages, experimentation, and emerging 3D/AI workflow integrations.
 
 Secondary positioning for semiconductor, hardware-adjacent, QA, validation, application engineering, and communication-heavy engineering roles: Joseph can be positioned as a product-minded engineer with international product-team experience, production quality ownership, cross-functional delivery, root-cause debugging, QA planning, release monitoring, and prior firmware/application engineering background.
 
@@ -71,7 +71,7 @@ Use these as supporting LinkedIn queries for semiconductor, QA, validation, appl
 
 ## Proof Points To Reuse
 
-- Houzz software engineer since May 2022.
+- Houzz software engineer from May 2022 to May 2026.
 - Built marketplace search and navigation improvements across desktop and mobile web.
 - Delivered A/B-tested search and browse improvements; one mobile search experiment trended positive with +5.8% orders and +2.5% GMV.
 - Implemented Prismic/CMS campaign experiences, including a contest page with about 21,000 unique visitors and 1,700 signed-in voting users.
