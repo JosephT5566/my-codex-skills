@@ -136,6 +136,7 @@ Technical depth to mention:
 - Debugged legacy `AutoSuggest` behavior around focus, blur, touch events, long press, clear-history actions, and `justSelectedSuggestion` state.
 - Handled SPF navigation where components do not fully remount, so search/header state had to be updated on navigation events.
 - Coordinated frontend test registration with backend expectations so service calls could receive correct test bucket values.
+- For data-fetching changes, worked through GraphQL schema/resolver updates where resolvers called backend Thrift services; the frontend consumed GraphQL contracts rather than directly accessing databases or backend service internals.
 - Used feature flags and GrowthBook/AB test names to isolate experiments and support controlled rollout/ramp-down.
 
 Impact / evidence:
@@ -412,6 +413,25 @@ Search/navigation metric surprises:
 - Lesson: analytics correctness is part of product correctness.
 
 Interview angle: shows ownership after launch, practical debugging discipline, and the ability to turn production issues into better engineering process.
+
+## Technical Notes for Resume Tailoring and Interview Stories
+
+Use these notes as internal evidence when tailoring resumes, LinkedIn summaries, recruiter screens, and technical interview STAR stories. Do not include every detail in a resume; select only the details that match the target job description.
+
+Frontend data-fetching architecture:
+- For Marketplace frontend work, the FE consumed GraphQL APIs rather than talking directly to databases or backend service internals.
+- When a feature needed new or adjusted data, I could update GraphQL schema/resolver logic so the frontend received a stable, UI-friendly contract.
+- GraphQL resolvers called backend Thrift services, which owned business logic, database access, and calls to other services.
+- This is useful evidence for roles asking for frontend engineers who can work across API contracts, backend integration boundaries, BFF-style GraphQL layers, or service-oriented architecture.
+
+Frontend implementation process:
+- Start from the product/UI flow, then trace the full path through React components, state/store behavior, GraphQL query shape, resolver mapping, backend service expectations, feature flags, and analytics events.
+- Validate edge cases across desktop/mobile, SPF navigation, legacy components that may not fully remount, loading/empty/null data, and A/B bucket propagation.
+- Treat analytics and experiment registration as part of feature correctness, not a separate afterthought.
+
+Interview framing:
+- Strong sentence: "I was not only rendering the UI; I worked through the FE-to-GraphQL-to-Thrift data path so the React experience had the right contract while backend business logic stayed behind the service boundary."
+- Use this when a role values React/TypeScript plus GraphQL, API integration, backend collaboration, experimentation, or large production-codebase debugging.
 
 ## Side Project STAR Story Bank
 
