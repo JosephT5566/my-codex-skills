@@ -1,4 +1,4 @@
 interface:
   display_name: "LinkedIn-First Fresh Job Search"
-  short_description: "Prioritize fresh jobs and today's top five"
-  default_prompt: "Use $linkedin-fresh-job-search to run today's light search within its normal budget, rank up to five applications by interview probability and career upside, and summarize resume customization, market gaps, homework, readiness, and reliable trends."
+  short_description: "Prioritize fresh Product, Full-stack, AI, and Frontend roles"
+  default_prompt: "Use $linkedin-fresh-job-search to run today's light search within its normal budget, prioritizing Product Engineer, Full-stack Product Engineer, AI Product Engineer, and complex Frontend roles. Rank up to five applications by interview probability and career upside, and summarize resume customization, backend-depth fit, market gaps, homework, readiness, and reliable trends."

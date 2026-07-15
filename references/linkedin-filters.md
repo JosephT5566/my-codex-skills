@@ -1,23 +1,18 @@
-# LinkedIn Freshness Filters
+# LinkedIn Filters
 
-Use LinkedIn Jobs search URLs with these query parameters:
+Use these details when constructing LinkedIn search URLs or explaining freshness filters.
 
-| Meaning | Parameter |
-|---|---|
-| Past 24 hours | `f_TPR=r86400` |
-| Past 3 days | `f_TPR=r259200` |
-| Past week | `f_TPR=r604800` |
+## Freshness
 
-Base URL pattern:
+- Past 24 hours: `f_TPR=r86400`
+- Past 3 days: `f_TPR=r259200`
+- Use Past 24 hours first. Expand to Past 3 days only when the qualified pool is thin or the user explicitly asks for broader coverage.
 
-```text
-https://www.linkedin.com/jobs/search/?f_TPR=r86400&keywords=<encoded keywords>&location=<encoded location>
-```
+LinkedIn result counts are noisy search-volume indicators. Do not treat them as exact counts of qualified jobs.
 
-Notes:
+## Screening Notes
 
-- A result count is LinkedIn's count for the search query after filters, not a count of perfect-fit jobs.
-- LinkedIn may include sponsored, loosely matched, reposted, or semantically related roles.
-- Past 24 hours should be treated as the highest application priority.
-- Past 3 days should be treated as the maximum normal window for fast-interview searching.
-- Older jobs should usually be skipped unless there is a referral, recruiter contact, or unusually strong fit.
+- Verify direct job pages before recommending a role.
+- Deduplicate by normalized company name plus role title.
+- Prefer direct job URLs over search-result URLs for selected leads.
+- Reject US-only remote roles unless the posting is unusually strong and does not require US work authorization, US payroll, or strict US-only location.

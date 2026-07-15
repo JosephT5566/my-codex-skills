@@ -49,41 +49,45 @@ Use when the user explicitly requests a comprehensive search, comparison across 
 1. Establish candidate profile signal.
    - Prefer the user's resume, LinkedIn profile, or stated background.
    - If available, read `references/candidate-profile.md` for a compact maintained profile snapshot.
+   - If available, read `references/career-targeting.md` for maintained role-family priorities, backend-depth expectations, and mixed-role screening rules.
    - If available, read `references/job-search-sources.md` for the canonical tracking sheet or source links.
    - If available, read `references/github-project-signals.md` for side-project evidence that can strengthen fit notes and resume targeting.
    - Use the Chrome skill/plugin for live LinkedIn and CakeResume searching and for updates to the existing `2026 interview` Google Sheet because these workflows may depend on the user's logged-in browser account.
    - Keep this workflow browser-only. If Chrome cannot access the tracker, stop and report the Chrome blocker instead of creating or updating a replacement through another account.
    - Do not inspect cookies, local storage, passwords, or private session stores.
-   - Unless the user's current materials indicate otherwise, evaluate Joseph Tseng as a Senior Frontend / Product Engineer with strengths in React, TypeScript, GraphQL, frontend architecture, product engineering, marketplaces, growth experimentation, large-scale production systems, and cross-functional collaboration.
+   - Unless the user's current materials indicate otherwise, evaluate Joseph Tseng as a product-minded frontend-heavy software engineer extending toward Product Engineer, Full-stack Product Engineer, and AI Product Engineer roles. Treat React/TypeScript/frontend architecture as the foundation, and product ownership, backend/data integration, AI workflow integration, production debugging, experimentation, and release quality as the differentiators.
    - Treat international companies, Europe opportunities, remote-first culture, product-focused organizations, and an L4/L5 growth trajectory as career-upside signals.
+   - Do not infer fit from title alone. Map the actual work to transferable skills: product ownership, system integration, backend boundary design, authorization/data access, observability, evaluation, AI tool safety, and cross-functional delivery.
 
 2. Build target role searches.
    - Start from role labels that match the user's strongest evidence.
    - Add broader aliases for volume and narrower aliases for precision.
    - For a Daily Light Run, start with these four core LinkedIn queries:
-     - `Frontend Engineer React TypeScript`
-     - `Software Engineer Frontend React`
-     - `Product Engineer React`
+     - `Product Engineer React TypeScript`
      - `Full Stack Product Engineer React`
+     - `AI Product Engineer TypeScript`
+     - `Frontend Engineer React TypeScript`
    - Add one rotating adjacent query only when useful:
      - QA/quality day: `QA Automation Engineer SQL`
      - ATE/test day: `ATE Software Engineer C++ C#`
-     - AI application day: `AI Application Engineer Workflow`
-     - Tools/integration day: `Developer Tools Engineer TypeScript` or `Solutions Engineer JavaScript`
+     - AI application day: `AI Product Engineer TypeScript` or `Applied AI Engineer Product`
+     - Agent/workflow day: `AI Agent Engineer Tool Calling` or `LLM Application Engineer`
+     - Tools/integration day: `Developer Tools Engineer TypeScript`, `Developer Productivity Engineer`, or `Solutions Engineer JavaScript`
    - Check the most recent dated tracker tab before choosing the rotating query. Prefer a family that was not searched in the previous run.
    - For Joseph Tseng, default strong role families are:
-     - Frontend Engineer / Frontend Developer
-     - Software Engineer, Frontend / Web Engineer
-     - Senior Frontend Engineer
-     - React / TypeScript Engineer
-     - Frontend-heavy Full Stack Engineer
-     - Search / Marketplace Frontend Engineer
-     - AI Product / AI-Native Web Engineer
-     - CMS / Campaign Frontend Engineer
      - Product Engineer with React/TypeScript product-web scope
-     - Developer Experience / Internal Tools Engineer with frontend tooling scope
-     - Solutions Engineer / Implementation Engineer for web, SaaS, CMS, e-commerce, or workflow automation products
+     - Full-stack Product Engineer / Frontend-heavy Full Stack Engineer
+     - AI Product Engineer / AI-Native Web Engineer / LLM Application Engineer
+     - Senior Frontend Engineer when the role involves complex product frontend, architecture, experimentation, performance, accessibility, design systems, realtime workflows, data visualization, or AI interfaces
+     - Frontend Platform Engineer / Web Platform UI Engineer
+     - Search / Marketplace Frontend Engineer
+     - CMS / Campaign Frontend Engineer
+     - Developer Experience / Developer Productivity / Internal Tools Engineer with frontend tooling, workflow automation, or coding-agent scope
+     - Solutions Engineer / Implementation Engineer / Forward Deployed Engineer for web, SaaS, CMS, e-commerce, AI workflow, or developer-tool products
    - For Joseph Tseng, default adjacent role families are:
+     - Applied AI Engineer when product-facing and focused on LLM application integration rather than ML research
+     - AI Agent Engineer / Agent Infrastructure Engineer when tool calling, human approval, evaluation, tracing, permissions, or developer workflows are central
+     - Developer Productivity Engineer / AI Workflow Engineer / Coding Agent Workflow Engineer
      - Product Engineer / Full Stack Product Engineer
      - Web Platform UI Engineer
      - Developer Tools / Developer Experience Engineer
@@ -96,12 +100,21 @@ Use when the user explicitly requests a comprehensive search, comparison across 
      - Application Engineer / Field Application Engineer for semiconductor, hardware, SaaS, CMS, e-commerce, or technical product roles
      - Technical Project Engineer / Technical Program Engineer when engineering coordination and quality ownership are central
    - For Joseph Tseng, default LinkedIn query set:
+     - `Product Engineer React TypeScript`
+     - `Full Stack Product Engineer React`
+     - `AI Product Engineer TypeScript`
+     - `Applied AI Engineer Product`
+     - `LLM Application Engineer`
+     - `AI Agent Engineer Tool Calling`
+     - `Software Engineer Agent Infrastructure`
+     - `Developer Productivity Engineer`
+     - `Developer Experience Engineer Frontend`
+     - `Developer Tools Engineer TypeScript`
+     - `Frontend Platform Engineer`
      - `Frontend Engineer React TypeScript`
      - `Frontend Developer React TypeScript`
      - `Software Engineer Frontend React`
      - `Web Engineer TypeScript`
-     - `Product Engineer React`
-     - `Full Stack Product Engineer React`
      - `Frontend-heavy Full Stack Engineer`
      - `React TypeScript Engineer`
      - `Marketplace Frontend Engineer`
@@ -111,8 +124,6 @@ Use when the user explicitly requests a comprehensive search, comparison across 
      - `Campaign Frontend Engineer`
      - `AI Product Engineer React`
      - `AI Native Web Engineer`
-     - `Developer Experience Engineer Frontend`
-     - `Developer Tools Engineer TypeScript`
      - `Internal Tools Engineer React`
      - `Solutions Engineer JavaScript`
      - `Implementation Engineer React`
@@ -134,6 +145,10 @@ Use when the user explicitly requests a comprehensive search, comparison across 
      - `Software Engineer ATE Testing`
      - `QA Automation Engineer SQL`
      - `Software Quality Engineer Automation SQL`
+     - `AI Product Engineer TypeScript`
+     - `Applied AI Engineer Product`
+     - `LLM Application Engineer`
+     - `AI Agent Engineer Tool Calling`
      - `AI Application Architect`
      - `AI Application Engineer Workflow`
      - `Digital Transformation AI Application`
@@ -167,11 +182,15 @@ Use when the user explicitly requests a comprehensive search, comparison across 
    - Favor postings with:
      - exact or near-exact title match
      - React/TypeScript/frontend/product-web requirements
-     - marketplace, e-commerce, search, CMS, experimentation, GraphQL, or AI-product overlap
+     - product engineering, full-stack product ownership, AI-product, LLM application, agent workflow, or developer-productivity scope
+     - marketplace, e-commerce, search, CMS, experimentation, GraphQL, PostgreSQL/data modeling, authorization/RLS, observability, or AI-product overlap
      - product engineering, developer tooling, internal tooling, implementation, or solutions-engineering roles where React/TypeScript/web integration remains central
+     - backend basics as role-appropriate evidence: API design, PostgreSQL/schema tradeoffs, authz/RLS, idempotency, async workflow, observability, security boundary, or production debugging
+     - AI workflow evidence: structured output, tool calling, RAG, human-in-the-loop approval, evaluation datasets, tracing, retry/fallback, token/latency/cost control, or permission-aware data access
      - QA, validation, application engineering, field application, customer quality, or technical project roles where test planning, root-cause debugging, release quality, production issue investigation, external/customer communication, or cross-functional engineering coordination are central
      - ATE/software-test roles using C/C++/C#, .NET, REST/WebSockets, data acquisition, device communication, debugging, documentation, and cross-functional hardware/test/system collaboration
      - AI application or digital transformation roles focused on workflow design, AI use-case definition, enterprise application patterns, stakeholder communication, delivery quality, and practical product outcomes
+     - mixed frontend/backend/AI roles where the backend depth is feature-level rather than deep platform ownership, especially when the work involves data access, auth boundaries, API contracts, evaluations, and user-facing AI workflows
      - posted within 24 hours
      - low applicant count
      - explicit recent posted or updated time on CakeResume
@@ -179,7 +198,9 @@ Use when the user explicitly requests a comprehensive search, comparison across 
      - active recruiter, alumni, shared connections, or direct hiring-manager signal
    - Penalize:
      - pure ML/data/AI research roles when the user's proof is frontend/product
-     - backend/platform/infra roles unless clearly frontend-heavy
+     - backend/platform/infra roles unless clearly product-facing, frontend-heavy, developer-tooling-oriented, or realistic for backend feature ownership rather than service/platform ownership
+     - AI Agent Engineer postings that are actually ML research, model training, GPU/model-serving infrastructure, or deep distributed systems roles rather than product-agent, tool-calling, evaluation, or workflow roles
+     - generic `Harness Engineer` or `Loop Engineer` matches unless the posting clearly means AI agent harnesses, evaluation loops, coding-agent workflows, or developer tools. Reject wire harness, hardware-in-the-loop, and software-in-the-loop noise by default.
      - solutions, implementation, or TPM roles that are mostly account management, project coordination, or support without meaningful technical/product-building scope
      - manual QA roles focused mainly on repetitive scripted testing without technical debugging, automation, release ownership, or engineering coordination
      - semiconductor validation or customer quality roles requiring deep device physics, wafer process ownership, or hardware lab specialization without a software/application bridge
@@ -191,8 +212,8 @@ Use when the user explicitly requests a comprehensive search, comparison across 
      - postings older than 3 days
      - CakeResume listings with no visible freshness signal when enough verified-fresh roles are available
    - After screening, rank every reviewed role using only captured evidence across four dimensions:
-     - `Skill Match`: React, TypeScript, GraphQL, frontend architecture, product engineering, web platform development, marketplaces, experimentation, and production-scale systems.
-     - `Career Growth Match`: ownership, leadership, technical scope, seniority trajectory, product influence, and cross-functional collaboration.
+     - `Skill Match`: React, TypeScript, GraphQL, frontend architecture, product engineering, web platform development, marketplaces, experimentation, production-scale systems, backend feature ownership, and applied AI workflow integration.
+     - `Career Growth Match`: ownership, leadership, technical scope, seniority trajectory, product influence, backend/data judgment, AI-product capability, and cross-functional collaboration.
      - `Location Match`: Europe eligibility, international hiring, remote-first or remote-friendly culture, and plausible Taiwan/APAC eligibility.
      - `Company Quality Signals`: visible evidence in the posting or search results that the employer is product-led, SaaS-oriented, engineering-driven, or operating at meaningful scale. Do not research the company separately.
    - Use qualitative evidence rather than fabricated precision. Do not show a numeric score unless the user explicitly requests one.
@@ -261,7 +282,8 @@ Use when the user explicitly requests a comprehensive search, comparison across 
      - Report `Priority` (`High`, `Medium`, or `Low`), `Suggested learning topics`, `Suggested project or exercise`, `Estimated effort`, and `Interview relevance` (`High`, `Medium`, or `Low`).
      - Make exercises interview-oriented and reusable, such as a focused system-design walkthrough, architecture extension to an existing project, or concise implementation exercise. Avoid generic course lists.
    - `Interview Readiness`:
-     - Assess `Frontend Engineering`, `Product Engineering`, `System Design`, `Cloud Infrastructure`, `AI / LLM Knowledge`, and `Leadership & Collaboration`.
+     - Assess `Frontend Engineering`, `Product Engineering`, `Backend Ownership`, `System Design`, `Cloud Infrastructure`, `AI / LLM Knowledge`, and `Leadership & Collaboration`.
+     - For `Backend Ownership`, distinguish API consumer, API integrator, API designer, backend feature owner, service/system owner, and platform/infrastructure owner. Treat Joseph's current default as API integrator moving toward API designer/backend feature owner unless newer project evidence proves more.
      - For each category report `Current Assessment` (`Strong`, `Good`, or `Needs Improvement`), `Reasoning`, and `Suggested Next Step`.
      - Base reasoning on the candidate profile plus requirements observed in this run. Use `Good` rather than overclaiming when evidence is incomplete.
    - `Career Signal Watch`:
@@ -296,6 +318,7 @@ At the end of a run, report:
 - ranked application shortlist of up to five roles
 - roles requiring resume customization
 - top three market gaps and practical homework
+- backend-depth fit note for shortlisted mixed roles when backend ownership expectations are visible
 - interview-readiness assessment
 - career signal watch, or an explicit insufficient-history note
 
