@@ -10,6 +10,7 @@ from pathlib import Path
 
 
 SHARED_REFERENCE_SKILLS = (
+    "engineering-interview-coach",
     "linkedin-fresh-job-search",
     "tailored-resume-generator",
 )
