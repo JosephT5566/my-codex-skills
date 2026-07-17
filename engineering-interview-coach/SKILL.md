@@ -14,6 +14,8 @@ Use context supplied in the conversation first. When available, read only the re
 - `references/candidate-profile.md` for experience, positioning, and interview stories
 - `references/github-project-signals.md` for project-grounded prompts
 - `references/resume-2026.md` when the target role or claimed experience matters
+- `references/engineering-interview-drills/api-contract-design.md` when the user requests API contract, idempotency, async job, retry, or failure-recovery practice
+- `references/engineering-interview-drills/postgresql-schema-tradeoffs.md` when the user requests PostgreSQL schema, normalization, snapshot, JSONB, constraint, trigger, or relational-integrity practice
 
 Treat the resume and the user's answers as authoritative. Use profile and project references only as supporting context. Do not expose private details unnecessarily or overstate side-project scale.
 
