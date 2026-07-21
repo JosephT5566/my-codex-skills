@@ -12,7 +12,7 @@ Current repo signals checked on 2026-06-11:
 - `my-actions-runner` - GitHub Actions automation on a self-hosted runner for Codex CLI tasks, scheduled LinkedIn job search, JD/resume fit scoring, and tailored resume generation/export/upload to Google Drive. Use as evidence for developer tooling, workflow automation, reusable AI-agent skills, security-conscious prompt boundaries, artifact handling, and cross-tool orchestration.
 - `expense-app` - Svelte app, recently active in May 2026. Use as evidence for modern frontend app ownership, product UI, and personal finance/tooling workflows.
 - `TravelSplit` - TypeScript app with Google Apps Script integration, recently active in May 2026. Use as evidence for travel/productivity tooling, spreadsheet/workflow automation, and lightweight full-stack product execution.
-- `my-codex-skills` - Codex skill repo, active in May 2026. Use as evidence for AI-assisted workflow design, agent instruction design, and practical Codex/Gemini leverage.
+- `my-codex-skills` - Codex skill repo with reusable job-search, resume, and adaptive engineering-interview workflows. Its interview drill library covers API contract design, PostgreSQL schema tradeoffs, and Supabase RLS reasoning with follow-up ladders and evaluation anchors. Use as evidence for AI-assisted workflow design, agent instruction design, structured technical evaluation, and practical Codex/Gemini leverage. Do not treat the drill rubrics themselves as proof of production backend ownership or completed interview mastery.
 - `my-oauth` - TypeScript auth/OAuth project. Use as supporting evidence for auth flows, integrations, and web security basics when relevant.
 - `musicFest` - TypeScript RWD mobile-first planning tool for music festivals. Use as evidence for responsive UX, mobile workflow design, and consumer-facing scheduling/planning tools.
 - `english-learning` - Svelte learning app. Use as evidence for personal productivity, learning workflows, and durable app ownership.
@@ -26,7 +26,7 @@ When a promising role overlaps with a side project, add a short fit note such as
 - Side-project proof: my-actions-runner shows GitHub Actions, self-hosted automation, Codex skill orchestration, and Google Drive delivery.
 - Side-project proof: TravelSplit shows Apps Script/workflow automation.
 - Side-project proof: musicFest shows mobile-first RWD planning UX.
-- Side-project proof: my-codex-skills shows AI-assisted workflow design.
+- Side-project proof: my-codex-skills shows AI-assisted workflow design and structured technical evaluation across job search, resume, and engineering-interview workflows.
 
 ## Project Leverage Plan
 

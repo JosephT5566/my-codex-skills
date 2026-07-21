@@ -48,7 +48,7 @@ Use when the user explicitly requests a comprehensive search, comparison across 
 
 1. Establish candidate profile signal.
    - Prefer the user's resume, LinkedIn profile, or stated background.
-   - If available, read `references/candidate-profile.md` for a compact maintained profile snapshot.
+   - If available, read `references/candidate-profile.md` for a compact maintained profile snapshot and its evidence-calibration rules.
    - If available, read `references/career-targeting.md` for maintained role-family priorities, backend-depth expectations, and mixed-role screening rules.
    - If available, read `references/job-search-sources.md` for the canonical tracking sheet or source links.
    - If available, read `references/github-project-signals.md` for side-project evidence that can strengthen fit notes and resume targeting.
@@ -74,6 +74,7 @@ Use when the user explicitly requests a comprehensive search, comparison across 
      - Agent/workflow day: `AI Agent Engineer Tool Calling` or `LLM Application Engineer`
      - Tools/integration day: `Developer Tools Engineer TypeScript`, `Developer Productivity Engineer`, or `Solutions Engineer JavaScript`
    - Check the most recent dated tracker tab before choosing the rotating query. Prefer a family that was not searched in the previous run.
+   - For a Deep Search Run or a noisy result pool, read `references/linkedin-query-strategy.md` and select the smallest relevant query set. Do not load or run the full inventory by default.
    - For Joseph Tseng, default strong role families are:
      - Product Engineer with React/TypeScript product-web scope
      - Full-stack Product Engineer / Frontend-heavy Full Stack Engineer
@@ -99,62 +100,7 @@ Use when the user explicitly requests a comprehensive search, comparison across 
      - Validation Engineer / System Validation Engineer with software, firmware, application, or product-quality scope
      - Application Engineer / Field Application Engineer for semiconductor, hardware, SaaS, CMS, e-commerce, or technical product roles
      - Technical Project Engineer / Technical Program Engineer when engineering coordination and quality ownership are central
-   - For Joseph Tseng, default LinkedIn query set:
-     - `Product Engineer React TypeScript`
-     - `Full Stack Product Engineer React`
-     - `AI Product Engineer TypeScript`
-     - `Applied AI Engineer Product`
-     - `LLM Application Engineer`
-     - `AI Agent Engineer Tool Calling`
-     - `Software Engineer Agent Infrastructure`
-     - `Developer Productivity Engineer`
-     - `Developer Experience Engineer Frontend`
-     - `Developer Tools Engineer TypeScript`
-     - `Frontend Platform Engineer`
-     - `Frontend Engineer React TypeScript`
-     - `Frontend Developer React TypeScript`
-     - `Software Engineer Frontend React`
-     - `Web Engineer TypeScript`
-     - `Frontend-heavy Full Stack Engineer`
-     - `React TypeScript Engineer`
-     - `Marketplace Frontend Engineer`
-     - `Search Frontend Engineer`
-     - `E-commerce Frontend Engineer`
-     - `CMS Frontend Engineer`
-     - `Campaign Frontend Engineer`
-     - `AI Product Engineer React`
-     - `AI Native Web Engineer`
-     - `Internal Tools Engineer React`
-     - `Solutions Engineer JavaScript`
-     - `Implementation Engineer React`
-     - `Forward Deployed Engineer TypeScript`
-     - `Technical Product Manager Web Platform`
-     - `QA Engineer Software`
-     - `Software QA Engineer`
-     - `Validation Engineer Software`
-     - `System Validation Engineer`
-     - `Application Engineer Semiconductor`
-     - `Field Application Engineer Software`
-     - `Technical Project Engineer`
-     - `Technical Program Engineer`
-     - `Customer Quality Engineer Software`
-     - `Product Quality Engineer Software`
-   - For Joseph Tseng, prioritize these high-signal adjacent queries before broad semiconductor/QA searches:
-     - `ATE Testing Software Engineer C#`
-     - `ATE Software Engineer C++ C#`
-     - `Software Engineer ATE Testing`
-     - `QA Automation Engineer SQL`
-     - `Software Quality Engineer Automation SQL`
-     - `AI Product Engineer TypeScript`
-     - `Applied AI Engineer Product`
-     - `LLM Application Engineer`
-     - `AI Agent Engineer Tool Calling`
-     - `AI Application Architect`
-     - `AI Application Engineer Workflow`
-     - `Digital Transformation AI Application`
-     - `Application Engineer Test Equipment`
-     - `Application Engineer Power Supply C++`
-   - Treat broad queries such as `Application Engineer Semiconductor`, `Validation Engineer Software`, and `Technical Project Engineer` as discovery pools only. Screen individual jobs carefully before ranking them.
+   - Use `references/linkedin-query-strategy.md` for extended primary and adjacent query pools. Treat its broad queries as discovery pools and screen individual jobs carefully before ranking them.
 
 3. Search sources, freshness windows, and geographies.
    - First run LinkedIn searches with `f_TPR=r86400` for past 24 hours.
@@ -178,6 +124,7 @@ Use when the user explicitly requests a comprehensive search, comparison across 
      - Search-card screen: reject obvious wrong-discipline, wrong-location, old, or seniority-mismatch results without opening them.
      - Direct-posting screen: open only plausible leads to verify freshness, location, role scope, applicant signal, and direct URL.
    - Do not fully read every plausible description during discovery. Capture enough evidence to rank it, then reserve detailed JD analysis for roles marked `Apply Today`.
+   - Apply the evidence levels in `references/candidate-profile.md`. Do not boost fit merely because an interview rubric covers a JD requirement; require professional, project, or assessed-practice evidence appropriate to the claim.
    - Deduplicate before opening more postings so repeated sponsored or cross-query results do not consume the screening budget.
    - Favor postings with:
      - exact or near-exact title match
@@ -281,10 +228,16 @@ Use when the user explicitly requests a comprehensive search, comparison across 
      - Provide one practical recommendation per reported gap.
      - Report `Priority` (`High`, `Medium`, or `Low`), `Suggested learning topics`, `Suggested project or exercise`, `Estimated effort`, and `Interview relevance` (`High`, `Medium`, or `Low`).
      - Make exercises interview-oriented and reusable, such as a focused system-design walkthrough, architecture extension to an existing project, or concise implementation exercise. Avoid generic course lists.
+     - After a backend requirement recurs or appears in a shortlisted role, use the conditional routing in `references/career-targeting.md`. Read only the matching drill:
+       - API contracts, async work, idempotency, retries, or recovery: `references/engineering-interview-drills/api-contract-design.md`
+       - PostgreSQL schema, JSONB, constraints, concurrency, or migrations: `references/engineering-interview-drills/postgresql-schema-tradeoffs.md`
+       - Supabase/PostgreSQL RLS, multi-tenancy, ownership, roles, or elevated credentials: `references/engineering-interview-drills/supabase-rls-reasoning.md`
+     - Treat an uncompleted drill as homework only. Upgrade readiness after a completed session records Joseph's actual strengths and remaining gaps.
    - `Interview Readiness`:
      - Assess `Frontend Engineering`, `Product Engineering`, `Backend Ownership`, `System Design`, `Cloud Infrastructure`, `AI / LLM Knowledge`, and `Leadership & Collaboration`.
      - For `Backend Ownership`, distinguish API consumer, API integrator, API designer, backend feature owner, service/system owner, and platform/infrastructure owner. Treat Joseph's current default as API integrator moving toward API designer/backend feature owner unless newer project evidence proves more.
      - For each category report `Current Assessment` (`Strong`, `Good`, or `Needs Improvement`), `Reasoning`, and `Suggested Next Step`.
+     - State whether backend/system-design reasoning is supported by professional evidence, project implementation, assessed practice, or preparation material only when that distinction affects the recommendation.
      - Base reasoning on the candidate profile plus requirements observed in this run. Use `Good` rather than overclaiming when evidence is incomplete.
    - `Career Signal Watch`:
      - Use only historical outputs already available in the tracker or supplied by the user.

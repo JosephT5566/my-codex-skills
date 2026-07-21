@@ -23,6 +23,18 @@ Use this scale when estimating fit:
 
 Default Joseph assessment: API integrator moving toward API designer/backend feature owner. Upgrade this only when project evidence shows schema tradeoffs, RLS policy reasoning, API contracts, idempotency, async jobs, observability, or production-like backend ownership.
 
+## Backend Capability Checks
+
+Use these checks to distinguish a keyword match from interview-ready ownership:
+
+| Capability | Look for in the JD | Evidence needed to upgrade readiness |
+| --- | --- | --- |
+| API contract design | API ownership, async processing, integrations, reliability | A concrete design or implementation covering resource states, validation, idempotency, failure semantics, retries, and observability |
+| PostgreSQL data modeling | PostgreSQL, schema design, migrations, transactional workflows | A defended schema choice covering access patterns, constraints, concurrency, migration safety, and operational tradeoffs |
+| Authorization / RLS | Supabase, PostgreSQL RLS, multi-tenancy, permissions | A clear actor-action-tenant model covering old and new row state, immutable fields, elevated credentials, denial tests, and trust boundaries |
+
+Apply the evidence levels in `candidate-profile.md`. Project implementation can support a fit note; assessed practice can support an interview-readiness note. Preparation material alone supports only a homework recommendation.
+
 ## Role-Family Backend Expectations
 
 - Senior Frontend Engineer: medium-low backend depth. Needs API/data/auth literacy and production debugging, not full service ownership.
@@ -66,3 +78,15 @@ When relevant requirements recur in reviewed roles, surface these as practical h
 - System design communication: explain product feature boundaries, data flow, failure modes, security/privacy, and monitoring in interview-ready language.
 
 Prefer exercises that extend the expense app rather than generic toy projects.
+
+## Conditional Drill Routing
+
+Recommend a drill only after the corresponding requirement recurs in the reviewed jobs or appears in a shortlisted role. Choose the smallest relevant exercise rather than assigning the full drill library.
+
+| Observed requirement or gap | Practice reference | Desired outcome |
+| --- | --- | --- |
+| API design, async jobs, idempotency, partial failure, retry, or operational recovery | `engineering-interview-drills/api-contract-design.md` | Defend an end-to-end contract and its failure semantics at the role's expected scale |
+| PostgreSQL schema design, normalization, JSONB, constraints, concurrency, or migrations | `engineering-interview-drills/postgresql-schema-tradeoffs.md` | Tie a schema choice to access patterns, integrity, write behavior, and migration safety |
+| Supabase/PostgreSQL RLS, multi-tenancy, ownership, admin roles, or service credentials | `engineering-interview-drills/supabase-rls-reasoning.md` | Model authorization boundaries and concrete exploit prevention without relying on syntax recall |
+
+Do not mark a gap resolved until Joseph completes the relevant exercise and the session records what he explained well, what remained incomplete, and the next practice priority.

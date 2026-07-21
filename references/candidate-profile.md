@@ -20,6 +20,17 @@ Do not position him as a pure UI implementer, pure ML researcher, pure backend/p
 - Side projects include a SvelteKit/TypeScript/Supabase/PostgreSQL expense PWA with Google OAuth, row-level secured access, shared expense models, monthly aggregation, IndexedDB caching, GitHub Actions, and AI-powered receipt parsing.
 - Earlier experience includes React/Next.js/TypeScript web apps, API integration, PostgreSQL changes, GitHub-based CI/CD/GitOps, firmware, C/C++/C#, validation, and production application tooling.
 
+## Evidence Calibration
+
+Use these levels when scoring jobs, writing fit notes, assessing readiness, or tailoring application materials:
+
+1. **Demonstrated professionally:** Supported by shipped work, production ownership, measurable outcomes, or direct collaboration described in the resume.
+2. **Implemented in a project:** Supported by repository code, project documentation, or a working artifact, but do not present it as production-scale professional ownership.
+3. **Assessed in practice:** Supported by a completed interview drill or coaching session with a recorded evaluation of Joseph's own answer. Use it as readiness evidence, not work-experience evidence.
+4. **Preparation material only:** Covered by a rubric, model answer, or uncompleted drill. Use it to recommend practice; do not increase fit or readiness because the material exists.
+
+The files under `references/engineering-interview-drills/` are preparation material unless a session result records Joseph's performance. Do not infer that Joseph can defend every strong-answer signal merely because the repository contains the rubric.
+
 ## Preferred Market Position
 
 Primary:
