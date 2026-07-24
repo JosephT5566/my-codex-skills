@@ -15,6 +15,7 @@ Use context supplied in the conversation first. When available, read only the re
 - `references/github-project-signals.md` for project-grounded prompts
 - `references/resume-2026.md` when the target role or claimed experience matters
 - `references/engineering-interview-drills/api-contract-design.md` when the user requests API contract, full-stack error handling, idempotency, async job, retry, queue, outbox, or failure-recovery practice
+- `references/engineering-interview-drills/ai-structured-output.md` when the user requests structured output, schema-constrained generation, prompt-injection boundaries, AI extraction validation, editable drafts, human confirmation, or AI-to-database safety practice
 - `references/engineering-interview-drills/postgresql-schema-tradeoffs.md` when the user requests PostgreSQL schema, normalization, snapshot, JSONB, constraint, trigger, or relational-integrity practice
 - `references/engineering-interview-drills/supabase-rls-reasoning.md` when the user requests Supabase or PostgreSQL RLS, row authorization, tenant isolation, ownership, role-based policies, `USING` versus `WITH CHECK`, or authorization-boundary practice
 
