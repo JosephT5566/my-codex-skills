@@ -4,6 +4,17 @@ Portable notes for installed skills and suggested prompt patterns:
 
 - [docs/codex-skills.md](docs/codex-skills.md)
 
+## Repo Memory
+
+Agent instructions and durable repo memory:
+
+- [AGENTS.md](AGENTS.md)
+- [docs/memory/repository-memory.md](docs/memory/repository-memory.md)
+- [docs/memory/skill-memory.md](docs/memory/skill-memory.md)
+- [docs/memory/reference-memory.md](docs/memory/reference-memory.md)
+- [docs/memory/workflow-memory.md](docs/memory/workflow-memory.md)
+- [docs/memory/decision-log.md](docs/memory/decision-log.md)
+
 ## Symlink the skills
 Link the skills in this repo to Codex:
 
