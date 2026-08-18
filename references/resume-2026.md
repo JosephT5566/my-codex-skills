@@ -5,15 +5,15 @@ chunlinjoseph@gmail.com | 0928-746-335
 
 ## Summary
 
-Software Engineer focused on frontend and full-stack product development, with experience building marketplace search, CMS-driven page platforms, experimentation workflows, real-time operational tools, and developer automation. Strong in TypeScript, React, Next.js, SvelteKit, GraphQL, Firebase, Supabase, and frontend architecture.
+Software Engineer focused on frontend and full-stack product development, with experience building marketplace search, CMS-driven page platforms, experimentation workflows, real-time operational tools, developer automation, and validated AI application services. Strong in TypeScript, React, Next.js, SvelteKit, GraphQL, Firebase, Supabase, frontend architecture, and project-level Python/Pydantic backend development.
 
 At Houzz, delivered search and browse improvements, Prismic-powered landing and event pages, GraphQL schema/resolver work, A/B-tested product changes, and frontend integrations across Marketplace, Lead Nurture, and 3D teams. Comfortable working through ambiguous product requirements with PM, design, backend, platform, personalization, and data stakeholders. Also experienced in large production codebases, tracing issues across frontend flows, API integrations, feature switches, logs, and analytics tools.
 
 ## Technical Skills
 
-- **Languages:** TypeScript, JavaScript, HTML, CSS, SQL, C, C#
+- **Languages:** TypeScript, JavaScript, Python, HTML, CSS, SQL, C, C#
 - **Frontend:** React, Next.js, SvelteKit, Tailwind CSS, responsive web development, PWA development, frontend state management, frontend architecture
-- **Backend / Data:** GraphQL schema and resolvers, Firebase Authentication, Firestore, Supabase, PostgreSQL, API integration, row-level security, serverless function integration
+- **Backend / Data:** GraphQL schema and resolvers, Pydantic, versioned API contracts, Firebase Authentication, Firestore, Supabase, PostgreSQL, API integration, row-level security, serverless function integration
 - **Product / Platform:** Prismic CMS, Amplitude, Redash, Coralogix, Jira, feature switches, A/B testing, QA planning, bug bash coordination
 - **Cloud / Tooling:** GitHub Actions, self-hosted runners, GitHub Pages, Firebase Hosting, GCP, Cloudflare Workers, CI/CD, Kubernetes collaboration, Codex CLI, AI API integration
 
@@ -52,6 +52,14 @@ Teams: Marketplace, Lead Nurture, 3D
 - Established unit tests for driver development using Ceedling, improving test coverage and development reliability.
 
 ## Selected Projects
+
+### AI Receipt Extraction Service
+
+**Tech:** Python, Pydantic v2, Google Cloud Functions, Gemini, Google Cloud Storage, JWT authentication
+
+- Built a canonical constrained receipt schema, Gemini structured-response integration, and a versioned normalized result contract that keeps provider output behind an application-owned validation boundary.
+- Enforced JWT-derived GCS object ownership plus MIME, file-size, generation, and magic-byte checks before downloads or model calls; separated untrusted receipt content from server-owned prompts, schemas, models, and tool configuration.
+- Added sanitized error domains and negative-path short-circuit tests for cross-user access, invalid model output, prompt injection, and configuration injection; the documented hardening pass reached 97 tests.
 
 ### Wedding Guest Seating and Check-In Service
 

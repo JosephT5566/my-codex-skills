@@ -19,6 +19,7 @@ Use context supplied in the conversation first. When available, read only the re
 - `references/engineering-interview-drills/ai-structured-output.md` when the user requests structured output, schema-constrained generation, prompt-injection boundaries, AI extraction validation, editable drafts, human confirmation, or AI-to-database safety practice
 - `references/engineering-interview-drills/postgresql-schema-tradeoffs.md` when the user requests PostgreSQL schema, normalization, snapshot, JSONB, constraint, trigger, or relational-integrity practice
 - `references/engineering-interview-drills/supabase-rls-reasoning.md` when the user requests Supabase or PostgreSQL RLS, row authorization, tenant isolation, ownership, role-based policies, `USING` versus `WITH CHECK`, or authorization-boundary practice
+- `references/engineering-interview-drills/transactional-concurrency.md` when the user requests concurrent-write, limited-inventory, coupon, seat-reservation, quota, row-lock, conditional-update, unique-constraint, transaction-isolation, deadlock, hot-row, or ambiguous-commit practice
 
 Treat the resume and the user's answers as authoritative. Use profile and project references only as supporting context. Do not expose private details unnecessarily or overstate side-project scale.
 

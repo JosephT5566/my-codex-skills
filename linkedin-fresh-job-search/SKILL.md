@@ -228,14 +228,11 @@ Use when the user explicitly requests a comprehensive search, comparison across 
      - Provide one practical recommendation per reported gap.
      - Report `Priority` (`High`, `Medium`, or `Low`), `Suggested learning topics`, `Suggested project or exercise`, `Estimated effort`, and `Interview relevance` (`High`, `Medium`, or `Low`).
      - Make exercises interview-oriented and reusable, such as a focused system-design walkthrough, architecture extension to an existing project, or concise implementation exercise. Avoid generic course lists.
-     - After a backend requirement recurs or appears in a shortlisted role, use the conditional routing in `references/career-targeting.md`. Read only the matching drill:
-       - API contracts, async work, idempotency, retries, or recovery: `references/engineering-interview-drills/api-contract-design.md`
-       - PostgreSQL schema, JSONB, constraints, concurrency, or migrations: `references/engineering-interview-drills/postgresql-schema-tradeoffs.md`
-       - Supabase/PostgreSQL RLS, multi-tenancy, ownership, roles, or elevated credentials: `references/engineering-interview-drills/supabase-rls-reasoning.md`
+     - After a recurring requirement appears in the reviewed set or a shortlisted role, use the conditional routing table in `references/career-targeting.md`. Read only the smallest matching drill; do not load the full drill library.
      - Treat an uncompleted drill as homework only. Upgrade readiness after a completed session records Joseph's actual strengths and remaining gaps.
    - `Interview Readiness`:
      - Assess `Frontend Engineering`, `Product Engineering`, `Backend Ownership`, `System Design`, `Cloud Infrastructure`, `AI / LLM Knowledge`, and `Leadership & Collaboration`.
-     - For `Backend Ownership`, distinguish API consumer, API integrator, API designer, backend feature owner, service/system owner, and platform/infrastructure owner. Treat Joseph's current default as API integrator moving toward API designer/backend feature owner unless newer project evidence proves more.
+     - For `Backend Ownership`, distinguish API consumer, API integrator, API designer, backend feature owner, service/system owner, and platform/infrastructure owner. Use the current calibrated default in `references/candidate-profile.md` and `references/career-targeting.md`; do not infer service/system ownership from project implementation or completed practice alone.
      - For each category report `Current Assessment` (`Strong`, `Good`, or `Needs Improvement`), `Reasoning`, and `Suggested Next Step`.
      - State whether backend/system-design reasoning is supported by professional evidence, project implementation, assessed practice, or preparation material only when that distinction affects the recommendation.
      - Base reasoning on the candidate profile plus requirements observed in this run. Use `Good` rather than overclaiming when evidence is incomplete.

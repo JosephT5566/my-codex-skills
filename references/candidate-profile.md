@@ -4,7 +4,7 @@ Use this as the compact maintained source of truth for Joseph Tseng's job-search
 
 ## Current Positioning
 
-Joseph Tseng is a product-minded frontend-heavy software engineer extending toward Product Engineer, Full-stack Product Engineer, and AI Product Engineer roles. His strongest evidence is TypeScript/React product frontend, marketplace search and browse, CMS-driven product infrastructure, A/B-tested product improvements, GraphQL/API integration, production debugging, release quality, analytics, and practical AI workflow integration.
+Joseph Tseng is a product-minded frontend-heavy software engineer extending toward Product Engineer, Full-stack Product Engineer, and AI Product Engineer roles. His strongest evidence is TypeScript/React product frontend, marketplace search and browse, CMS-driven product infrastructure, A/B-tested product improvements, GraphQL/API integration, production debugging, release quality, analytics, and practical AI workflow integration. Recent project work adds Python/Pydantic service-boundary design, versioned API contracts, authorization-aware storage access, structured AI output validation, and security-focused negative testing.
 
 Do not position him as a pure UI implementer, pure ML researcher, pure backend/platform engineer, or pure manual QA candidate unless the user explicitly requests that lane.
 
@@ -18,7 +18,19 @@ Do not position him as a pure UI implementer, pure ML researcher, pure backend/p
 - Integrated AI/3D-adjacent workflows, GraphQL services, frontend state/data flow, dimension parsing/transformation, and external AI services.
 - Uses Amplitude, Redash, and Coralogix for product analysis, release monitoring, dashboards, and production debugging.
 - Side projects include a SvelteKit/TypeScript/Supabase/PostgreSQL expense PWA with Google OAuth, row-level secured access, shared expense models, monthly aggregation, IndexedDB caching, GitHub Actions, and AI-powered receipt parsing.
+- Implemented a Python/Pydantic receipt-extraction service in `google-ai-gcf` with a canonical schema, Gemini structured responses, a versioned normalized result contract, JWT-derived GCS ownership checks, file and metadata limits, prompt-injection trust boundaries, sanitized failure handling, and 97 tests across the latest documented hardening pass.
 - Earlier experience includes React/Next.js/TypeScript web apps, API integration, PostgreSQL changes, GitHub-based CI/CD/GitOps, firmware, C/C++/C#, validation, and production application tooling.
+
+## Recent Assessed Practice
+
+Use these completed sessions as interview-readiness evidence, not as professional experience:
+
+- PostgreSQL schema tradeoffs (2026-07-16): the initial answer was `Weak / risky`; Joseph understood normalization, foreign keys, snapshots, and JSONB flexibility but needed more precise entity mapping, database invariants, concurrency, and explicit tradeoffs.
+- API contract and full-stack error handling (2026-07-17): `Strong` on database-arbitrated idempotency and the external-provider failure window; `Acceptable but incomplete` on initial contract semantics, continuous job recovery, retry policy, state machines, and observability.
+- RLS, AI structured output, and async recovery (week of 2026-07-26): demonstrated sound trust-boundary instincts, human review, tenant-sensitive authorization, durable job state, and provider idempotency. Remaining practice areas were old/new row precision, lease fencing, partial-failure recovery, bounded retry, and operational signals.
+- Transactional concurrency (week of 2026-08-02): correctly combined idempotency, business uniqueness, database arbitration, and a short transaction for limited inventory. Remaining practice areas were lock granularity, invariant-first explanation, ambiguous commit recovery, and avoiding unnecessary async architecture.
+
+Current calibration: API designer in assessed practice with backend feature implementation in side projects. Do not present Joseph as a production service/system owner; production observability, recoverability, deployment operations, and sustained service ownership remain less evidenced.
 
 ## Evidence Calibration
 

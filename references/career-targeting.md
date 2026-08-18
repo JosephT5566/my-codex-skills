@@ -21,7 +21,9 @@ Use this scale when estimating fit:
 5. Service/system owner: owns backend service reliability, deployment, scaling, incident response, and service-level architecture.
 6. Platform/infrastructure owner: owns cloud, containers, networking, observability platform, distributed systems, IaC, or internal platform foundations.
 
-Default Joseph assessment: API integrator moving toward API designer/backend feature owner. Upgrade this only when project evidence shows schema tradeoffs, RLS policy reasoning, API contracts, idempotency, async jobs, observability, or production-like backend ownership.
+Default Joseph assessment: API designer in assessed practice with project-level backend feature implementation, moving toward backend feature owner. Current project evidence covers strict/versioned contracts, structured-output validation, authorization-aware storage boundaries, sanitized errors, and extensive negative tests. Do not upgrade him to service/system owner until production observability, recoverability, deployment operations, and sustained service ownership are demonstrated.
+
+Recent practice also covers PostgreSQL schema tradeoffs, RLS reasoning, idempotency, durable async jobs, lease/fencing concepts, transactional concurrency, ambiguous timeouts, and outbox tradeoffs. Apply the evidence levels in `candidate-profile.md`: mixed or incomplete session results support calibrated readiness notes, not blanket claims of mastery.
 
 ## Backend Capability Checks
 
@@ -88,5 +90,8 @@ Recommend a drill only after the corresponding requirement recurs in the reviewe
 | API design, async jobs, idempotency, partial failure, retry, or operational recovery | `engineering-interview-drills/api-contract-design.md` | Defend an end-to-end contract and its failure semantics at the role's expected scale |
 | PostgreSQL schema design, normalization, JSONB, constraints, concurrency, or migrations | `engineering-interview-drills/postgresql-schema-tradeoffs.md` | Tie a schema choice to access patterns, integrity, write behavior, and migration safety |
 | Supabase/PostgreSQL RLS, multi-tenancy, ownership, admin roles, or service credentials | `engineering-interview-drills/supabase-rls-reasoning.md` | Model authorization boundaries and concrete exploit prevention without relying on syntax recall |
+| Synchronous concurrent writes, limited inventory, one-per-user rules, counters, balances, or ambiguous commits | `engineering-interview-drills/transactional-concurrency.md` | State invariants first, assign each guarantee to the database or API layer, and defend contention and recovery behavior |
+| Durable jobs, worker ownership, leases, fencing, stuck work, or provider reconciliation | `engineering-interview-drills/async-workflow-recovery.md` | Defend at-least-once execution, atomic claim, bounded retry, stale-worker rejection, and operational recovery |
+| Structured AI output, prompt injection, human review, draft confirmation, or late model results | `engineering-interview-drills/ai-structured-output.md` | Separate model guidance from enforceable boundaries and safely move probabilistic output into application state |
 
-Do not mark a gap resolved until Joseph completes the relevant exercise and the session records what he explained well, what remained incomplete, and the next practice priority.
+Do not mark a gap resolved merely because a drill exists. Use the completed-session calibration in `candidate-profile.md`; repeat or deepen a drill when its recorded gaps match a shortlisted role.
