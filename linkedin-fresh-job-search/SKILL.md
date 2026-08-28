@@ -55,18 +55,18 @@ Use when the user explicitly requests a comprehensive search, comparison across 
    - Use the Chrome skill/plugin for live LinkedIn and CakeResume searching and for updates to the existing `2026 interview` Google Sheet because these workflows may depend on the user's logged-in browser account.
    - Keep this workflow browser-only. If Chrome cannot access the tracker, stop and report the Chrome blocker instead of creating or updating a replacement through another account.
    - Do not inspect cookies, local storage, passwords, or private session stores.
-   - Unless the user's current materials indicate otherwise, evaluate Joseph Tseng as a product-minded frontend-heavy software engineer extending toward Product Engineer, Full-stack Product Engineer, and AI Product Engineer roles. Treat React/TypeScript/frontend architecture as the foundation, and product ownership, backend/data integration, AI workflow integration, production debugging, experimentation, and release quality as the differentiators.
+   - Unless the user's current materials indicate otherwise, evaluate Joseph Tseng first as a product-minded frontend engineer, then expand toward frontend-heavy Product Engineer, Full-stack Product Engineer, and AI Product Engineer roles. Treat React/TypeScript/frontend architecture as the primary professional foundation. Use product ownership, backend/data integration, AI workflow integration, production debugging, experimentation, and release quality as differentiators rather than reasons to deprioritize strong frontend roles.
    - Treat international companies, Europe opportunities, remote-first culture, product-focused organizations, and an L4/L5 growth trajectory as career-upside signals.
    - Do not infer fit from title alone. Map the actual work to transferable skills: product ownership, system integration, backend boundary design, authorization/data access, observability, evaluation, AI tool safety, and cross-functional delivery.
 
 2. Build target role searches.
    - Start from role labels that match the user's strongest evidence.
    - Add broader aliases for volume and narrower aliases for precision.
-   - For a Daily Light Run, start with these four core LinkedIn queries:
-     - `Product Engineer React TypeScript`
-     - `Full Stack Product Engineer React`
-     - `AI Product Engineer TypeScript`
+   - For a Daily Light Run, start with these four core LinkedIn queries in priority order:
      - `Frontend Engineer React TypeScript`
+     - `Senior Frontend Engineer React TypeScript`
+     - `Product Engineer React TypeScript`
+     - `Frontend-heavy Full Stack Engineer`
    - Add one rotating adjacent query only when useful:
      - QA/quality day: `QA Automation Engineer SQL`
      - ATE/test day: `ATE Software Engineer C++ C#`
@@ -75,14 +75,14 @@ Use when the user explicitly requests a comprehensive search, comparison across 
      - Tools/integration day: `Developer Tools Engineer TypeScript`, `Developer Productivity Engineer`, or `Solutions Engineer JavaScript`
    - Check the most recent dated tracker tab before choosing the rotating query. Prefer a family that was not searched in the previous run.
    - For a Deep Search Run or a noisy result pool, read `references/linkedin-query-strategy.md` and select the smallest relevant query set. Do not load or run the full inventory by default.
-   - For Joseph Tseng, default strong role families are:
-     - Product Engineer with React/TypeScript product-web scope
-     - Full-stack Product Engineer / Frontend-heavy Full Stack Engineer
-     - AI Product Engineer / AI-Native Web Engineer / LLM Application Engineer
+   - For Joseph Tseng, default strong role families are ordered by current priority:
      - Senior Frontend Engineer when the role involves complex product frontend, architecture, experimentation, performance, accessibility, design systems, realtime workflows, data visualization, or AI interfaces
      - Frontend Platform Engineer / Web Platform UI Engineer
      - Search / Marketplace Frontend Engineer
      - CMS / Campaign Frontend Engineer
+     - Product Engineer with React/TypeScript product-web scope
+     - Full-stack Product Engineer / Frontend-heavy Full Stack Engineer
+     - AI Product Engineer / AI-Native Web Engineer / LLM Application Engineer when user-facing frontend/product work remains central
      - Developer Experience / Developer Productivity / Internal Tools Engineer with frontend tooling, workflow automation, or coding-agent scope
      - Solutions Engineer / Implementation Engineer / Forward Deployed Engineer for web, SaaS, CMS, e-commerce, AI workflow, or developer-tool products
    - For Joseph Tseng, default adjacent role families are:
@@ -163,6 +163,7 @@ Use when the user explicitly requests a comprehensive search, comparison across 
      - `Career Growth Match`: ownership, leadership, technical scope, seniority trajectory, product influence, backend/data judgment, AI-product capability, and cross-functional collaboration.
      - `Location Match`: Europe eligibility, international hiring, remote-first or remote-friendly culture, and plausible Taiwan/APAC eligibility.
      - `Company Quality Signals`: visible evidence in the posting or search results that the employer is product-led, SaaS-oriented, engineering-driven, or operating at meaningful scale. Do not research the company separately.
+   - When two roles have similar interview probability and career upside, prefer the role that uses Joseph's demonstrated frontend/product strengths while adding credible backend scope. Do not prefer a backend-heavier title merely because it says `Full Stack`.
    - Use qualitative evidence rather than fabricated precision. Do not show a numeric score unless the user explicitly requests one.
    - Assign one opportunity tier:
      - `Target`: high career upside with strong engineering/product signals plus international, Europe-friendly, or remote-friendly exposure. Action: apply immediately, customize the resume, and seek a referral when a visible path exists.

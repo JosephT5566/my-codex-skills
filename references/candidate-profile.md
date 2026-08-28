@@ -4,7 +4,7 @@ Use this as the compact maintained source of truth for Joseph Tseng's job-search
 
 ## Current Positioning
 
-Joseph Tseng is a product-minded frontend-heavy software engineer extending toward Product Engineer, Full-stack Product Engineer, and AI Product Engineer roles. His strongest evidence is TypeScript/React product frontend, marketplace search and browse, CMS-driven product infrastructure, A/B-tested product improvements, GraphQL/API integration, production debugging, release quality, analytics, and practical AI workflow integration. Recent project work adds a locally verified FastAPI/PostgreSQL backend core with SQLAlchemy/Alembic migrations, database-enforced ownership, deterministic APIs, server-side authentication and authorization, and transactional/idempotent review writes, alongside Python/Pydantic structured-AI validation and security-focused negative testing.
+Joseph Tseng is a product-minded frontend engineer with a strong TypeScript/React professional foundation and project-level full-stack/backend evidence. Frontend Engineer and Senior Frontend Engineer are the first priority. Frontend-heavy Product Engineer and Full-stack Engineer roles are the preferred growth path, followed by AI Product Engineer roles where user-facing frontend/product work remains central. His strongest professional evidence is marketplace search and browse, CMS-driven product infrastructure, A/B-tested product improvements, GraphQL/API integration, production debugging, release quality, analytics, and practical AI workflow integration. Recent project work adds a locally verified FastAPI/PostgreSQL backend core with SQLAlchemy/Alembic migrations, database-enforced ownership, deterministic APIs, server-side authentication and authorization, and transactional/idempotent review writes, alongside Node.js/Express and Python/Pydantic service boundaries, structured-AI validation, and security-focused negative testing.
 
 Do not position him as a pure UI implementer, pure ML researcher, pure backend/platform engineer, or pure manual QA candidate unless the user explicitly requests that lane.
 
@@ -23,6 +23,14 @@ Do not position him as a pure UI implementer, pure ML researcher, pure backend/p
 - Implemented the locally verified Weeks 0-3 backend core for `english-learning`: a shared English/Japanese FastAPI and PostgreSQL domain, SQLAlchemy transaction boundaries, reversible Alembic migrations, keyset-paginated read APIs, Google-token verification, horizontal owner isolation, optimistic versions, and locked/idempotent review submissions. The closeout passed 171 unit and real-PostgreSQL integration tests plus Ruff, lock, and frontend build checks. Keep this calibrated as project evidence: import, frontend cutover, live Google verification, remote CI, deployment, observability, and production behavior remain unverified.
 - Earlier experience includes React/Next.js/TypeScript web apps, API integration, PostgreSQL changes, GitHub-based CI/CD/GitOps, firmware, C/C++/C#, validation, and production application tooling.
 
+## Current Full-stack Targeting Boundary
+
+- Keep frontend roles first in search coverage, shortlist tie-breaks, and application priority because they have the strongest professional evidence and interview probability.
+- Consider frontend-heavy and product-oriented full-stack roles now when React/TypeScript, user-facing product ownership, API integration, authentication, relational data, testing, and production debugging are central.
+- Treat roles as stronger matches when backend work is feature-level and can be supported by the existing Node.js/Express, Python/Pydantic, Supabase/PostgreSQL, Google identity, and API-contract projects.
+- Treat backend-heavy roles as `Practice` or `Skip` when they require established professional ownership of distributed services, high-scale backend architecture, on-call operations, Kubernetes, networking, or infrastructure platforms.
+- Never count a planned `english-learning` milestone as evidence. Promote it only after the repository evidence ledger records implementation and relevant local, CI, or deployed verification.
+
 ## Recent Assessed Practice
 
 Use these completed sessions as interview-readiness evidence, not as professional experience:
@@ -32,7 +40,7 @@ Use these completed sessions as interview-readiness evidence, not as professiona
 - RLS, AI structured output, and async recovery (week of 2026-07-26): demonstrated sound trust-boundary instincts, human review, tenant-sensitive authorization, durable job state, and provider idempotency. Remaining practice areas were old/new row precision, lease fencing, partial-failure recovery, bounded retry, and operational signals.
 - Transactional concurrency (week of 2026-08-02): correctly combined idempotency, business uniqueness, database arbitration, and a short transaction for limited inventory. Remaining practice areas were lock granularity, invariant-first explanation, ambiguous commit recovery, and avoiding unnecessary async architecture.
 
-Current calibration: API designer with substantial locally verified backend feature implementation in side projects. The `english-learning` project now demonstrates schema, migration, deterministic API, authentication/authorization, transaction, idempotency, rollback, and concurrency decisions, but not an end-to-end deployed feature. Do not present Joseph as a production service/system owner; import/cutover, production observability, recoverability, deployment operations, and sustained service ownership remain less evidenced.
+Current calibration: API designer with substantial locally verified backend feature implementation in side projects. The `english-learning` project now demonstrates schema, migration, deterministic API, authentication/authorization, transaction, idempotency, rollback, and concurrency decisions, but not an end-to-end deployed feature. This is sufficient to pursue frontend-heavy and product-oriented full-stack roles now when backend ownership is feature-level rather than service/platform-level. Do not present Joseph as a professional production service/system owner; import/cutover, production observability, recoverability, deployment operations, and sustained service ownership remain less evidenced.
 
 ## Evidence Calibration
 
@@ -48,13 +56,13 @@ The files under `references/engineering-interview-drills/` are preparation mater
 ## Preferred Market Position
 
 Primary:
-- Product Engineer with Applied AI capability
-- Full-stack Product Engineer with frontend strength
-- AI Product Engineer / LLM Application Engineer for user-facing workflows
-
-Secondary:
 - Senior Frontend Engineer for complex product frontend, architecture, experimentation, performance, accessibility, design systems, realtime workflows, data visualization, or AI interfaces
 - Frontend Platform Engineer / Web Platform UI Engineer
+- Product Engineer when React/TypeScript and user-facing product-web ownership remain central
+
+Secondary:
+- Full-stack Product Engineer / Frontend-heavy Full-stack Engineer
+- AI Product Engineer / LLM Application Engineer when user-facing frontend and product workflows remain central
 - Developer Productivity Engineer / Developer Experience Engineer when frontend tooling, automation, internal workflows, or coding-agent workflows are central
 - Forward Deployed Engineer / Solutions Engineer when hands-on implementation, integration, and product engineering are central
 

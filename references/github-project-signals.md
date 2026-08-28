@@ -41,7 +41,7 @@ High-leverage project upgrades:
 - Add small test coverage or typed validation for the core workflow.
 - For `google-api-gcf`, bind `/data` access to the verified caller, add request-schema validation and runnable endpoint tests, declare all direct dependencies, and define idempotency or recovery behavior for partial multi-tab writes/deletes before presenting it as production-ready backend work.
 - For `google-ai-gcf`, prioritize production-facing gaps already identified in the project review: metrics/alerts and correlation tracing, a real Gemini/GCS smoke test, retention/privacy policy, rollback, service ownership, and a concise runbook.
-- For `english-learning`, complete the controlled Sheet import/reconciliation, frontend API cutover, live Google verification, remote CI, deployment, and operational checks before turning the backend-core evidence into an end-to-end resume claim.
+- For `english-learning`, finish the checked-in training tickets in sequence. Refresh this reference after each material milestone only when `doc/training/evidence.md` records concrete implementation, verification, limitations, and an explanation Joseph can defend.
 - Add one polished demo path per repo, especially for `expense-app`, `TravelSplit`, `musicFest`, and `english-learning`.
 - Add AI/Codex notes only when relevant: describe how AI accelerated implementation, testing, refactoring, or workflow design without implying the project was not personally owned.
 - For frontend/product roles, prioritize visible UX polish, responsive screenshots, loading/empty/error states, and one measurable product decision.
@@ -55,6 +55,7 @@ Use this project evidence to boost roles involving:
 - Consumer mobile-web/RWD UX
 - Spreadsheet, Apps Script, or lightweight automation integrations
 - Node.js/Express REST API and serverless API roles involving Google identity and Sheets integration
+- Frontend-heavy and product-oriented full-stack roles where feature-level API, auth, relational-data, migration, and failure-handling judgment matter
 - AI-assisted product engineering or developer tooling
 - Applied AI services with structured output, human-review boundaries, provider isolation, or permission-aware data access
 - Python/Pydantic API contracts and security-focused backend validation

@@ -6,7 +6,17 @@ Use this reference when ranking mixed frontend/backend/AI roles or producing car
 
 The strongest current positioning is:
 
-Product-minded Full-stack / AI Product Engineer with strong frontend, product ownership, backend/data integration, experimentation, production debugging, and AI workflow integration experience.
+Product-minded Frontend Engineer with strong React/TypeScript product ownership and project-level backend implementation, backend/data integration, experimentation, production debugging, and AI workflow integration evidence.
+
+Use this targeting order unless the user requests a different lane:
+
+1. Frontend Engineer / Senior Frontend Engineer with substantial product ownership.
+2. Frontend Platform, Web Platform UI, Search, Marketplace, CMS, or product-infrastructure frontend roles.
+3. Product Engineer and frontend-heavy Full-stack Engineer roles.
+4. AI Product Engineer or LLM Application Engineer roles where user-facing frontend/product work remains central.
+5. Developer Productivity, Forward Deployed, or Solutions roles with meaningful hands-on frontend/product implementation.
+
+Target frontend-heavy and product-oriented full-stack roles now, but use them as the preferred growth lane rather than replacing the frontend-first strategy. Calibrate every role to evidence that exists on the application date.
 
 Do not rank roles by title alone. Screen by actual work content and transferable skills.
 
@@ -24,6 +34,32 @@ Use this scale when estimating fit:
 Default Joseph assessment: API designer with substantial project-level backend feature implementation, moving toward end-to-end backend feature owner. Current project evidence covers strict/versioned contracts, a FastAPI/PostgreSQL multilingual domain, reversible migrations, database-enforced ownership, keyset pagination, server-side authentication/authorization, transactional and idempotent writes, rollback/concurrency tests, structured-output validation, sanitized errors, and extensive negative tests. The strongest backend-core evidence is locally verified; do not treat it as a shipped end-to-end feature until import, frontend cutover, live identity verification, remote CI, and deployment are verified. Do not upgrade him to service/system owner until production observability, recoverability, deployment operations, and sustained service ownership are demonstrated.
 
 Recent practice also covers PostgreSQL schema tradeoffs, RLS reasoning, idempotency, durable async jobs, lease/fencing concepts, transactional concurrency, ambiguous timeouts, and outbox tradeoffs. Apply the evidence levels in `candidate-profile.md`: mixed or incomplete session results support calibrated readiness notes, not blanket claims of mastery.
+
+## Full-stack Targeting Now
+
+Promote a full-stack role to `Target` or `Strong Fit` when most of the following are true:
+
+- React/TypeScript or comparable product-web ownership is a major part of the job.
+- Backend work is tied to user-facing features, API contracts, integrations, authentication, authorization, relational data, or workflow reliability.
+- The expected backend depth is API designer or backend feature owner, with room to grow into broader service ownership.
+- Node.js, Python, REST, GraphQL, PostgreSQL, Supabase, Firebase, serverless functions, or third-party integrations overlap with current professional or project evidence.
+- The role values product judgment, experimentation, debugging, release quality, and cross-functional delivery rather than backend specialization alone.
+
+For comparable opportunities, rank a strong frontend role above a full-stack role unless the full-stack role preserves substantial frontend ownership and offers clearly better product scope or career upside. Do not use the `Full Stack` title itself as an upside signal.
+
+Use `Practice` when the role is moderately backend-heavy but remains product-facing, provides a credible frontend bridge, and does not make prior large-scale service ownership a hard screen. Use `Skip` when the role primarily requires deep distributed systems, backend platform ownership, infrastructure, networking, Kubernetes, or years of professional backend on-call responsibility.
+
+When an `english-learning` milestone is completed, update the evidence level from the repository ledger rather than assuming the whole roadmap is finished:
+
+| Verified milestone | Full-stack evidence it can add |
+| --- | --- |
+| Backend foundation and data model | FastAPI, SQLAlchemy, Alembic, PostgreSQL constraints, migrations, integration tests, query-driven indexes |
+| Authentication and review writes | Server-verified identity, per-user authorization, transactions, idempotency, concurrency behavior |
+| Import and frontend cutover | Reconciled migration, typed API integration, end-to-end failure handling, source-of-truth transition |
+| Deployment and operations | Deployed personal-service evidence, health checks, logs, metrics, backup/restore, rollback rehearsal |
+| AI authoring and hardening | Safe AI draft lifecycle, evaluation, retries/failures, measured performance, security review |
+
+These milestones strengthen project-level backend feature ownership. They do not become professional production ownership merely because the implementation is deployed.
 
 ## Backend Capability Checks
 
@@ -79,7 +115,7 @@ When relevant requirements recur in reviewed roles, surface these as practical h
 - AI product evidence: structured output, tool calling, permission-aware data access, human approval, evaluation dataset, tracing, retry/fallback, and cost/latency controls.
 - System design communication: explain product feature boundaries, data flow, failure modes, security/privacy, and monitoring in interview-ready language.
 
-Prefer exercises that close the active `english-learning` migration and operational gaps, or extend the expense app when Supabase/RLS is specifically relevant, rather than generic toy projects.
+Prefer exercises that advance the active `english-learning` training tickets or extend an existing project rather than creating generic toy projects. Treat completed and verified ticket work as project evidence; treat planned tickets as homework only.
 
 ## Conditional Drill Routing
 
