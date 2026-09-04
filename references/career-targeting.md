@@ -21,7 +21,7 @@ Use this scale when estimating fit:
 5. Service/system owner: owns backend service reliability, deployment, scaling, incident response, and service-level architecture.
 6. Platform/infrastructure owner: owns cloud, containers, networking, observability platform, distributed systems, IaC, or internal platform foundations.
 
-Default Joseph assessment: API designer in assessed practice with project-level backend feature implementation, moving toward backend feature owner. Current project evidence covers strict/versioned contracts, structured-output validation, authorization-aware storage boundaries, sanitized errors, and extensive negative tests. Do not upgrade him to service/system owner until production observability, recoverability, deployment operations, and sustained service ownership are demonstrated.
+Default Joseph assessment: API designer with substantial project-level backend feature implementation, moving toward end-to-end backend feature owner. Current project evidence covers strict/versioned contracts, a FastAPI/PostgreSQL multilingual domain, reversible migrations, database-enforced ownership, keyset pagination, server-side authentication/authorization, transactional and idempotent writes, rollback/concurrency tests, structured-output validation, sanitized errors, and extensive negative tests. The strongest backend-core evidence is locally verified; do not treat it as a shipped end-to-end feature until import, frontend cutover, live identity verification, remote CI, and deployment are verified. Do not upgrade him to service/system owner until production observability, recoverability, deployment operations, and sustained service ownership are demonstrated.
 
 Recent practice also covers PostgreSQL schema tradeoffs, RLS reasoning, idempotency, durable async jobs, lease/fencing concepts, transactional concurrency, ambiguous timeouts, and outbox tradeoffs. Apply the evidence levels in `candidate-profile.md`: mixed or incomplete session results support calibrated readiness notes, not blanket claims of mastery.
 
@@ -32,8 +32,8 @@ Use these checks to distinguish a keyword match from interview-ready ownership:
 | Capability | Look for in the JD | Evidence needed to upgrade readiness |
 | --- | --- | --- |
 | API contract design | API ownership, async processing, integrations, reliability | A concrete design or implementation covering resource states, validation, idempotency, failure semantics, retries, and observability |
-| PostgreSQL data modeling | PostgreSQL, schema design, migrations, transactional workflows | A defended schema choice covering access patterns, constraints, concurrency, migration safety, and operational tradeoffs |
-| Authorization / RLS | Supabase, PostgreSQL RLS, multi-tenancy, permissions | A clear actor-action-tenant model covering old and new row state, immutable fields, elevated credentials, denial tests, and trust boundaries |
+| PostgreSQL data modeling | PostgreSQL, schema design, migrations, transactional workflows | Locally implemented in `english-learning`: shared multilingual schema, named constraints, composite ownership keys, reversible migrations, query-plan checks, locked writes, rollback, and concurrency tests; deployment and operational behavior remain gaps |
+| Authorization / RLS | Supabase, PostgreSQL RLS, multi-tenancy, permissions | Locally implemented at the application/database boundary in `english-learning`: server-verified identity, owner-derived writes, horizontal denial tests, foreign-parent denial, and optimistic version conflicts; RLS and live Google verification remain separate gaps |
 
 Apply the evidence levels in `candidate-profile.md`. Project implementation can support a fit note; assessed practice can support an interview-readiness note. Preparation material alone supports only a homework recommendation.
 
@@ -75,11 +75,11 @@ Apply the evidence levels in `candidate-profile.md`. Project implementation can 
 
 When relevant requirements recur in reviewed roles, surface these as practical homework:
 
-- Backend ownership evidence: schema tradeoffs, indexes, transactions, idempotency, migrations, RLS policies, service-role safety, API contracts, async workflow, and observability.
+- Backend ownership evidence: prioritize the remaining end-to-end and operational gaps—Sheet import/reconciliation, frontend cutover, live identity verification, remote CI, deployment, observability, backup/restore, and recovery. Continue RLS/service-role and async-workflow practice when a target role requires those specific mechanisms; schema, indexes, migrations, API contracts, authorization, transactions, idempotency, rollback, and local concurrency now have concrete `english-learning` implementation evidence.
 - AI product evidence: structured output, tool calling, permission-aware data access, human approval, evaluation dataset, tracing, retry/fallback, and cost/latency controls.
 - System design communication: explain product feature boundaries, data flow, failure modes, security/privacy, and monitoring in interview-ready language.
 
-Prefer exercises that extend the expense app rather than generic toy projects.
+Prefer exercises that close the active `english-learning` migration and operational gaps, or extend the expense app when Supabase/RLS is specifically relevant, rather than generic toy projects.
 
 ## Conditional Drill Routing
 

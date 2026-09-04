@@ -6,7 +6,7 @@ Use Joseph's public GitHub profile as supporting evidence when screening roles, 
 https://github.com/JosephT5566
 ```
 
-Maintained repo signals, with project evidence updated through 2026-08-26:
+Maintained repo signals, with project evidence updated through 2026-09-04:
 
 - `wedding-table-service` - Next.js/React/TypeScript wedding operations app with real-time Firestore data, responsive table visualization, fuzzy guest search, check-in/check-out, guest management, Google authentication, email-allowlisted writes, strict Firestore rules, and dry-run-first data migrations. Use as evidence for end-to-end product ownership, operational UX, Firebase security, real-time state, and schema migration work.
 - `my-actions-runner` - GitHub Actions automation on a self-hosted runner for Codex CLI tasks, scheduled LinkedIn job search, JD/resume fit scoring, and tailored resume generation/export/upload to Google Drive. Use as evidence for developer tooling, workflow automation, reusable AI-agent skills, security-conscious prompt boundaries, artifact handling, and cross-tool orchestration.
@@ -16,7 +16,7 @@ Maintained repo signals, with project evidence updated through 2026-08-26:
 - `my-codex-skills` - Codex skill repo with reusable job-search, resume, and adaptive engineering-interview workflows. Its interview drill library covers API contracts, transactional concurrency, async recovery, AI structured output, PostgreSQL schema tradeoffs, and Supabase RLS reasoning with follow-up ladders and evaluation anchors. Use as evidence for AI-assisted workflow design, agent instruction design, structured technical evaluation, and practical Codex/Gemini leverage. Do not treat the drill rubrics themselves as proof of production backend ownership or completed interview mastery.
 - `my-oauth` - TypeScript auth/OAuth project. Use as supporting evidence for auth flows, integrations, and web security basics when relevant.
 - `musicFest` - TypeScript RWD mobile-first planning tool for music festivals. Use as evidence for responsive UX, mobile workflow design, and consumer-facing scheduling/planning tools.
-- `english-learning` - Svelte learning app. Use as evidence for personal productivity, learning workflows, and durable app ownership.
+- `english-learning` - SvelteKit learning app evolving through a documented migration to one FastAPI/PostgreSQL backend for English and Japanese. The locally verified Weeks 0-3 core includes SQLAlchemy transaction ownership, reversible Alembic migrations, database-enforced composite ownership, keyset-paginated read contracts, Google-token verification behind a replaceable boundary, owner-scoped authorization, optimistic versions, and deterministic locked/idempotent review transactions. Closeout passed 171 unit and real-PostgreSQL integration tests; representative planner fixtures verified intended index selection at 40,000 cards. Use as project evidence for relational modeling, migrations, API/auth boundaries, negative authorization testing, transactions, concurrency, idempotency, and evidence-driven engineering. Do not claim production scale, latency, reliability, or end-to-end deployment: Sheet import, frontend cutover, live Google verification, remote CI, observability, backup/restore, and deployment remain pending.
 
 Do not overstate side projects as production-scale work unless the repo itself clearly shows that. Treat them as interview conversation starters and proof of initiative, not as primary work experience.
 
@@ -29,6 +29,7 @@ When a promising role overlaps with a side project, add a short fit note such as
 - Side-project proof: TravelSplit + google-api-gcf show a TypeScript product with Node.js/Express REST-style APIs, Google identity verification, and Google Sheets workflow automation.
 - Side-project proof: musicFest shows mobile-first RWD planning UX.
 - Side-project proof: my-codex-skills shows AI-assisted workflow design and structured technical evaluation across job search, resume, and engineering-interview workflows.
+- Side-project proof: english-learning shows a locally verified FastAPI/PostgreSQL multilingual backend core with ownership constraints, deterministic APIs, authentication/authorization, and transactional idempotent review writes.
 
 ## Project Leverage Plan
 
@@ -40,6 +41,7 @@ High-leverage project upgrades:
 - Add small test coverage or typed validation for the core workflow.
 - For `google-api-gcf`, bind `/data` access to the verified caller, add request-schema validation and runnable endpoint tests, declare all direct dependencies, and define idempotency or recovery behavior for partial multi-tab writes/deletes before presenting it as production-ready backend work.
 - For `google-ai-gcf`, prioritize production-facing gaps already identified in the project review: metrics/alerts and correlation tracing, a real Gemini/GCS smoke test, retention/privacy policy, rollback, service ownership, and a concise runbook.
+- For `english-learning`, complete the controlled Sheet import/reconciliation, frontend API cutover, live Google verification, remote CI, deployment, and operational checks before turning the backend-core evidence into an end-to-end resume claim.
 - Add one polished demo path per repo, especially for `expense-app`, `TravelSplit`, `musicFest`, and `english-learning`.
 - Add AI/Codex notes only when relevant: describe how AI accelerated implementation, testing, refactoring, or workflow design without implying the project was not personally owned.
 - For frontend/product roles, prioritize visible UX polish, responsive screenshots, loading/empty/error states, and one measurable product decision.
@@ -56,6 +58,7 @@ Use this project evidence to boost roles involving:
 - AI-assisted product engineering or developer tooling
 - Applied AI services with structured output, human-review boundaries, provider isolation, or permission-aware data access
 - Python/Pydantic API contracts and security-focused backend validation
+- FastAPI/PostgreSQL product-backend roles involving relational constraints, migrations, owner isolation, deterministic pagination, transactions, concurrency, or idempotency
 - Firebase/Firestore operational tools with authenticated writes
 - GitHub Actions and self-hosted workflow automation
 
