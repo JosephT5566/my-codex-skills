@@ -31,7 +31,7 @@ Use this scale when estimating fit:
 5. Service/system owner: owns backend service reliability, deployment, scaling, incident response, and service-level architecture.
 6. Platform/infrastructure owner: owns cloud, containers, networking, observability platform, distributed systems, IaC, or internal platform foundations.
 
-Default Joseph assessment: API designer with substantial project-level backend feature implementation, moving toward end-to-end backend feature owner. Current project evidence covers strict/versioned contracts, a FastAPI/PostgreSQL multilingual domain, reversible migrations, database-enforced ownership, keyset pagination, server-side authentication/authorization, transactional and idempotent writes, rollback/concurrency tests, structured-output validation, sanitized errors, and extensive negative tests. The strongest backend-core evidence is locally verified; do not treat it as a shipped end-to-end feature until import, frontend cutover, live identity verification, remote CI, and deployment are verified. Do not upgrade him to service/system owner until production observability, recoverability, deployment operations, and sustained service ownership are demonstrated.
+Default Joseph assessment: project-level backend feature owner with assessed API/system-design practice and operator-verified personal-service deployment/release rehearsal. Current evidence covers strict/versioned contracts, structured-output validation, server-verified identity, owner-scoped authorization, deterministic APIs, PostgreSQL constraints and migrations, transactional/idempotent review writes, controlled legacy-data import and reconciliation, typed frontend cutover, containerization, and staged candidate/promotion/rollback procedures. The deployment evidence is from a personal project and partly operator-reported; it does not establish professional service ownership, production scale, sustained observability, incident response, or on-call experience.
 
 Recent practice also covers PostgreSQL schema tradeoffs, RLS reasoning, idempotency, durable async jobs, lease/fencing concepts, transactional concurrency, ambiguous timeouts, and outbox tradeoffs. Apply the evidence levels in `candidate-profile.md`: mixed or incomplete session results support calibrated readiness notes, not blanket claims of mastery.
 
@@ -53,10 +53,10 @@ When an `english-learning` milestone is completed, update the evidence level fro
 
 | Verified milestone | Full-stack evidence it can add |
 | --- | --- |
-| Backend foundation and data model | FastAPI, SQLAlchemy, Alembic, PostgreSQL constraints, migrations, integration tests, query-driven indexes |
-| Authentication and review writes | Server-verified identity, per-user authorization, transactions, idempotency, concurrency behavior |
-| Import and frontend cutover | Reconciled migration, typed API integration, end-to-end failure handling, source-of-truth transition |
-| Deployment and operations | Deployed personal-service evidence, health checks, logs, metrics, backup/restore, rollback rehearsal |
+| Backend foundation and data model — verified locally in `english-learning` | FastAPI, SQLAlchemy, Alembic, PostgreSQL constraints, reversible migrations, integration tests, and seven query-driven indexes exercised on representative data |
+| Authentication and review writes — verified locally | Server-verified identity, per-user authorization, deterministic reads, transactions, idempotency, rollback, and concurrent-conflict behavior |
+| Import and frontend cutover — verified locally, with private import operator results | Reconciled migration, typed API integration, end-to-end failure handling, bilingual management, and PostgreSQL source-of-truth transition |
+| Deployment and operations — locally verified release contract plus operator-reported production rehearsal | Non-root containerization, TLS/secrets boundaries, health checks, staged candidate verification, authenticated smoke tests, promotion, schema-compatible rollback, and WIF workflows |
 | AI authoring and hardening | Safe AI draft lifecycle, evaluation, retries/failures, measured performance, security review |
 
 These milestones strengthen project-level backend feature ownership. They do not become professional production ownership merely because the implementation is deployed.
@@ -111,7 +111,7 @@ Apply the evidence levels in `candidate-profile.md`. Project implementation can 
 
 When relevant requirements recur in reviewed roles, surface these as practical homework:
 
-- Backend ownership evidence: prioritize the remaining end-to-end and operational gaps—Sheet import/reconciliation, frontend cutover, live identity verification, remote CI, deployment, observability, backup/restore, and recovery. Continue RLS/service-role and async-workflow practice when a target role requires those specific mechanisms; schema, indexes, migrations, API contracts, authorization, transactions, idempotency, rollback, and local concurrency now have concrete `english-learning` implementation evidence.
+- Backend ownership evidence: deepen production observability, database runtime/migration role separation, backup/restore evidence, remote candidate-workflow proof, incident diagnosis, and sustained operations while retaining schema, auth, transaction, idempotency, migration, and API-contract practice.
 - AI product evidence: structured output, tool calling, permission-aware data access, human approval, evaluation dataset, tracing, retry/fallback, and cost/latency controls.
 - System design communication: explain product feature boundaries, data flow, failure modes, security/privacy, and monitoring in interview-ready language.
 

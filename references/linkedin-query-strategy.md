@@ -82,5 +82,5 @@ Use broad queries such as `Application Engineer Semiconductor`, `Validation Engi
 - In a Deep Search Run, select queries across the requested primary families before adding adjacent searches.
 - Prefer narrower technology-and-scope combinations over broad titles when the result pool is noisy.
 - Use the full-stack queries now; do not wait for the active training plan to finish. Keep them secondary to frontend searches and screen for product-facing, frontend-heavy, or feature-level backend scope supported by current evidence.
-- Treat Python/FastAPI searches as discovery pools until the relevant `english-learning` implementation is verified. A keyword in the training plan is not evidence of implementation.
+- Treat Python/FastAPI searches as secondary, product-facing discovery pools. `english-learning` now supports project-level evidence for authenticated APIs, PostgreSQL modeling, transactional/idempotent writes, controlled migration/cutover, containerization, and staged Cloud Run/Neon release judgment. Keep the evidence boundary explicit: deployment results are from a personal project and partly operator-reported, while production scale, sustained observability/on-call ownership, database-role proof, and remaining release artifacts are not established.
 - Treat query result counts as coverage signals, not evidence that individual jobs fit.
