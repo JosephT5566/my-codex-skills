@@ -7,6 +7,7 @@
 - `candidate-profile.md`: compact candidate profile, positioning, evidence calibration, and interview/job-search assumptions.
 - `career-targeting.md`: target role families, priorities, and screening logic.
 - `github-project-signals.md`: project evidence that can support job matching, resume tailoring, and interview prompts.
+- `interview-readiness-priorities.md`: canonical ordered training priorities, proof targets, cadence, and evidence gates.
 - `job-search-sources.md`: canonical job-search trackers and source links.
 - `linkedin-filters.md`: reusable LinkedIn filter notes.
 - `linkedin-query-strategy.md`: expanded query inventory and search strategy.

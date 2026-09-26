@@ -31,7 +31,7 @@ Use this scale when estimating fit:
 5. Service/system owner: owns backend service reliability, deployment, scaling, incident response, and service-level architecture.
 6. Platform/infrastructure owner: owns cloud, containers, networking, observability platform, distributed systems, IaC, or internal platform foundations.
 
-Default Joseph assessment: project-level backend feature owner with assessed API/system-design practice and operator-verified personal-service deployment/release rehearsal. Current evidence covers strict/versioned contracts, structured-output validation, server-verified identity, owner-scoped authorization, deterministic APIs, PostgreSQL constraints and migrations, transactional/idempotent review writes, controlled legacy-data import and reconciliation, typed frontend cutover, containerization, and staged candidate/promotion/rollback procedures. The deployment evidence is from a personal project and partly operator-reported; it does not establish professional service ownership, production scale, sustained observability, incident response, or on-call experience.
+Default Joseph assessment: project-level backend feature owner with assessed API/system-design practice and operator-verified personal-service deployment/release rehearsal. Current evidence covers strict/versioned contracts, structured-output validation, server-verified identity, owner-scoped authorization, deterministic APIs, PostgreSQL constraints and migrations, transactional/idempotent review writes, controlled legacy-data import and reconciliation, typed frontend cutover, containerization, staged candidate/promotion/rollback procedures, health checks, operational exercises, and owner-safe semantic retrieval. The deployment evidence is from a personal project and partly operator-reported; it does not establish professional service ownership, production scale, sustained observability, incident response, or on-call experience.
 
 Recent practice also covers PostgreSQL schema tradeoffs, RLS reasoning, idempotency, durable async jobs, lease/fencing concepts, transactional concurrency, ambiguous timeouts, and outbox tradeoffs. Apply the evidence levels in `candidate-profile.md`: mixed or incomplete session results support calibrated readiness notes, not blanket claims of mastery.
 
@@ -111,11 +111,13 @@ Apply the evidence levels in `candidate-profile.md`. Project implementation can 
 
 When relevant requirements recur in reviewed roles, surface these as practical homework:
 
-- Backend ownership evidence: deepen production observability, database runtime/migration role separation, backup/restore evidence, remote candidate-workflow proof, incident diagnosis, and sustained operations while retaining schema, auth, transaction, idempotency, migration, and API-contract practice.
-- AI product evidence: structured output, tool calling, permission-aware data access, human approval, evaluation dataset, tracing, retry/fallback, and cost/latency controls.
-- System design communication: explain product feature boundaries, data flow, failure modes, security/privacy, and monitoring in interview-ready language.
+- Interview filter risk: follow `interview-readiness-priorities.md`; timed TypeScript DSA is the highest-priority gap and should run continuously alongside portfolio work.
+- Frontend seniority evidence: build one measured architecture/performance case study with budgets, bundle and Core Web Vitals evidence, accessibility, failure states, and Playwright coverage.
+- Backend ownership evidence: close remaining operational proof gaps—restored-data reconciliation, independently captured runtime-role/IAM boundaries, alert delivery, and response-ID correlation. Add async infrastructure only for a measured requirement.
+- AI product evidence: finish the frozen semantic-retrieval evaluation before claiming general quality; later prove structured output, permission-aware tool calling, human approval, tracing, retry/fallback, and latency/cost controls without allowing AI to confirm durable cards directly.
+- System design communication: practice product-facing systems such as search, CMS, experimentation, realtime dashboards, notifications, and AI-assisted workflows, covering data flow, failure modes, security/privacy, observability, and evolution under load.
 
-Prefer exercises that advance the active `english-learning` training tickets or extend an existing project rather than creating generic toy projects. Treat completed and verified ticket work as project evidence; treat planned tickets as homework only.
+Prefer exercises that deepen a measured `english-learning` or professional frontend gap, or extend the expense app when Supabase/RLS is specifically relevant, rather than generic toy projects.
 
 ## Conditional Drill Routing
 
