@@ -231,6 +231,18 @@ Use when the user explicitly requests a comprehensive search, comparison across 
      - Make exercises interview-oriented and reusable, such as a focused system-design walkthrough, architecture extension to an existing project, or concise implementation exercise. Avoid generic course lists.
      - After a recurring requirement appears in the reviewed set or a shortlisted role, use the conditional routing table in `references/career-targeting.md`. Read only the smallest matching drill; do not load the full drill library.
      - Treat an uncompleted drill as homework only. Upgrade readiness after a completed session records Joseph's actual strengths and remaining gaps.
+   - `Engineering Lifecycle Coaching`:
+     - When a reviewed requirement or the user's request concerns high-level delivery practice, read only the smallest matching reference below. Do not load the full lifecycle library by default.
+       - Overall engineering-lifecycle gap summary, learning sequence, or readiness update: `references/engineering-lifecycle/engineering-lifecycle-learning-plan.md`
+       - SDLC, end-to-end feature ownership, engineering process, or release lifecycle: `references/engineering-lifecycle/software-delivery-lifecycle.md`
+       - Test strategy, test layers, coverage, test automation, accessibility, performance testing, or flaky tests: `references/engineering-lifecycle/testing-strategy.md`
+       - CI/CD, GitHub Actions, GitOps, build artifacts, release strategies, feature flags, migrations, or rollback: `references/engineering-lifecycle/cicd-and-release-strategy.md`
+       - DevOps principles, shared ownership, developer productivity, platform-team boundaries, DORA metrics, or postmortems: `references/engineering-lifecycle/devops-and-team-ownership.md`
+       - Observability, monitoring, SLOs, alerts, incidents, backup/restore, capacity, or on-call: `references/engineering-lifecycle/production-operations-and-observability.md`
+       - Docker, containers, Cloud Run, Kubernetes, orchestration, probes, resources, networking, or autoscaling: `references/engineering-lifecycle/containers-cloud-run-and-kubernetes.md`
+     - Use each reference's evidence map to calibrate the answer, but keep `references/candidate-profile.md` as the canonical evidence source when they differ.
+     - Draw homework from the matching reference's `Learning and Proof Backlog`, prioritizing recurring target-role requirements and the smallest exercise that creates interview-usable evidence.
+     - Do not treat conceptual knowledge, a reference file, or a one-time lab as professional production ownership.
    - `Interview Readiness`:
      - Assess `Frontend Engineering`, `Product Engineering`, `Backend Ownership`, `System Design`, `Cloud Infrastructure`, `AI / LLM Knowledge`, and `Leadership & Collaboration`.
      - For `Backend Ownership`, distinguish API consumer, API integrator, API designer, backend feature owner, service/system owner, and platform/infrastructure owner. Use the current calibrated default in `references/candidate-profile.md` and `references/career-targeting.md`; do not infer service/system ownership from project implementation or completed practice alone.
