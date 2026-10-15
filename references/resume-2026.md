@@ -79,7 +79,7 @@ Teams: Marketplace, Lead Nurture, 3D
 
 ### Personal Expense Tracking PWA
 
-**Tech:** SvelteKit, TypeScript, Supabase, Tailwind CSS, IndexedDB, GitHub Actions, GitHub Pages
+**Tech:** Svelte 5, SvelteKit, TypeScript, Python, FastAPI, LangGraph, Gemini, Supabase/PostgreSQL, SSE, Playwright, Docker, Tailwind CSS, IndexedDB, GitHub Actions, GitHub Pages
 
 - Built a mobile-first expense tracking PWA supporting personal expenses and household shared expenses.
 - Designed a static-first architecture using SvelteKit and GitHub Pages, with Supabase as the backend service.
@@ -88,6 +88,11 @@ Teams: Marketplace, Lead Nurture, 3D
 - Designed normalized expense-sharing data models and monthly balance aggregation flows.
 - Built a CI/CD pipeline with GitHub Actions for automated deployment and preview validation.
 - Integrated an AI-powered receipt parsing flow through serverless cloud function endpoints.
+- Built a Python/FastAPI/LangGraph semantic-entry workflow with structured Gemini extraction, deterministic expense validation, and bounded clarification before automatic persistence.
+- Implemented caller-scoped transactional request idempotency with payload hashes and row locking, plus status recovery for uncertain writes.
+- Added backward-compatible SSE streaming across Python and Svelte/TypeScript, including incremental Unicode decoding, bounded buffering, deadlines, and stale-response isolation.
+
+Reference note for tailoring: these additions are project implementation evidence. Historical verification and remaining hosted/model gaps are recorded in [project signals](github-project-signals.md#expense-app-semantic-entry-evidence-reviewed-2026-10-15). Do not turn fixture results into model-accuracy, latency, cost-saving, production-scale, or professional operations claims. Select the relevant bullets for each application; omit this internal note from exported resumes.
 
 ## Education
 
