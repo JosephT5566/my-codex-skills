@@ -2,6 +2,8 @@
 
 `references/` is the repo's shared source-of-truth layer. Skills read these files at runtime so personal context can stay current without copying it into every `SKILL.md`.
 
+Use `managing-shared-references` for source updates and coordinated consumer changes. New material needs topic-based routing in relevant skills; renames need direct and indirect consumer paths updated. Preserve shared-directory symlinks and evidence limits. Missing source material remains pending without adding routes to nonexistent files.
+
 ## Current Reference Files
 
 - `candidate-profile.md`: compact candidate profile, positioning, evidence calibration, and interview/job-search assumptions.

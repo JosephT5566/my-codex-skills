@@ -1,0 +1,4 @@
+interface:
+  display_name: "Shared Reference Manager"
+  short_description: "Maintain shared references and their skill consumers"
+  default_prompt: "Use $managing-shared-references to incorporate this new information into the shared references and update affected skill usages."

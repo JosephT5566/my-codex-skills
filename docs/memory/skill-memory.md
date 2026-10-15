@@ -10,6 +10,7 @@ This file records the repo's active skill inventory and how the skills relate to
 | `jd-resume-fit-scorer` | Recruiter-style JD/resume scoring with evidence mapping and ATS gaps. | Reads resume/profile/project references when available. |
 | `linkedin-fresh-job-search` | Fresh LinkedIn-first job discovery and application prioritization. | Reads candidate profile, career targeting, source links, query strategy, and project signals. Uses live browser context for LinkedIn/Sheets workflows. |
 | `markdown-resume-exporter` | Converts Markdown resumes or similar documents into PDF, DOCX, HTML, or text. | Uses bundled export script and CSS. Does not rewrite content. |
+| `managing-shared-references` | Maintains canonical shared references and coordinates affected skill consumers. | Resolves the source repo, reads reference/skill memory, and inspects consumer paths and symlink configuration; does not require its own skill-local references link. |
 | `tailored-resume-generator` | Tailors resumes to specific job descriptions. | Reads shared resume, candidate profile, and project signals when available. |
 
 ## Cross-Skill Boundaries
@@ -19,6 +20,7 @@ This file records the repo's active skill inventory and how the skills relate to
 - Job fit scoring belongs in `jd-resume-fit-scorer`.
 - Job discovery and prioritization belong in `linkedin-fresh-job-search`.
 - Interview practice and answer evaluation belong in `engineering-interview-coach`.
+- Shared source updates, reference reorganization, and consumer routing maintenance belong in `managing-shared-references`.
 
 ## Update Guidance
 
