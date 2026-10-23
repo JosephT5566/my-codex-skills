@@ -111,7 +111,7 @@ Apply the evidence levels in `candidate-profile.md`. Project implementation can 
 
 When relevant requirements recur in reviewed roles, surface these as practical homework:
 
-- Interview filter risk: follow `interview-readiness-priorities.md`; timed TypeScript DSA is the highest-priority gap and should run continuously alongside portfolio work.
+- Interview filter risk: follow `interview-readiness-priorities.md`; make timed DSA primary when an algorithm screen is a current preparation goal. TypeScript is a familiarity default, not a requirement. Otherwise prioritize frontend architecture/performance evidence and product system design.
 - Frontend seniority evidence: build one measured architecture/performance case study with budgets, bundle and Core Web Vitals evidence, accessibility, failure states, and Playwright coverage.
 - Backend ownership evidence: close remaining operational proof gaps—restored-data reconciliation, independently captured runtime-role/IAM boundaries, alert delivery, and response-ID correlation. Add async infrastructure only for a measured requirement.
 - AI product evidence: finish the frozen semantic-retrieval evaluation before claiming general quality; later prove structured output, permission-aware tool calling, human approval, tracing, retry/fallback, and latency/cost controls without allowing AI to confirm durable cards directly.

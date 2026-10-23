@@ -1,82 +1,104 @@
 # Interview Readiness Priorities
 
-Use this reference when choosing training work, interview drills, or portfolio proof. The ordering is
-optimized for Joseph's current target: frontend-strong Product Engineer, Full-stack Product Engineer,
-and AI Product Engineer roles at large product companies. Do not interpret the list as seven parallel
-projects. Keep one primary practice track and at most one proof-building track active at a time.
+Use this as the canonical source for Joseph's preparation priorities. His professional frontend and
+product experience remains the starting point for Frontend, Product, Full-stack Product, and
+product-facing AI roles. Select one primary practice focus and at most one proof-building exercise.
 
-## Priority Table
+## Choose the immediate priority
 
-| Priority | Expertise | Why it matters | Proof to build |
-| --- | --- | --- | --- |
-| 1 | Data structures and algorithms | Often the first major Google/Microsoft interview filter, including for frontend roles. Current project depth cannot compensate for failing this screen. | Solve 40-60 curated medium problems in TypeScript; practice explaining complexity, invariants, edge cases, and tradeoffs without generated notes. |
-| 2 | Frontend architecture and performance | This is Joseph's strongest route into large product companies and the shortest path from existing professional experience to senior-level evidence. | Establish performance budgets, bundle analysis, Core Web Vitals evidence, virtualization or large-list behavior, caching decisions, accessibility checks, and Playwright coverage on one polished product flow. |
-| 3 | Product-oriented system design | Senior frontend, product, and full-stack interviews require scope beyond an individual UI feature. | Practice designing search, CMS, experimentation, realtime dashboards, notifications, and AI-assisted workflows, including requirements, APIs, data, failure behavior, security, observability, and evolution under load. |
-| 4 | Production backend ownership | This broadens the role pool without discarding the frontend advantage. The English Learning project now supports a credible deployed-project story, but not professional production-scale ownership. | Extend one service with a measured need for durable async work, then demonstrate idempotency, bounded retries, recovery, observability, deployment, rollback, and an incident exercise. Do not add a queue merely to check a box. |
-| 5 | Behavioral and leadership communication | Large companies evaluate influence, ambiguity, collaboration, judgment, and measurable impact as heavily as implementation detail. | Prepare 6-8 reusable STAR/CAR stories covering conflict, failure, leadership without authority, ambiguity, debugging, tradeoffs, delivery, and product impact. Mark which claims are professional versus project evidence. |
-| 6 | Cloud and operational fundamentals | End-to-end ownership requires operational literacy, but deep infrastructure specialization is unnecessary for the target roles. | Be able to defend the current Cloud Run/Neon design, Docker image, CI/CD, secrets, health checks, metrics, alerts, backup/restore limits, rollout, and rollback; learn Kubernetes concepts well enough to compare, not administer, a cluster. |
-| 7 | Applied AI product engineering | This is a useful differentiator for product-facing AI teams when paired with safe execution and measured quality. | Demonstrate structured output, permission-aware retrieval/tool calling, human approval, evaluation, tracing, failure handling, and latency/cost measurement. Keep generated content as a validated editable draft, never a directly confirmed learning card. |
+Updated 2026-10-23 after reviewing current roles and the user's coaching request. The default next
+investment is a measured frontend architecture/performance case study. Connect that work to
+product-oriented system design and the ability to review, explain, and verify AI-assisted changes.
 
-## How to Execute the Priorities
+Treat interview preparation and capability evidence as separate decisions:
 
-### Primary weekly track: DSA
+- When an upcoming interview includes algorithms, the user requests DSA, or the user is actively
+  preparing for companies with an expected algorithm screen, make timed DSA a primary practice track.
+  Confirm a specific interview's format and allowed languages when supplied material does not establish them.
+- When no algorithm interview or DSA goal is identified, start with frontend architecture/performance
+  and a product-system deep dive. Offer DSA as a separate interview-preparation track without making it
+  an unconditional prerequisite to applying or improving the portfolio.
+- An explicit target interview, user-selected topic, time constraint, or language choice overrides defaults.
 
-- Use TypeScript unless a target interview explicitly requires another language.
-- Prefer a curated pattern set over random volume: arrays/strings, hash maps, two pointers, sliding
-  window, stacks/queues, binary search, linked lists, trees, heaps, graphs, intervals, backtracking,
-  and dynamic programming.
-- Count a problem as retained only after a timed re-solve and a spoken explanation of correctness and
-  time/space complexity. Forty well-retained mediums are stronger evidence than sixty copied solutions.
-- Track first-attempt result, hint level, error pattern, re-solve dates, and explanation quality.
+The 2026-10-23 reviewed postings included frontend-anchor entry, allocation by existing strengths, and
+heavy use of coding agents. These observations support practicing transferable product judgment.
+They do not prove that all employers relax requirements or that AI replaces service ownership.
 
-### Proof-building track: frontend first, then selective backend/AI depth
+## Capability and proof-building priorities
 
-Use one end-to-end English Learning flow as the evidence surface rather than starting another toy
-application. A strong sequence is:
+| Priority | Expertise | Proof to build |
+| --- | --- | --- |
+| 1 | Frontend architecture and performance | Measure one critical flow. Explain state and component boundaries, cache behavior, bundle or rendering costs, accessibility, and loading/error/recovery UX. Show a justified change with comparable before/after evidence. |
+| 2 | Product-oriented system design | Explain the same flow across user needs, frontend, API, data, authorization, failure handling, observability, and rollout. Compare alternatives under an explicit workload. |
+| 3 | AI-assisted engineering judgment | Define requirements and acceptance criteria, bound agent tasks, review generated code, test behavior, and explain rejected alternatives. For AI product features, add structured-output validation, permissions, human review, and measured quality/latency/cost where relevant. |
+| 4 | Behavioral and leadership communication | Prepare reusable stories about product impact, ambiguity, tradeoffs, collaboration, debugging, conflict, and influence. Mark professional versus project evidence. |
+| 5 | Selective backend feature ownership | Use existing services to defend API contracts, relational data, authorization, transactions, idempotency, and recovery. Deepen only where a target role or observed failure justifies it. |
+| 6 | Cloud and operational fundamentals | Defend the current deployment, CI/CD, secrets, health checks, observability, backup/restore limits, rollout, and rollback. Infrastructure specialization follows a role requirement. |
 
-1. Measure a user-critical frontend flow and set a budget before optimizing it.
-2. Add browser coverage for loading, empty, error, authorization, and recovery states.
-3. Produce a short architecture explanation connecting the Svelte UI, authenticated API, PostgreSQL
-   invariants, deployment boundary, and monitoring.
-4. Finish the frozen semantic-search evaluation before making broad RAG-quality claims.
-5. Add durable async processing only when observed AI generation latency or failure behavior justifies
-   it; define recovery and human approval before choosing infrastructure.
+### DSA when an algorithm screen is a preparation goal
 
-## Evidence Gates
+DSA means data structures and algorithms. TypeScript is Joseph's default because of existing fluency.
+Python or another language is valid when he prefers it or a supplied interview constraint requires it.
+Language choice supports clear implementation and explanation; it does not determine reasoning quality.
 
-Use the following labels consistently:
+Use a curated pattern set: arrays/strings, hash maps, two pointers, sliding windows, stacks/queues,
+binary search, linked lists, trees, heaps, graphs, intervals, backtracking, and dynamic programming.
+Count a problem as retained after a timed independent re-solve and a spoken explanation of correctness
+and time/space complexity. Track hints, error patterns, and re-solve dates rather than raw problem count.
+Scale the plan to the interview date and diagnostic results. Do not impose a fixed quota before applying.
+
+## One reusable proof-building exercise
+
+Use one existing English Learning or expense-app flow rather than starting another application.
+Budget about 3-4 hours for a first pass and narrow the scope if the baseline reveals substantial work.
+
+1. Select a user-critical frontend flow and record a reproducible baseline before optimizing.
+2. Identify the actual bottleneck and compare one credible alternative.
+3. Make one bounded change. Verify comparable measurements and relevant loading, error, authorization,
+   and recovery behavior.
+4. Explain the frontend/API/data boundaries and why the change fits the product's requirements.
+5. Produce a one-page case study and rehearse a five-minute explanation without generated notes.
+
+AI can assist with implementation and investigation. Joseph owns the problem definition, acceptance
+criteria, review, and interpretation of the results. A proposed improvement or one synthetic run is
+not a measured production outcome.
+
+For a deeper backend or AI interview, use the matching drill and extend the existing service only when
+the requirement warrants it. Finish the frozen retrieval evaluation before claiming general retrieval
+quality. Add durable async processing only after observed latency or failure behavior justifies it.
+
+## Suggested cadence
+
+- General product/frontend preparation: one project deep dive or proof-building session, followed by
+  one short system-design or behavioral rehearsal using the same evidence.
+- Algorithm-screen preparation: three DSA sessions per week, about 45 minutes each, covering a new
+  pattern, a timed attempt, and a spaced re-solve. Keep at most one small portfolio exercise alongside it.
+- For a specific interview, prioritize its confirmed format, expected depth, and nearest deadline.
+- Review priorities after interview feedback or recurring JD requirements. A missing skill is not
+  automatically the next investment with the greatest value.
+
+## Evidence gates
 
 - **Practiced:** completed under interview conditions and explainable without notes.
 - **Implemented in a project:** code and relevant tests exist.
 - **Verified in CI:** the linked revision passed the relevant automated checks.
 - **Deployed and verified:** the behavior was exercised in the deployed personal application.
-- **Demonstrated professionally:** supported by actual shipped professional work and defensible impact.
+- **Demonstrated professionally:** supported by shipped professional work and defensible impact.
 
-Do not upgrade evidence because a plan, rubric, dependency, or architecture diagram exists. Never turn
-personal-project traffic, latency, reliability, or operator reports into professional production claims.
+Do not upgrade evidence because a plan, rubric, dependency, architecture diagram, or generated solution
+exists. Personal-project traffic, latency, reliability, and operator reports remain project evidence.
 
-## Suggested Cadence
+## Current project mapping
 
-- Three DSA sessions per week: one new pattern/problem, one timed mixed set, and one spaced re-solve.
-- One system-design or project-deep-dive session per week, alternating frontend/product design and
-  backend/AI ownership.
-- One behavioral story rehearsal per week until the 6-8 story bank is concise and adaptable.
-- One monthly portfolio checkpoint: record only new implemented and verified proof, then revise the
-  next four weeks based on actual interview feedback and recurring job requirements.
-
-## Current Project Mapping
-
-- Priorities 4 and 6 already have meaningful project evidence in `english-learning`: FastAPI and
-  PostgreSQL ownership boundaries, transactions and idempotency, containerization, Cloud Run/Neon
-  deployment, candidate promotion, schema-compatible rollback, health checks, and operational drills.
-  Remaining limits include independently captured IAM/role evidence, full restored-data
-  reconciliation, and complete alert-delivery evidence.
-- Priority 7 has implemented and deployed owner-safe semantic retrieval plus a frozen evaluation
-  boundary. Treat retrieval quality as unproven until the Issue #41 provider evaluation and sanitized
-  production inspection support a go/iterate/stop decision. The later AI authoring/tutor workflow is
-  planned, not implemented.
-- Priority 2 has strong professional product-frontend evidence, but the shared references do not yet
-  contain a focused, measured performance case study. Build one rather than listing tools without
-  results.
-- Priority 1 remains the highest interview-risk reduction because repository work does not prove
-  timed algorithm performance.
+- Frontend architecture/performance has strong professional product experience behind it, but the
+  shared references do not yet contain a focused measured case study. Build that proof first.
+- `english-learning` already supports project-level FastAPI/PostgreSQL boundaries, transactions,
+  idempotency, containerization, Cloud Run/Neon releases, rollback, health checks, and operational drills.
+  Independently captured IAM/role evidence, restored-data reconciliation, and full alert-delivery
+  evidence remain incomplete or partly operator-reported. These gaps matter most for roles expecting
+  independent service ownership.
+- AI projects support structured output, streaming, authorization, and failure-boundary discussion.
+  Retrieval and model-quality claims remain bounded by their recorded evaluations. Planned AI
+  authoring/tutor work is not implementation evidence.
+- Repository depth does not prove timed DSA ability. Use assessed performance when planning an
+  algorithm-screen track, without inferring that every frontend/product interview has that screen.

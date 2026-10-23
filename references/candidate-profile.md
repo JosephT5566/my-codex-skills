@@ -10,7 +10,7 @@ Do not position him as a pure UI implementer, pure ML researcher, pure backend/p
 
 ## Strongest Evidence
 
-- Houzz software engineer since May 2022 across Marketplace, Lead Nurture, and 3D teams.
+- Houzz software engineer from May 2022 to May 2026 across Marketplace, Lead Nurture, and 3D teams, as recorded in `resume-2026.md`.
 - Built marketplace search, browse, navigation, CMS, event, and campaign experiences across desktop and mobile web.
 - Delivered A/B-tested search/browse improvements; one mobile experiment trended positive with +5.8% orders and +2.5% GMV.
 - Built Prismic/CMS-driven page infrastructure with content models, GraphQL schemas/resolvers, data transformations, routing, reusable slices, and frontend rendering.
@@ -44,10 +44,12 @@ Current calibration: project-level backend feature owner with assessed API/syste
 
 ## Interview Readiness Focus
 
-Use `interview-readiness-priorities.md` as the canonical ordering. The near-term emphasis is timed
-TypeScript DSA, a measured frontend architecture/performance case study, and product-oriented system
-design. Backend, cloud, and AI work should deepen the existing deployed project only where a measured
-requirement or target role justifies it.
+Use `interview-readiness-priorities.md` as the canonical source for preparation priorities. The default
+next investment is a measured frontend architecture/performance case study, connected to product-oriented
+system design and the ability to explain and verify AI-assisted changes. Prioritize timed DSA when an
+algorithm screen is a current preparation goal. TypeScript is a familiarity default; Joseph's language
+choice or a supplied interview constraint takes precedence. Backend, cloud, and AI work should deepen
+existing projects where a measured requirement or target role justifies it.
 
 ## Evidence Calibration
 

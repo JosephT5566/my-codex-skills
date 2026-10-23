@@ -1,4 +1,4 @@
 interface:
   display_name: "Interview Coach"
-  short_description: "Practice backend ownership and system design"
-  default_prompt: "Use $engineering-interview-coach to run a project-grounded backend and system design mock interview."
+  short_description: "Practice frontend, product design, and coding interviews"
+  default_prompt: "Use $engineering-interview-coach to run a project-grounded interview aligned with my current target role and preparation priorities."

@@ -2,6 +2,25 @@
 
 Record durable repo decisions here. Use reverse chronological order.
 
+## 2026-10-23: Align Interview Coaching With Frontend and Product Targets
+
+Decision: Default interview practice to frontend architecture/performance and product system design.
+Use `references/interview-readiness-priorities.md` for preparation choices. Treat DSA as a primary track
+when an algorithm screen is a current goal. Honor the user's language choice; TypeScript is a fluency default.
+
+Reasoning:
+
+- The old skill and UI prompt defaulted to backend ownership despite frontend/product positioning.
+- The user's current request prioritizes transferable judgment and verified AI-assisted delivery.
+- Unconditional DSA-first advice competed with the current frontend proof-building recommendation.
+
+Implications:
+
+- Keep advice and explanations separate from the one-question interview loop.
+- Preserve explicit backend drills and professional/project/practice evidence boundaries.
+- Keep personal training priorities in shared references and route the skill to them.
+- Treat unfamiliar frameworks as training inputs, without assuming AI removes operational responsibilities.
+
 ## 2026-08-28: Keep Job Search Frontend-First While Expanding Full-stack Coverage
 
 Decision: Keep Frontend Engineer and Senior Frontend Engineer as Joseph's first job-search priority. Treat Product Engineer and frontend-heavy Full-stack Engineer as the preferred growth lane, followed by frontend-centered AI Product roles.
