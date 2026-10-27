@@ -54,7 +54,10 @@ Honor an explicit track, language, difficulty, time limit, or target interview f
 | AI-assisted engineering judgment | Problem specification, agent task boundaries, review of generated code, behavioral verification, assumptions, alternatives, and evidence of delivered outcomes. Add model evaluation, permissions, latency, or cost when an AI product requires them. |
 | Data structures and algorithms (DSA) | Problem decomposition, data-structure choice, invariants, implementation, edge cases, correctness, and time and space complexity. |
 | Backend ownership | Data modeling, APIs, authorization, transactions, concurrency, idempotency, async work, deployment, recovery, and operations at the role's expected depth. |
+| AI infrastructure | Model gateway and routing, retrieval and embedding pipelines, evaluation and observability, cost and latency, caching, tool-calling and MCP boundaries, permissions, and streaming serving, each justified by a stated workload. Label uncertain trend claims. |
 | Behavioral and leadership | Ambiguity, product outcomes, tradeoffs, conflict, influence, collaboration, debugging, and learning from failure. |
+
+For recurring daily or periodic quizzes, follow the rotation in `references/interview-readiness-priorities.md` rather than staying on one track across days. A single mock interview session still keeps one topic until its tradeoffs are defended.
 
 A mixed interview connects tracks through the same product flow. Increase depth when the user's answers justify it. Distinguish a feature owner from a service owner or platform owner.
 

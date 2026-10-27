@@ -47,6 +47,41 @@ Count a problem as retained after a timed independent re-solve and a spoken expl
 and time/space complexity. Track hints, error patterns, and re-solve dates rather than raw problem count.
 Scale the plan to the interview date and diagnostic results. Do not impose a fixed quota before applying.
 
+## Daily coaching rotation
+
+Updated 2026-10-27 from the user's request. For recurring daily or periodic quizzes, rotate topics rather
+than drilling the same category on consecutive days, and avoid repeated deep dives on one category within a
+week unless the user asks. The rotation supplements the priority table; it does not change which
+capabilities are most valuable to prove.
+
+- Categories: frontend architecture and performance; product-oriented system design; full-stack API,
+  database, and authorization; AI infrastructure and current AI engineering trends; AI/LLM application
+  engineering; AI-assisted development judgment; behavioral; resume or self-introduction; career reflection.
+- The user explicitly wants system design and AI infrastructure questions included. Schedule each about
+  once or twice a week, with a mix of product-level whiteboard design and tradeoff or failure scenarios.
+- AI infrastructure topics: LLM gateway and model routing, retrieval and embedding pipelines, evaluation
+  and observability, cost and latency control, caching, agent and tool-calling boundaries (including MCP),
+  permissions and safety, and streaming inference serving. Frame these at the level of a product engineer
+  growing toward full-stack and AI roles, and require workload-based reasons for added components.
+- Trend claims must come from a current source or be labeled uncertain; do not present a trend as
+  established fact without support.
+- Keep professional and project evidence separate in questions and feedback. Treat answers as assessed
+  practice, not production evidence.
+
+### Assessed practice log
+
+Record dated, compact results here when the user completes quiz answers. These are assessments of an
+answer, not proof of capability.
+
+- 2026-10-27, frontend architecture and performance (scenario: INP 450 ms and LCP 3.4 s on a list or
+  search results page). Strengths: layered diagnosis, correct mapping of INP to main-thread and DOM cost
+  and of LCP to server rendering and streaming, named the cost of virtualization, and referred to A/B
+  testing experience. Gaps: relied on Lighthouse (lab data) rather than field data (RUM) and INP
+  attribution to find the slow interaction; verification lacked p75 comparison by variant and guardrail
+  metrics such as conversion. The optional STAR case was not answered. The user is considering Sentry or
+  the web-vitals library for RUM; he has not used web-vitals monitoring himself. Next practice: field data
+  and attribution, experiment design, and an observability-introduction design question.
+
 ## One reusable proof-building exercise
 
 Use one existing English Learning or expense-app flow rather than starting another application.

@@ -52,3 +52,16 @@ Implications:
 - Future durable repo knowledge should be captured in the smallest relevant `docs/memory/` file.
 - Sensitive candidate facts should stay in `references/`, not `AGENTS.md`.
 - Behavior-specific instructions still belong in the relevant `SKILL.md`.
+
+## 2026-10-27: Rotate Daily Coaching Topics
+
+Decision: Daily or periodic coaching quizzes rotate across categories and include product system design and AI infrastructure, instead of repeatedly deepening one category.
+
+Reasoning:
+
+- The user asked for varied topics and explicitly wanted system design and current AI infrastructure questions.
+
+Implications:
+
+- The rotation and assessed practice log live in `references/interview-readiness-priorities.md`; `engineering-interview-coach` routes recurring quizzes to it.
+- Quiz results are assessed practice, not professional or production evidence.
