@@ -81,6 +81,18 @@ answer, not proof of capability.
   metrics such as conversion. The optional STAR case was not answered. The user is considering Sentry or
   the web-vitals library for RUM; he has not used web-vitals monitoring himself. Next practice: field data
   and attribution, experiment design, and an observability-introduction design question.
+- 2026-10-28, AI infrastructure (scenario: expense-app semantic entry at 10x traffic with high p95
+  latency, rising model cost, and provider 429/5xx errors; answers mixed design ideas, not claims of
+  implemented behavior). The user said the topic was unfamiliar. Strengths: proposed a model router that
+  sends requests to a small or frontier model, idempotency with state checks and a retry cap of two,
+  semantic caching, and tracing with prompt logs, an evaluation suite, and a release gate; on the bonus
+  question, proposed showing failure state, a retry button, and distinct handling for rate limiting and
+  retry exhaustion. Gaps: retry detail (backoff with jitter, Retry-After, provider fallback, circuit
+  breaker); the router's own latency and cost (rules first, then small model, then escalation); semantic
+  cache isolation per user and near-miss risk for numeric inputs; missing latency, cost, error-rate,
+  cache-hit, and escalation-rate metrics. Next practice: short learning pass on gateways, retries,
+  caching, and LLM evals, then a narrower question on one of these. This is design-level assessed practice
+  only; the project does not evidence a production gateway.
 
 ## One reusable proof-building exercise
 
