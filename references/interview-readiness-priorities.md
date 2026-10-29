@@ -93,6 +93,19 @@ answer, not proof of capability.
   cache-hit, and escalation-rate metrics. Next practice: short learning pass on gateways, retries,
   caching, and LLM evals, then a narrower question on one of these. This is design-level assessed practice
   only; the project does not evidence a production gateway.
+- 2026-10-29, product-oriented system design (scenario: shared expense ledger for 3-6 people with
+  concurrent edits, offline resubmission, and budget-overrun notifications). Strengths: proposed
+  request IDs with idempotency for offline resubmission, named last-write-wins and operational transform
+  as conflict options, and clearly separated implemented evidence from design ideas. Project evidence:
+  the expense-app AI agent write path uses request IDs with idempotency because processing is
+  asynchronous; everything else in the answer was a design idea. Gaps: jumped to operational transform
+  for a small group instead of version numbers with optimistic locking and field-level merge; did not
+  compare sync options (SSE or hosted realtime versus WebSocket); no uniqueness constraint on
+  (ledger, client request ID) was described; notification design (event fan-out and flood control) was
+  unfamiliar; for the high-write bonus, named load balancing, autoscaling, caching, and rate limiting but
+  not database write bottlenecks (partitioning, hot ledgers, batching, queue buffering). Next practice:
+  conflict handling with optimistic locking, then a notification and event-driven design question. This
+  is design-level assessed practice only.
 
 ## One reusable proof-building exercise
 
