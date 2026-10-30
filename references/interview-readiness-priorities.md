@@ -106,6 +106,19 @@ answer, not proof of capability.
   not database write bottlenecks (partitioning, hot ledgers, batching, queue buffering). Next practice:
   conflict handling with optimistic locking, then a notification and event-driven design question. This
   is design-level assessed practice only.
+- 2026-10-30, full-stack API, database, and authorization (scenario: shared ledger expense edited
+  concurrently, with a duplicate offline add, on Supabase PostgreSQL with RLS). The user said the topic
+  was unfamiliar and researched before answering. Strengths: described a version column for optimistic
+  locking, a request ID with a uniqueness constraint against duplicate adds, 409 Conflict returning the
+  latest version and data, field-level merge with its complexity cost, RLS plus an API-layer check, and
+  a frontend flow that auto-merges non-conflicting edits and asks the user on real conflicts. Project
+  evidence: expense-app implements an idempotency key and a transaction to prevent duplicate writes and
+  keep them atomic; everything else was a design idea. Gaps: a replayed create should return the original
+  result without changing the version; the uniqueness constraint should include the ledger, not only the
+  user; the conditional update (UPDATE ... WHERE version = ?) and affected-row check were not described;
+  RLS should check ledger membership rather than only matching the row's user ID; PATCH should send
+  changed fields plus a base version so overlap can be detected. Next practice: a short SQL exercise
+  on the conditional update and a membership-based RLS policy. This is design-level assessed practice only.
 
 ## One reusable proof-building exercise
 
