@@ -87,12 +87,14 @@ Teams: Marketplace, Lead Nurture, 3D
 - Added IndexedDB-based monthly caching to reduce redundant API requests and improve navigation performance.
 - Designed normalized expense-sharing data models and monthly balance aggregation flows.
 - Built a CI/CD pipeline with GitHub Actions for automated deployment and preview validation.
-- Integrated an AI-powered receipt parsing flow through serverless cloud function endpoints.
+- Integrated AI receipt-image analysis into the semantic-entry service (v3), replacing the earlier separate receipt flow; deployed for personal use (single user, reported by Joseph 2026-10-30).
 - Built a Python/FastAPI/LangGraph semantic-entry workflow with structured Gemini extraction, deterministic expense validation, and bounded clarification before automatic persistence.
 - Implemented caller-scoped transactional request idempotency with payload hashes and row locking, plus status recovery for uncertain writes.
 - Added backward-compatible SSE streaming across Python and Svelte/TypeScript, including incremental Unicode decoding, bounded buffering, deadlines, and stale-response isolation.
+- Added receipt-image entry with signed-URL uploads, a multimodal Gemini provider, per-line-item editable drafts, and batch persistence through a transactional idempotent SQL RPC under a versioned contract.
+- Built pending-write recovery for uncertain AI writes with an account-scoped pending list, status lookup, same-id retry, and explicit timeouts.
 
-Reference note for tailoring: these additions are project implementation evidence. Historical verification and remaining hosted/model gaps are recorded in [project signals](github-project-signals.md#expense-app-semantic-entry-evidence-reviewed-2026-10-15). Do not turn fixture results into model-accuracy, latency, cost-saving, production-scale, or professional operations claims. Select the relevant bullets for each application; omit this internal note from exported resumes.
+Reference note for tailoring: the standalone `AI Receipt Extraction Service` project above is now merged into this project (2026-10-30); for a short resume, present them as one Expense App project and keep the hardening details attributed to the receipt service. These additions are project implementation evidence. Historical verification and remaining hosted/model gaps are recorded in [project signals](github-project-signals.md#expense-app-semantic-entry-evidence-reviewed-2026-10-15). Do not turn fixture results into model-accuracy, latency, cost-saving, production-scale, or professional operations claims. Select the relevant bullets for each application; omit this internal note from exported resumes.
 
 ## Education
 

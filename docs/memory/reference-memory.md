@@ -8,7 +8,7 @@ Use `managing-shared-references` for source updates and coordinated consumer cha
 
 - `candidate-profile.md`: compact candidate profile, positioning, evidence calibration, and interview/job-search assumptions.
 - `career-targeting.md`: target role families, priorities, and screening logic.
-- `github-project-signals.md`: project evidence that can support job matching, resume tailoring, and interview prompts. Its dated JoPie semantic-entry section is the canonical detailed source for Python/LangGraph, transactional idempotency, SSE/recovery, historical verification, and hosted/model limits; profile and resume contain compact summaries.
+- `github-project-signals.md`: project evidence that can support job matching, resume tailoring, and interview prompts. Its dated JoPie semantic-entry sections (2026-10-15 and the 2026-10-30 v3 receipt/draft/pending-recovery update) are the canonical detailed source for Python/LangGraph, transactional idempotency, SSE/recovery, historical verification, and hosted/model limits; profile and resume contain compact summaries.
 - `interview-readiness-priorities.md`: canonical ordered training priorities, proof targets, cadence, and evidence gates.
 - `job-search-sources.md`: canonical job-search trackers and source links.
 - `linkedin-filters.md`: reusable LinkedIn filter notes.
