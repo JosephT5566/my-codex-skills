@@ -119,6 +119,25 @@ answer, not proof of capability.
   RLS should check ledger membership rather than only matching the row's user ID; PATCH should send
   changed fields plus a base version so overlap can be detected. Next practice: a short SQL exercise
   on the conditional update and a membership-based RLS policy. This is design-level assessed practice only.
+- 2026-10-31, AI-assisted development judgment (scenario: a coding agent's PR adds a CSV export of one
+  ledger's monthly expenses; CI is green, tests mock the database; the endpoint takes ledger_id and month
+  with no membership check, uses start + 30 days with BETWEEN, SELECT *, and writes note values straight
+  into CSV). The user said the issues were not obvious at a glance and discussed them with an agent.
+  Strengths: named missing authorization on ledger_id (IDOR) as the top risk, CSV formula injection, and
+  unbounded result size; explained that CI only checks the logic and requirements someone thought of, so
+  a missed security requirement passes; proposed an authorization test (user A cannot read user B) and a
+  CSV injection test; wrote a structured follow-up instruction that prioritizes risks, asks for negative
+  and real-database integration tests, forbids weakening existing assertions, and asks for findings,
+  changes, results, and remaining risks. Gaps: missed the silent data-correctness bug (30-day month
+  range loses the 31st and spills into the next month; BETWEEN includes the next month's first instant;
+  time zone not handled), invalid month returning 500 instead of 400, and SELECT * over-fetching; the
+  tests did not name boundary-date cases (1/31, 2/28, 12/31) or explain that a mocked database cannot
+  verify SQL, RLS, or date boundaries; the follow-up instruction was generic, not scoped to the export
+  endpoint, had no checkable acceptance criteria, and "do not unnecessarily change production code"
+  would discourage the fix. Evidence: the user said this kind of AI-generated-code review only comes up
+  in personal projects, not at Houzz; the STAR bonus was answered only at that level. Next practice:
+  write acceptance criteria and a scoped agent instruction for a small change, and a short exercise on
+  date-range boundaries and real-database tests. This is design-level assessed practice only.
 
 ## One reusable proof-building exercise
 
