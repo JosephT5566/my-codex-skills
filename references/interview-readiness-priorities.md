@@ -138,6 +138,33 @@ answer, not proof of capability.
   in personal projects, not at Houzz; the STAR bonus was answered only at that level. Next practice:
   write acceptance criteria and a scoped agent instruction for a small change, and a short exercise on
   date-range boundaries and real-database tests. This is design-level assessed practice only.
+- 2026-11-02, AI/LLM application engineering (agent tool-calling error handling and evaluation;
+  scenario: expense-app semantic entry upgraded to a tool-calling agent with find_ledger, find_member,
+  and create_expense, for the input "dinner with Xiaoming yesterday, 1200, split evenly, put it in the
+  roommates ledger"; the ledger is hypothetical because expense-app scopes data as household versus
+  personal and has no ledger concept). A first version sent on 2026-11-01 (receipt parsing with a JSON
+  missing currency or a string amount, item sum 480 versus total 520, a ledger_id the user does not
+  belong to, and a duplicate create_expense call in one request) was not answered. The user said he
+  could not answer in detail but tried. Strengths: treated prompt and model output as a trust boundary
+  that still needs real server-side authentication; proposed a validate function before writing and
+  asking the user to fill in or fix data; resolved same-name members by ID and capped retries to avoid
+  agent loops; split tests into function-logic unit tests without an agent fixture and model I/O tests
+  with an agent fixture (needs the API); separated design ideas from implemented behavior. After
+  feedback he highlighted as important that validation and permission errors should not be retried by
+  the model, only transient errors (5xx, timeout) get bounded retries with the same idempotency key, and
+  that the auth layer keeps an agent from reaching data it should not. Gaps: validation was not layered
+  (schema format versus authorization versus business rules such as split shares summing to the
+  amount); the create_expense parameters listed table columns, including payer_email, instead of
+  having the server inject identity fields from the session; same-name matches should return a
+  candidate list (ID, name, email prefix) and ask the user; no error classification for retry versus
+  stop; evaluation had no release gate (normal, ambiguous or missing-data, and malicious or
+  hallucinated cases such as a foreign ledger_id or prompt injection, with tool-call format accuracy,
+  wrong-write rate near zero, clarification rate, and no regression across prompt changes); the
+  confirmation-card bonus was not answered. Evidence: expense-app implements a request ID with
+  idempotency and a transaction on the AI write path; the tool-calling agent and evaluation set are
+  design ideas; RLS (#58) and the Gemini gateway (#62) under roadmap issue #64 are planned, not
+  implemented. Next practice: an evaluation set with a release gate, the confirmation-card tradeoff, and
+  layered authorization. This is design-level assessed practice only.
 
 ## One reusable proof-building exercise
 
