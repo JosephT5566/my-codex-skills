@@ -165,6 +165,31 @@ answer, not proof of capability.
   design ideas; RLS (#58) and the Gemini gateway (#62) under roadmap issue #64 are planned, not
   implemented. Next practice: an evaluation set with a release gate, the confirmation-card tradeoff, and
   layered authorization. This is design-level assessed practice only.
+- 2026-11-03, behavioral (production incident handling, paired with the skill-gap themes production
+  debugging, incident response, and deployment and rollback). The question asked for a STAR story about
+  debugging and fixing a production problem. The user said he has little direct incident-troubleshooting
+  experience and asked for a scenario and best practices, so the coach gave one: a search results page
+  redesign released behind a feature flag to 50 percent of users; p95 latency rose from 400 ms to 3.5 s
+  and 5xx from 0.2 percent to 4 percent, only on the new version, with a new sort-field query on the
+  backend. Answers: first stop the bleeding by finding the impacted code change or page and trying a
+  revert or feature switch; from Houzz experience with Coralogix, start from error messages, check the
+  page and failed component, trace back to likely missing response data, then the API logic; notify
+  stakeholders to change it or submit the fix himself, complete related tests before reopening, and add
+  a feature switch as appropriate; after the root cause, fix plus unit tests and keep monitoring the same
+  warning message. Strengths: mitigation before root cause; outside-in troubleshooting grounded in real
+  Coralogix use; fix plus test plus continued monitoring. Gaps: quantify impact and timeline and
+  correlate with recent deploys before choosing a mitigation; compare new versus old version traffic
+  splits; check the backend and database (traces, slow queries, missing index, heavier query); reopen
+  with gradual rollout (1, 10, 50, 100 percent) and metrics at each step; the post-incident review should
+  ask why it was not detected earlier (integration tests, performance tests, latency and error-rate
+  alerts, pre-production data volume) and improve detection, not only the bug; stakeholder communication
+  (status, impact, next update time). After feedback he agreed that detection capability and database
+  and traffic-split evidence are important. Evidence: professional evidence is monitoring and diagnosing
+  frontend errors in Coralogix at Houzz (page, component, missing response data, API logic); he has no
+  direct end-to-end incident ownership story yet, and the scenario answers were conceptual. Reference:
+  `engineering-lifecycle/production-incident-checklist.md`. Next practice: a 60-90 second STAR from a
+  real Houzz case, plus a follow-up question on this scenario planned this week. This is design-level
+  assessed practice only.
 
 ## One reusable proof-building exercise
 

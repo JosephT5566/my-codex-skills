@@ -52,6 +52,8 @@ The goal is not to collect everything. Retain the smallest useful signals with a
 
 Do not delay mitigation to find a perfect root cause. Do not call a restart a root cause.
 
+For a one-page step checklist and interview one-liner, see `production-incident-checklist.md`.
+
 ### Plan data and disaster recovery
 
 - Separate high availability from backup and restoration.

@@ -25,6 +25,7 @@ Use a matching drill only after selecting its topic:
 - `references/engineering-interview-drills/postgresql-schema-tradeoffs.md` for schemas, normalization, snapshots, JSONB, constraints, and relational integrity.
 - `references/engineering-interview-drills/supabase-rls-reasoning.md` for RLS, tenant isolation, ownership, role policies, and authorization boundaries.
 - `references/engineering-interview-drills/transactional-concurrency.md` for inventory, quotas, locks, uniqueness, isolation, deadlocks, contention, and ambiguous commits.
+- `references/engineering-lifecycle/production-incident-checklist.md` for production incident response, debugging stories, mitigation, gradual rollout, and postmortems.
 
 Current user instructions and supplied experience supersede stale references. Keep professional work, project implementation, assessed practice, and preparation material distinct. Preserve unknowns and verification limits. A rubric or AI-generated solution does not establish readiness.
 
