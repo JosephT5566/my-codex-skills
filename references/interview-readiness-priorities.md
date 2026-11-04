@@ -190,6 +190,35 @@ answer, not proof of capability.
   `engineering-lifecycle/production-incident-checklist.md`. Next practice: a 60-90 second STAR from a
   real Houzz case, plus a follow-up question on this scenario planned this week. This is design-level
   assessed practice only.
+- 2026-11-04, AI infra (embedding v2 backfill pipeline: retries, resumability, rate limiting, and
+  monitoring, paired with the skill-gap themes AI engineering second half and production
+  observability). Hypothetical scenario: english-learning upgrades its embedding model to v2; a backfill
+  CLI re-embeds all notes and sentences while user-added content still uses background embedding; the
+  provider returns many 429s and some 5xx, and the CLI is interrupted midway. Parts: retry strategy,
+  resumability and idempotency with the version switch, rate limiting and priority between realtime and
+  backfill, and monitoring metrics; bonus: implemented versus design-only. Answers: 429 means too many
+  concurrent requests, so use jitter to spread retries and Retry-After when provided, record retry state,
+  and stop and update state at the retry limit; keep a state table and rerun only specific states such
+  as failed, serving v1 until the backfill is confirmed complete, then switch to v2; use the API service
+  rate limiter to reduce request volume; check embedding switch completion rate, correctness of context
+  tests under v2, and build an eval. The bonus part was not answered. Strengths: jitter plus
+  Retry-After; a state table with rerun of failed only; v1 until complete, then v2; completion rate and
+  v2 quality as launch metrics. Gaps: error classification (retry 429, 5xx, and timeouts; do not retry
+  400, 401, or 403; pause the whole run on repeated failures); an in_progress state with timeout reclaim
+  and an upsert keyed by (content id, model version) for idempotency; an explicit switch threshold
+  (coverage plus eval not worse than v1) and a rollback flag; separate priority queues or token-bucket
+  quotas for realtime versus backfill, with backfill yielding on 429 (a single rate limiter only slows
+  everything); monitoring lacked process health (429 and 5xx rate, retry and failed counts, realtime p95
+  latency, backfill speed and ETA, cost). Follow-up: he asked about token buckets and how they differ
+  from a rate limiter; the coach explained that a token bucket is one algorithm for implementing a rate
+  limiter, controls sending speed, is typically combined with a concurrency cap, and can be split into
+  two buckets for realtime and backfill. Evidence: design-level only. english-learning actually has
+  versioned vectors, background embedding, a backfill CLI, and 503 on failure; retry, rate limiting, and
+  cost observability are planned in english-learning issue #66, not implemented. No production
+  experience is claimed. Next practice: a short design note or issue in english-learning for a priority
+  queue plus token bucket and backfill CLI flags (--max-rps, --concurrency); reading: Amazon Builders'
+  Library "Timeouts, retries and backoff with jitter" and Google SRE Book "Handling Overload". This is
+  design-level assessed practice only.
 
 ## One reusable proof-building exercise
 
