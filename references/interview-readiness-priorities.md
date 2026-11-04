@@ -213,8 +213,15 @@ answer, not proof of capability.
   from a rate limiter; the coach explained that a token bucket is one algorithm for implementing a rate
   limiter, controls sending speed, is typically combined with a concurrency cap, and can be split into
   two buckets for realtime and backfill. Evidence: design-level only. english-learning actually has
-  versioned vectors, background embedding, a backfill CLI, and 503 on failure; retry, rate limiting, and
-  cost observability are planned in english-learning issue #66, not implemented. No production
+  versioned vectors, hash-guarded background embedding, a backfill CLI
+  (apps/api/app/embedding_backfill.py, with --retry-exhausted), DB-level retry for document
+  embeddings (up to 3 attempts at about 1/4/16 minutes with jitter, then marked exhausted; #47,
+  commit cb20956), and a retryable 503 on provider failure. His answer "rerun only failed items"
+  matches that implemented design. Still planned, not implemented: query-side retry and rate
+  limiting (#63; today an 8 s timeout and 429 mapped to provider_rate_limited, no Retry-After
+  handling), cost observability (#64), and the realtime/backfill priority split; tracked under
+  roadmap #66. Implementation facts verified on 2026-11-04 from public GitHub (code, commits, issue
+  states); not verified as running in production. No production
   experience is claimed. Next practice: a short design note or issue in english-learning for a priority
   queue plus token bucket and backfill CLI flags (--max-rps, --concurrency); reading: Amazon Builders'
   Library "Timeouts, retries and backoff with jitter" and Google SRE Book "Handling Overload". This is
@@ -272,6 +279,7 @@ exists. Personal-project traffic, latency, reliability, and operator reports rem
   independent service ownership.
 - AI projects support structured output, streaming, authorization, and failure-boundary discussion.
   Retrieval and model-quality claims remain bounded by their recorded evaluations. Planned AI
-  authoring/tutor work is not implementation evidence.
+  authoring/tutor work, including the english-learning learning-assistant agent idea (#70, under
+  epic #78), is not implementation evidence.
 - Repository depth does not prove timed DSA ability. Use assessed performance when planning an
   algorithm-screen track, without inferring that every frontend/product interview has that screen.

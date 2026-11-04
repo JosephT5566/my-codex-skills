@@ -86,6 +86,7 @@ Teams: Marketplace, Lead Nurture, 3D
 - Implemented Google OAuth authentication and row-level secured Supabase data access.
 - Added IndexedDB-based monthly caching to reduce redundant API requests and improve navigation performance.
 - Designed normalized expense-sharing data models and monthly balance aggregation flows.
+- Added data-visualization and timezone-correct reporting: a six-month spending trend chart, category color coding, and Taipei-timezone monthly grouping for shared balances.
 - Built a CI/CD pipeline with GitHub Actions for automated deployment and preview validation.
 - Integrated AI receipt-image analysis into the semantic-entry service (v3), replacing the earlier separate receipt flow; deployed for personal use (single user, reported by Joseph 2026-10-30).
 - Built a Python/FastAPI/LangGraph semantic-entry workflow with structured Gemini extraction, deterministic expense validation, and bounded clarification before automatic persistence.
