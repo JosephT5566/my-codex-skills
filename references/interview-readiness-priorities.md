@@ -227,6 +227,40 @@ answer, not proof of capability.
   Library "Timeouts, retries and backoff with jitter" and Google SRE Book "Handling Overload". This is
   design-level assessed practice only.
 
+- 2026-11-09, product-oriented system design (quiz Q11: shared-ledger budget-overrun notifications;
+  3-6 members per ledger, monthly category budgets, in-app plus Web Push at 80 and 100 percent,
+  about 20k ledgers, 50 writes/s peak, and offline replay of about 10 expenses). Answers: detect the
+  threshold in the transaction and roll back on failure, then hand push to a background worker;
+  unsure about deduplication, proposed request IDs, monthly-once behavior with periodic re-validation,
+  and re-triggering after spend drops below the threshold; revision traffic splitting and rollback
+  to the previous revision, with a failed-state table and bounded retry for push 5xx. Strengths:
+  worker decoupling, bounded retry with recorded failures, revision-based rollback, and an honest,
+  precise account of implemented idempotency limits. Coach feedback: an expense write must not depend
+  on crossing a threshold. In one transaction, write the expense, recompute the monthly category total,
+  detect before < threshold <= after, and insert a transactional outbox event so event recording and
+  expense commit are atomic; direct push risks phantom notifications on rollback or lost notifications
+  after a post-commit crash. Serialize concurrent writes per ledger with SELECT ... FOR UPDATE or
+  enforce the relevant invariant with a uniqueness constraint. Request IDs cover request retries,
+  not monthly-once delivery; use a notification log with unique (ledger_id, category_id, threshold,
+  month) and INSERT ... ON CONFLICT DO NOTHING before sending. Offline replays hit that constraint
+  after the first event; optional short-window coalescing reduces floods. A drop below the threshold
+  neither retracts nor re-notifies within the month; edits/deletes use the same recompute, and a jump
+  from 70 to 110 percent sends only the 100 percent notice. Detect on writes; schedules are for
+  reconciliation, not periodic re-validation. Retry 5xx/timeouts with a cap, exponential backoff, and
+  jitter, then mark failed; 410 Gone means an expired subscription, so deactivate it without retry
+  (missed in the answer). Monitor outbox backlog and oldest-event age, send success rate, 5xx/410 rates,
+  crossing-to-delivery latency, and notifications per ledger for duplicates. Add ledger/user feature
+  flags at 1/10/50/100 percent and a kill switch that pauses sending while the outbox keeps recording.
+  Evidence: expense-app has no similar notification design. Its real AI-entry implementation uses
+  (user_id, request_id) plus input_hash: same ID and input returns the saved result; changed input with
+  the same ID returns 409; a new ID is a new operation and can duplicate it. Retry content exists only
+  in the original page's memory. Outbox, notification deduplication, and push retry/410 handling are
+  design-only. Reading given: microservices.io "Transactional outbox", RFC 8030 on subscription expiry,
+  `engineering-interview-drills/async-workflow-recovery.md`, and
+  `engineering-interview-drills/transactional-concurrency.md`. Next practice: notification/outbox design
+  has now been practiced; an optional expense-app budget-notification design issue is deferred until
+  the user asks. This is design-level assessed practice only.
+
 ## One reusable proof-building exercise
 
 Use one existing English Learning or expense-app flow rather than starting another application.
