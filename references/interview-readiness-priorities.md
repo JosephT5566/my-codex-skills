@@ -312,8 +312,10 @@ exists. Personal-project traffic, latency, reliability, and operator reports rem
   evidence remain incomplete or partly operator-reported. These gaps matter most for roles expecting
   independent service ownership.
 - AI projects support structured output, streaming, authorization, and failure-boundary discussion.
-  Retrieval and model-quality claims remain bounded by their recorded evaluations. Planned AI
-  authoring/tutor work, including the english-learning learning-assistant agent idea (#70, under
-  epic #78), is not implementation evidence.
+  Retrieval and model-quality claims remain bounded by their recorded evaluations. The personal
+  english-learning project implements the read-only assistant (#70) and structured extraction (#72)
+  under epic #78, closed as completed on 2026-11-10. A finished RAG tutor is not built; routing was
+  evaluated and is not wired in; alerts are not implemented. See `github-project-signals.md` for
+  dated merge evidence and limits.
 - Repository depth does not prove timed DSA ability. Use assessed performance when planning an
   algorithm-screen track, without inferring that every frontend/product interview has that screen.

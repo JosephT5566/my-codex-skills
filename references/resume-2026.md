@@ -97,6 +97,17 @@ Teams: Marketplace, Lead Nurture, 3D
 
 Reference note for tailoring: the standalone `AI Receipt Extraction Service` project above is now merged into this project (2026-10-30); for a short resume, present them as one Expense App project and keep the hardening details attributed to the receipt service. These additions are project implementation evidence. Historical verification and remaining hosted/model gaps are recorded in [project signals](github-project-signals.md#expense-app-semantic-entry-evidence-reviewed-2026-10-15). Do not turn fixture results into model-accuracy, latency, cost-saving, production-scale, or professional operations claims. Select the relevant bullets for each application; omit this internal note from exported resumes.
 
+### English Learning App (Personal, Deployed Project)
+
+**Tech:** SvelteKit, Svelte 5, FastAPI, PostgreSQL, pgvector, Alembic, Vertex AI/Gemini, SSE, Cloud Run, Neon, GitHub Actions
+
+- Built a multilingual review product with owner-scoped APIs, controlled data migration, transactional/idempotent review writes, and staged release/rollback workflows.
+- Implemented owner-safe semantic retrieval, an at-most-3-step read-only tool assistant with SSE chat, and separate server-side structured card extraction.
+- Added consent checks before Vertex, embedding deletion on withdrawal, and fail-closed PostgreSQL RLS with transaction-scoped user identity; production API deployment and migration 0008 are operator-reported, confirmed by the maintainer on 2026-11-10.
+- Added a CI offline retrieval eval gate for SQL/index/distance regressions and structured assistant/extraction logs correlated by request ID.
+
+Reference note for tailoring: these are personal-project implementation claims, not professional service ownership. See [project signals](github-project-signals.md#english-learning-epic-78-mainline-evidence-updated-2026-11-10) for dated merges, evaluation limits, the frozen retrieval iterate decision, consent/RLS gaps, and unverified production behavior. This is not a finished RAG tutor; routing is not wired in and alerts are not implemented. Select relevant bullets for each application; omit this internal note from exported resumes.
+
 ## Education
 
 **National Chung Hsing University**  
