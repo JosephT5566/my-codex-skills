@@ -260,6 +260,44 @@ answer, not proof of capability.
   `engineering-interview-drills/transactional-concurrency.md`. Next practice: notification/outbox design
   has now been practiced; an optional expense-app budget-notification design issue is deferred until
   the user asks. This is design-level assessed practice only.
+- 2026-11-10, AI-assisted development judgment (quiz Q12: review an AI-authored deployment PR
+  for `english-learning`, also practicing cloud deploy and checkable acceptance criteria). The
+  hypothetical PR claimed CI was green, rebuilt the image at deploy time once each for staging
+  and production, wrote the database connection string and a long-lived service account key into
+  workflow environment variables, skipped a zero-traffic candidate and sent the new revision to
+  100 percent traffic, ran in one job an Alembic migration that made a previously nullable
+  column `NOT NULL` then immediately `DROP` an old column, and used a smoke test that only hit
+  `/health` against a mocked database. The user said this was closer to SRE work and was
+  unfamiliar. Answers: putting the connection string and SA key in env is dangerous; secrets
+  should go in Secret Manager; test new behavior at zero traffic after publishing a revision,
+  then gradually shift production traffic; keep the old column and change the related backend
+  methods rather than immediately `DROP` it; old and new code should coexist behind a feature
+  switch, and the new version must run without the old column before evaluating `DROP`; rolling
+  back the Cloud Run revision leaves the database migration's schema change; at zero traffic,
+  verify with a smoke test and look at tracking before shifting traffic. Strengths: correctly
+  rejected long-lived secrets in workflow env; zero-traffic then gradual traffic shift; kept the
+  old column and required new code to work without it before `DROP`; clearly stated that
+  revision rollback does not undo a breaking migration. Gaps: treated rebuild-at-deploy for
+  staging and production as acceptable, missing image drift (build once and promote the same
+  digest); did not explain why CI green is still unsafe (mocked `/health` does not exercise the
+  real migration, auth, or changed read/write path); missed nullable-to-`NOT NULL` risk
+  (existing nulls and old writers still inserting `NULL`); expand-and-contract was incomplete
+  (no backfill-then-constrain sequence, and `DROP` must be a later contract migration after old
+  revisions are gone); acceptance criteria were too vague (only "smoke test" and "tracking"),
+  without 4-6 pass/fail checks for a single image digest, secret injection, authenticated
+  real-database smoke on the changed path, pre-shift 5xx/latency versus baseline, and
+  backward-compatible schema so traffic rollback still works; did not label what was already
+  implemented in `english-learning` versus designed in this answer. Evidence: design-level
+  assessed practice only, not professional SRE or production service ownership.
+  `english-learning` already has project-level zero-traffic candidate verification,
+  authenticated smoke, promotion, schema-compatible rollback, WIF, and secrets boundaries; these
+  remain project evidence, not professional SRE experience, formal on-call ownership, or
+  production service ownership. The "build once and promote the same digest" rule and timing of
+  `DROP`/`NOT NULL` were identified in feedback as today's design. Reading given: Martin Fowler
+  "Parallel Change", Google Cloud Run "Rollouts, gradual rollouts, and traffic migration", and
+  Secret Manager overview. Next practice: write checkable acceptance criteria and a scoped agent
+  follow-up for a small deploy or migration change; a short expand-and-contract exercise on
+  nullable-to-`NOT NULL` plus later `DROP`. This is design-level assessed practice only.
 
 ## One reusable proof-building exercise
 
