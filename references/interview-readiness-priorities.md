@@ -298,6 +298,43 @@ answer, not proof of capability.
   Secret Manager overview. Next practice: write checkable acceptance criteria and a scoped agent
   follow-up for a small deploy or migration change; a short expand-and-contract exercise on
   nullable-to-`NOT NULL` plus later `DROP`. This is design-level assessed practice only.
+- 2026-11-11, frontend architecture and performance plus observability (quiz Q13; follow-up to
+  the 2026-10-27 gap on field data and experiment guardrails). Hypothetical scenario (all
+  numbers hypothetical): a React/Next.js search results page redesign rolled out behind a
+  feature flag to 10% of users; Lighthouse score rose from 72 to 88, but RUM showed mobile INP
+  p75 rising from 180 ms to 320 ms, LCP roughly unchanged, and search-to-product-click
+  conversion slightly down. Answers: Lighthouse may have improved due to other metrics; worse
+  INP possibly came from a larger bundle, long main-thread tasks from new expensive JS, async
+  waiting, or longer React render; use DevTools Network or add `web-vitals/attribution`, which
+  the user said he has not used yet; reduce synchronous recompute wait by caching after initial
+  load and not refetching, re-render only the currently displayed list, and keep monitoring INP
+  and continue rollout if it improves. Strengths: identified main-thread blocking, expensive JS,
+  and React render time as INP drivers; re-rendering only visible items points toward
+  virtualization; tied rollout to monitoring INP. Gaps: did not explain lab versus field
+  (Lighthouse measures page load in a simulated environment with no real interactions, so it has
+  no INP, only TBT as a proxy; real low-end mobile devices differ); conflated bundle size
+  (mainly load, indirect for INP via hydration-time input delay) and async waiting (network
+  awaits after handlers are not part of INP, which ends at next paint) with INP causes; missed
+  the three INP phases (input delay, processing duration, presentation delay) and hydration-time
+  interactions; DevTools is local only and cannot see field data; did not name attribution
+  fields (`interactionTarget`, `interactionType`, `inputDelay`, `processingDuration`,
+  `presentationDelay`, `loadState`, `longAnimationFrameEntries`) or slicing dimensions (flag
+  variant, device class/mobile versus desktop, browser, page type, interaction target) and
+  comparing variant-vs-control p75 delta; fix lacked concrete React techniques (immediate
+  checkbox state then deferred list update with `useTransition`/`useDeferredValue`, memoized
+  filtering, list virtualization, chunking/yielding or Web Worker for heavy recompute), and
+  "cache after load" only helps if recompute inputs repeat; rollout lacked pre-written pass/fail
+  thresholds (mobile INP p75 not worse than control beyond a small margin, ideally back under
+  the 200 ms "good" threshold; conversion not significantly below control; JS error rate and LCP
+  not worse; enough samples and 1-2 days per stage; otherwise turn flag off) and ignored the
+  already-dropping conversion as the key guardrail signal. Bonus Houzz A/B STAR was not
+  answered. Evidence: design-level assessed practice only; `web-vitals` attribution / RUM
+  instrumentation is not yet used in practice. A/B testing and product-oriented frontend remain
+  Houzz professional experience, but this answer did not add new professional evidence. Reading
+  given: web.dev "Interaction to Next Paint (INP)", web.dev "Find slow interactions in the
+  field", and React docs useTransition. Next practice: answer the Houzz A/B test 60-second STAR;
+  a small exercise adding `web-vitals` attribution INP reporting to a personal project (e.g.
+  english-learning or expense-app) and writing rollout thresholds.
 
 ## One reusable proof-building exercise
 
