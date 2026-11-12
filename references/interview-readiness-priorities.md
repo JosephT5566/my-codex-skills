@@ -335,6 +335,58 @@ answer, not proof of capability.
   field", and React docs useTransition. Next practice: answer the Houzz A/B test 60-second STAR;
   a small exercise adding `web-vitals` attribution INP reporting to a personal project (e.g.
   english-learning or expense-app) and writing rollout thresholds.
+- 2026-11-12, AI infra (quiz Q14: LLM gateway retry placement, time budget, rate limiting and
+  cost, caching, and observability), based on an english-learning hypothetical. Implemented
+  project context: #70 read-only assistant with a maximum 3-step tool loop (`search_cards`,
+  `get_due_cards`, `get_review_stats`), SSE streaming, and Gemini Flash-Lite; #91 15-second
+  heartbeat, 25-second assistant deadline, and Cloud Run 30-second timeout; #73 request-ID
+  structured logs covering success, step limit, timeout, provider failure, and SSE early
+  disconnect. Planned only, not implemented: #77 rate limit and cache, #63 query-side retry and
+  limit, #64 cost observability. Hypothetical scenario (not an actual production incident; all
+  scenario numbers hypothetical): the assistant opens to 50 beta users; evening peak logs show
+  provider 429/5xx bursts, about 10% of runs timing out mostly at step 3, and regenerate spam
+  tripling daily token cost. The user said the topic was beyond his current understanding but
+  attempted an answer. Answers: before any text is sent, treat it as server overload, notify the
+  user to wait, or retry on the frontend with jitter / Retry-After; mid-stream, use the recorded
+  request ID to auto-retry or ask the user. Asked the purpose of per-user limiting; for regenerate
+  spam, use the backend request ID as an idempotency key and disable the frontend submit button.
+  Cache key could include the request ID unique constraint; cache embeddings and tool results; do
+  not cache final answers because they can vary with questioning time. Bonus metrics question was
+  not answered. Strengths: jitter plus Retry-After; frontend submit guarding; embeddings are
+  cacheable; final answers generally should not be cached. Gaps: 429 and 5xx are provider-side
+  errors, so retries belong in the backend gateway, not the frontend. Before the first token,
+  retry transparently with exponential backoff plus jitter, honoring Retry-After, only if the
+  remaining deadline allows it; otherwise use a fallback model or return a fast clear error.
+  Mid-stream cannot silently retry because it would produce duplicate or inconsistent text; keep
+  partial output, mark the answer interrupted, and offer regenerate. The request ID is for tracing
+  and cannot resume a stream from the interruption point. Deadline propagation in this
+  hypothetical design: each step gets min(remaining time, a step cap of about 8 seconds); reserve
+  about 5 seconds for the final answer; at step 3 near the deadline, answer with tool results
+  already gathered instead of letting the whole run time out. Per-user limiting provides fairness
+  on a shared provider quota (429 means quota is exhausted), cost control, and service protection.
+  Enforce at the backend gateway per `user_id`; frontend limits are bypassable and only auxiliary.
+  Combine 1 concurrent run per user, requests per minute, and a daily token budget, with a clear
+  message when the budget is used up. An idempotency key does not stop regenerate: each regenerate
+  is a new intent and should count as a new request. Frontend should disable the button and cancel
+  the previous request with `AbortController`. Backend should cancel the same user's previous run
+  when a new one starts (latest wins), add a per-message regenerate cap, and count those attempts
+  toward the daily token budget. A request ID is useless as a cache key because it is unique every
+  time and always misses. Embedding cache key = model, version, and hash of normalized text
+  (shareable across users; contains no user data). Tool-result cache key = `user_id`, tool name,
+  args hash, and data version, with a short TTL (`get_due_cards` changes after reviews). Final
+  answers generally should not be cached; if cached at all, only per user when prompt and data
+  version are exactly the same. Isolation depends on `user_id` plus database authorization (RLS),
+  not the cache key alone. Bonus (unanswered) reference metrics: provider failure rate
+  (hypothetical example: above 5% over 15 minutes), timeout rate sliced by step, and per-user
+  daily tokens (hypothetical example: above 5 times the median). Set thresholds from one week of
+  baseline data, then use multiples of usual values. Evidence: design-level assessed practice
+  only; no professional or production LLM gateway experience, and no professional production
+  rate-limiting experience established by this answer. This answer did not add new professional
+  evidence; #77, #63, and #64 remain planned. Reading given: AWS Builders' Library "Timeouts,
+  retries and backoff with jitter"
+  (https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/). Next
+  practice: in english-learning, design deadline propagation plus a per-user concurrent-run limit
+  (ties to #77 and #63); the Q13 bonus Houzz A/B 60-second STAR is still pending.
 
 ## One reusable proof-building exercise
 
