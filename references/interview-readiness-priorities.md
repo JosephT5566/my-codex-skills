@@ -387,6 +387,47 @@ answer, not proof of capability.
   (https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/). Next
   practice: in english-learning, design deadline propagation plus a per-user concurrent-run limit
   (ties to #77 and #63); the Q13 bonus Houzz A/B 60-second STAR is still pending.
+- 2026-11-13, full-stack API/DB (quiz Q15: zero-downtime schema migration and rollback).
+  Hypothetical scenario (not an actual expense-app requirement; all scenario numbers
+  hypothetical): expense-app shared ledger adds multi-currency; change `expenses.amount numeric`
+  (TWD default) to `amount_minor bigint` plus `currency char(3) NOT NULL`; about 2 million rows,
+  Supabase Postgres with RLS; Cloud Run rolling deploy with old and new versions serving
+  concurrently; old iOS and Web clients may remain for weeks. Answers: run the migration before
+  the new code deploy so old code still works against the new DB; add a corresponding SELECT
+  check into the NOT NULL update SQL so NOT NULL happens under safe conditions; on error, roll
+  the related API back to the old version so the program keeps running, avoiding DB rollback
+  unless necessary. Bonus: first asked what an API contract means, then said the `currency`
+  returned to the frontend should be valid; the backend switches which column to use via a
+  feature switch; safely removing `amount` depends on monitoring the feature-flag switch result;
+  stop writing and drop the column only after old clients are gone. Strengths: migration-first
+  and old-code compatibility, the core of expand/contract; prefer code rollback over DB rollback;
+  contract-phase ordering (stop writing, then drop, only after old clients are gone); instinct to
+  validate `currency`. Gaps: spell out the expand/contract phases explicitly. Add nullable columns
+  first (`currency` default `'TWD'`). Deploy dual-write with reads still on the old column, plus
+  a trigger that fills `amount_minor` from `amount` when it is NULL, because old code still writes
+  only `amount`. Use batched, resumable backfill by primary key (hypothetical example: 5,000 to
+  10,000 rows per transaction, with pauses between batches), rather than one hypothetical
+  2-million-row `UPDATE` with long locks and WAL bloat. Add `NOT NULL` safely with
+  `CHECK (amount_minor IS NOT NULL) NOT VALID`, then `VALIDATE CONSTRAINT` (validation does not
+  block reads and writes), then `SET NOT NULL`; Postgres 12 and later (PG12+) can use that check
+  without rescanning. Switch reads behind a feature flag. Contract last. Rollback: code can roll
+  back in all phases before writes to `amount` stop; for a conversion bug, flip the flag back,
+  fix, and rerun backfill. The irreversible point is stopping writes to `amount` or dropping
+  `amount`. Mitigate with a long dual-write period, comparison of old and new values, and
+  old-client usage near zero. API contract: additive during the transition (the response carries
+  `amount`, `amount_minor`, and `currency`); the flag controls the read source and conversion,
+  not the response shape. Keep `amount` semantics TWD for old clients (convert, or hide/block
+  non-TWD entries for old apps, plus a forced-update minimum version). Validate `currency` against
+  an ISO 4217 allowlist plus a DB `CHECK` or foreign key. Decide removal from request logs of app
+  version or `User-Agent` staying near zero for a period, plus forced update; optionally add a
+  `Deprecation` header. Evidence: design-level assessed practice only. The user did not separate
+  Houzz, personal-project, and conceptual experience. This answer did not add new professional
+  evidence or establish professional or production zero-downtime schema-migration experience.
+  Reading given: PostgreSQL `ALTER TABLE` documentation, focusing on `NOT VALID` and
+  `VALIDATE CONSTRAINT` (https://www.postgresql.org/docs/current/sql-altertable.html). Next
+  practice: state whether expense-app has done similar migrations and separate Houzz,
+  personal-project, and conceptual experience; the Q13 bonus Houzz A/B 60-second STAR is still
+  pending.
 
 ## One reusable proof-building exercise
 
