@@ -35,6 +35,18 @@ They do not prove that all employers relax requirements or that AI replaces serv
 | 5 | Selective backend feature ownership | Use existing services to defend API contracts, relational data, authorization, transactions, idempotency, and recovery. Deepen only where a target role or observed failure justifies it. |
 | 6 | Cloud and operational fundamentals | Defend the current deployment, CI/CD, secrets, health checks, observability, backup/restore limits, rollout, and rollback. Infrastructure specialization follows a role requirement. |
 
+### Frontend architecture and performance
+
+- 2026-11-13 sync (source notes dated 2026-08-25, imported 2026-11-11). Self-study only, not yet
+  assessed and not yet applied. Covers resource loading (discovery before priority, critical
+  request chains, waterfall diagnosis, code splitting versus chain depth, HTTP versions as
+  infrastructure), main-thread rendering (preload scanner, script blocking, React versus browser
+  render, long tasks, layout thrashing, transform/opacity), and Core Web Vitals (metrics as
+  symptoms; LCP, INP, and CLS phases; lab versus field; Server-Timing; regression checks). The
+  frontend hub adds no new facts. Earlier quiz gaps (lab versus field data, the three INP phases,
+  hydration-time input delay) are addressed at the knowledge level only. The proof target remains
+  open: a measured frontend performance case study with RUM / web-vitals attribution.
+
 ### DSA when an algorithm screen is a preparation goal
 
 DSA means data structures and algorithms. TypeScript is Joseph's default because of existing fluency.
