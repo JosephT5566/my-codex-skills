@@ -440,6 +440,74 @@ answer, not proof of capability.
   practice: state whether expense-app has done similar migrations and separate Houzz,
   personal-project, and conceptual experience; the Q13 bonus Houzz A/B 60-second STAR is still
   pending.
+- 2026-11-16, AI/LLM application engineering (quiz Q16: english-learning #72 single-card
+  extraction extended to hypothetical whole-article batch extraction). Hypothetical scenario
+  (all scenario numbers hypothetical). The user said he was unfamiliar but attempted an answer.
+  Answers: schema-pass does not mean content is correct; use server rules for deduplication and
+  card count; fix only failed cards; use evals. Strengths: separated schema validity from content
+  correctness; identified server validation, selective repair, and evaluation. Gaps: enforce card
+  count with schema `maxItems` plus a server re-check. A reading in the example field and words
+  absent from the source can pass the schema, so server rules must require a full example sentence
+  containing the target word and kana-only reading; normalize words before deduplicating, including
+  against existing cards. Drop words not found in the source instead of asking the user to confirm
+  them all. Accept good cards and retry only failed cards once, passing the error reason. Retry
+  429/5xx, timeout, or malformed output; content errors such as hallucination do not trigger that
+  retry policy. The 410 disable rule does not apply here. Evals should measure extraction quality,
+  not tool use; expand the gold set to 50-100 cases. Metrics: hallucination rate (hypothetical
+  target: at most 1%), field accuracy (at least 95%), duplicate rate (0), recall (no worse than
+  the old model minus 2 points), latency, and cost. Compare model changes against the old model,
+  roll out to small traffic, and monitor user edits and deletes of cards. Evidence: design-level
+  assessed practice only for the batch design; no new professional evidence. The user attributed
+  schema checks to expense-app, but #72 belongs to english-learning. Implemented project evidence
+  is single-card server-side schema validation, extraction only with user consent, 8 gold cards,
+  and injection cases; whole-article batch extraction remains conceptual. Next practice: choose
+  one gap, either server rules for batch validation or eval metrics, and answer narrowly.
+- 2026-11-17, product-oriented system design (quiz Q17: Houzz-like home-goods search
+  typeahead). Hypothetical scenario (all scenario numbers hypothetical). Answers: drop stale
+  responses that do not match the current input; avoid `ILIKE` on the primary database; put hot
+  prefixes in CDN or cache; personalization breaks caching; build the new index as its own
+  migration; watch INP and search interaction time to decide ramp-up. Strengths: stale-response
+  guarding, primary-database protection, prefix caching, awareness of personalization's cache
+  impact, and separate index migration. Gaps: debounce input by 150-250 ms rather than throttle,
+  require at least 2 characters, cancel the previous request with `AbortController`, and use an
+  increasing request sequence number so only the latest response is shown. At about 3,000 QPS,
+  use a search engine (OpenSearch edge n-gram or completion suggester) or at least a read replica.
+  `ILIKE '%x%'` cannot use a normal index; `pg_trgm` GIN is risky at 5 million rows with a p95
+  target of 150 ms. Cache generic prefix suggestions in CDN or Redis with a 1-5 minute TTL;
+  personalize by server-side reranking of the top roughly 50 generic candidates, and never put a
+  user ID in the cache key. Build the index in the background and switch an alias, or use
+  `CREATE INDEX CONCURRENTLY`; ramp with a feature flag at 1/10/50/100 percent. Primary metrics:
+  suggestion API p95 and error rate, suggestion CTR and post-search conversion, and zero-result
+  rate. Bonus Houzz A/B partial STAR: per-feature switching flag, traffic split, matching tracking
+  logs, and conversion comparison at each traffic level to decide ramp-up. Missing: a concrete
+  feature, ramp thresholds and observation days, and a real result number. Evidence: design-level
+  assessed practice only for the search design. Real input-related experience uses throttle; the
+  rest is conceptual, and the user has never used a search engine. The Houzz A/B bonus draws on
+  real experience but remains an incomplete STAR. Next practice: finish that STAR with a concrete
+  feature and result number, then answer a narrower search or caching question.
+- 2026-11-18, AI-assisted development review and verification plus spec-driven flow (quiz Q18:
+  acceptance criteria and local Codex instructions for a recurring expense). Hypothetical
+  scenario (not an actual expense-app requirement; all scenario numbers hypothetical): monthly
+  rent of 15,000 due on the 31st, with a daily scheduler to be implemented by local Codex. The
+  user said he previously relied on a grok agent for this kind of work. Answers: day 31 falls
+  back to the last day in short months; check member permission; avoid duplicate writes; use a
+  separate agent to review against the spec. Strengths: month-end fallback, authorization,
+  duplicate prevention, and independent spec review. Gaps: make conditions decidable with
+  Given/When/Then, including posting on February 28, February 29 in leap years, and returning to
+  March 31. The backend must compute the due date in the ledger timezone (`Asia/Taipei`), beyond
+  frontend display. Enforce a DB unique constraint on `(recurring_id, period)` with
+  `INSERT ... ON CONFLICT DO NOTHING`; app-level check-then-insert fails under concurrency.
+  Require 403 for non-members and define a rule for removed members. Define scheduler-outage
+  catch-up by backfilling at most one entry per period. The Codex instruction lacked forbidden
+  scope, which tests must hit real Postgres, and a reporting format (diff stat, exit code, failing
+  lines). Frontend plus API plus migration was too broad: implement the backend first, then the
+  frontend in the next phase. Review judgment: reject the out-of-scope auth middleware refactor
+  to a separate branch; verify tests cover the acceptance criteria, including real-DB concurrency,
+  February, and timezone edges; rerun locally, then obtain an independent review against the spec.
+  Bonus was skipped. In interviews, state personal acceptance criteria and rejection standards
+  rather than only "delegate to an agent". Evidence: design-level assessed practice only, no new
+  professional evidence. Next practice: rewrite the acceptance criteria and Codex instruction
+  himself, then attempt the skipped bonus.
 
 ## One reusable proof-building exercise
 
