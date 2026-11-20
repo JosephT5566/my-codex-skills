@@ -508,6 +508,66 @@ answer, not proof of capability.
   rather than only "delegate to an agent". Evidence: design-level assessed practice only, no new
   professional evidence. Next practice: rewrite the acceptance criteria and Codex instruction
   himself, then attempt the skipped bonus.
+- 2026-11-19, cloud deployment, rollout, and rollback (quiz Q19: english-learning on Cloud Run).
+  Hypothetical scenario (all scenario numbers hypothetical). A new revision changes the
+  card-extraction prompt and renames an API response field. Error rate rises from 0.3% to 4% within
+  10 minutes while health checks pass. The original behavioral STAR question on a data-driven ramp
+  decision in a prior role was replaced at the user's request because behavioral practice is not a
+  current priority. No behavioral answer was given or assessed. The user did not separate real
+  experience from conceptual answers, so it is unknown whether he has split Cloud Run revision
+  traffic. Answers: health checks only verify connectivity; unsure what liveness and readiness
+  mean; add a post-deploy eval for prompt impact; Cloud Run can split traffic across revisions,
+  and the fastest rollback routes all traffic to one revision; a DB migration affects rollback;
+  use API versioning (v1/v2) for compatibility; monitor API p95 latency and error rate. Strengths:
+  post-deploy prompt eval, revision traffic rollback, and migration awareness. Gaps: liveness
+  checks whether the process is alive so it can be restarted if hung. Readiness/startup probes
+  check whether it is ready for traffic (DB and config loaded). Both can pass with a bad prompt
+  because they do not check output correctness. Deploy with `gcloud run deploy --no-traffic`
+  and smoke-test 3-5 fixed real requests against the new revision tag URL, checking status,
+  response schema, and gold cases before shifting traffic. Ramp with
+  `gcloud run services update-traffic --to-revisions NEW=5` and roll back with
+  `--to-revisions OLD=100`. Revision rollback leaves destructive migrations, bad data already
+  written, and cached frontend JS talking to the wrong backend unresolved. Keep migrations additive,
+  record the writing revision, and use a cleanup script for bad data. For a single field rename,
+  use expand/contract (return both fields, migrate the frontend, and remove the old field after
+  traffic from old clients stops) instead of a full v2, as in Q15. Compare the new revision with the
+  old one instead of the overall average. Roll back if 5xx exceeds 1% or 2x the old revision's
+  rate for 5 minutes. Halt the ramp if p95 rises 30% for 10 minutes. Roll back if the extraction
+  schema failure rate exceeds 2%. Evidence: design-level assessed practice only, no new professional
+  evidence. Next practice: state which parts were actually done or rehearsed and which were
+  conceptual.
+- 2026-11-20, AI infrastructure: RAG retrieval quality and no-answer handling (quiz Q20: Q&A
+  over the user's own english-learning cards). Hypothetical scenario (all scenario numbers
+  hypothetical). Retrieve the top 5 cards, then ask an LLM. Implemented in english-learning:
+  semantic search with versioned vectors, background embedding, a backfill CLI, SQL filtering
+  before ranking, and 503 on failure. Eval results were 1.0 on the synthetic set and 8 of 9 hits in
+  the top 5 on the real corpus. Results appear as a ranked list, and RAG is unimplemented. The
+  user has no experience in this area from his prior role. He said the concept was new and plans
+  to evolve vector search into reliable RAG. Answers: a fixed top 5 can lead to confident answers
+  based on wrong data; avoid hard-coding a threshold, log results, and run regression checks;
+  the backend decides when to return not found, and the frontend displays the API result; use
+  rules or scores to gate evidence before the LLM; enforce ownership in SQL or RLS because
+  prompt-only filtering cannot enforce access. Test exact match, misspelling, semantic query,
+  no-answer, and near-miss. Track recall@5, no-answer refusal, p50/p95 latency, and cost.
+  Strengths: backend-owned no-answer decision, evidence gate, data-layer authorization, broad
+  test cases, and clear separation of implemented behavior from design ideas. Gaps: top-k
+  always returns 5 in this scenario. Gate on the top-1 score, the gap between top-1 and top-5,
+  and lexical match. Set the threshold using labeled answerable and unanswerable queries,
+  balancing false refusals against wrong answers, and recalibrate when the embedding model
+  changes. Return `found: false` and skip the LLM to save cost. Have the frontend offer a next
+  step and let the prompt allow "insufficient data". Hybrid retrieval combines keyword search
+  (Postgres full-text or `pg_trgm`) with vector search using RRF, is cheap in Postgres, and fixes
+  single-word lookup. Cross-encoder reranking of the top 20-50 helps with polysemy at about
+  50-200 ms plus API cost. Skip it when users have a few hundred cards and hybrid retrieval is
+  accurate enough, or when the latency budget is tight. Authorization: apply
+  `WHERE user_id = :uid` in retrieval SQL before scoring similarity, using the ID from a
+  verified token instead of request parameters. Prompt injection can expose data already in
+  context. Evals: add polysemy and words found only in another user's cards (should return not
+  found), with 10-20 cases per category and 50+ total. Track false-refusal rate alongside
+  refusal rate, and add MRR. Bonus skipped: structured output with cited card IDs validated
+  against the retrieved set and example sentences matched to card source text. Evidence:
+  design-level assessed practice only, no new professional evidence. Next practice: label a
+  small answerable/unanswerable set and pick a threshold.
 
 ## One reusable proof-building exercise
 
