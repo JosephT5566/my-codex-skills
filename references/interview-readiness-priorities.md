@@ -568,6 +568,46 @@ answer, not proof of capability.
   against the retrieved set and example sentences matched to card source text. Evidence:
   design-level assessed practice only, no new professional evidence. Next practice: label a
   small answerable/unanswerable set and pick a threshold.
+- 2026-11-23, frontend architecture and performance (quiz Q21: Next.js SSR product
+  detail page). Hypothetical scenario (all scenario numbers hypothetical). Mobile LCP
+  p75 is 3.8s against a 2.5s target, and the hero image is the LCP element. Live product
+  and recommendation queries on every request put HTML TTFB at about 900 ms. A client
+  component fetches the hero URL from `/api/product/:id` after hydration, then starts
+  the image download. The image is a 2400px-wide JPEG with `loading="lazy"` and no
+  `srcset`. Two synchronous third-party scripts (A/B and analytics) run in the head, and
+  font CSS loads through an extra `@import` layer. Answers: cache common product queries
+  or serve them via CDN while watching for stale data, especially for personalized
+  queries. Move the image URL into SSR to start the download before hydration while
+  watching TTFB. Add `srcset` for display size and device pixel ratio. Use
+  `web-vitals/attribution` in RUM with `onLCP` and `onTTFB`, tracking p50 and p95.
+  Strengths: targeted caching, earlier hero discovery, responsive image selection, and
+  attributed RUM. Gaps: the LCP subpart mapping was partly wrong. Post-hydration
+  discovery and lazy loading add resource load delay. The oversized JPEG without
+  `srcset` adds resource load duration. Sync head scripts block the HTML parser, adding
+  load delay and also element render delay if the image has already downloaded. Font CSS
+  via `@import` adds a render-blocking request chain, mainly affecting element render
+  delay. First make the LCP image discoverable in the initial HTML: SSR the `img`,
+  remove lazy loading, set `fetchpriority="high"` (`next/image` priority in Next.js),
+  and use `srcset`/`sizes` and AVIF/WebP. Give high priority only to the true LCP image
+  because promoting every image cancels the benefit. Split volatile data from the
+  cacheable shell: cache the product shell via CDN/ISR with a short TTL and
+  stale-while-revalidate. Stream price, stock, and recommendations via Suspense or fetch
+  them later so they do not block HTML. Keep recommendations off the first-paint path.
+  Make third-party scripts async/defer and run A/B tests server-side or at the edge to
+  avoid flicker. Replace `@import` with font preloads and `font-display: swap`. Use
+  Lighthouse or WebPageTest with mobile throttling to confirm an early hero request at
+  High priority in the waterfall. Use DevTools Performance to see the four LCP subparts.
+  Lab data verifies the mechanism. Use field p75 to assess real-user experience, with
+  `timeToFirstByte`, `resourceLoadDelay`, `resourceLoadDuration`, `elementRenderDelay`,
+  and `url` attribution split by device and network. The rollout plan lacked pass
+  criteria and guardrails. Feature-flag the variant for 10% of traffic and compare it
+  with control. Pass if mobile LCP p75 is 2.5s or below and resource load delay clearly
+  drops. Track CLS, INP, conversion, add-to-cart, error rate, and stale price/stock
+  complaints as guardrails. Evidence: the user said the work in his prior role did not
+  go into this level of detail. This is later concept-level self-study and design-level
+  assessed practice only, with no new professional evidence. Next practice: rehearse the
+  four LCP subparts against a real waterfall and write a rollout plan with field p75,
+  explicit pass criteria, and guardrails.
 
 ## One reusable proof-building exercise
 
