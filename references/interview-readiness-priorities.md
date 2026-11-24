@@ -609,6 +609,52 @@ answer, not proof of capability.
   four LCP subparts against a real waterfall and write a rollout plan with field p75,
   explicit pass criteria, and guardrails.
 
+- 2026-11-24, full-stack API/DB/authorization (quiz Q22: idempotent settlement API
+  with membership authorization). Hypothetical scenario (all scenario numbers
+  hypothetical). A proposed expense-app shared ledger uses `POST
+  /ledgers/{ledger_id}/settlements` with body `{from_user, to_user, amount}`. Before
+  launch, timeout retries can duplicate settlements, removed members can write with
+  unexpired JWTs, and removal can race with an insert and leave a settlement for a
+  removed member. Answers: use an idempotency key and unique constraint `(creator_id,
+  idempotency_key)`. Key reused with a different body or invalid amount -> 422. No
+  permission -> 403. Check membership and write in one transaction. Strengths: DB as
+  authorization source of truth, RLS as defense, and API status codes. Given/When/Then
+  tests: valid settlement -> 201, removed payer -> no DB change, same key and body ->
+  original result, no new row. Gaps: send the key in the `Idempotency-Key` header and
+  scope it by user and endpoint. Store the request hash and first response with a TTL
+  (e.g. 24 hours). Replay the original 201 and body, optionally with
+  `Idempotent-Replayed: true`. If same-key requests race, the loser catches unique
+  violation `23505` and replays the stored response, or returns 409 while the first is
+  in flight so the client retries later. Use 401 if unauthenticated, 403 for
+  nonmembers, or 404 to hide the ledger. The proposed optimistic lock checked a
+  `group_members` version with `WHERE version = expected`. Optimistic locking only
+  protects same-row updates via compare-and-swap. An INSERT into another table only
+  reads a snapshot, leaving a check-then-write race (TOCTOU) under READ COMMITTED. In
+  the settlement transaction, use `SELECT ... FROM ledger_members WHERE ledger_id=?
+  AND user_id IN (from,to) FOR SHARE` to serialize against removal's DELETE or UPDATE
+  row lock. Or use composite FKs `(ledger_id, from_user)` and `(ledger_id, to_user)`
+  referencing `ledger_members(ledger_id, user_id)` with hard deletes. Inserts take KEY
+  SHARE locks, which do not protect against soft deletes. A third option is
+  SERIALIZABLE with retry on `40001`. Add `CHECK (amount > 0)` and `CHECK (from_user
+  <> to_user)` alongside the composite FKs. Keep membership out of JWTs, which cannot
+  be revoked before expiry. On 403, clear the frontend's ledger cache and return to
+  the list while keeping the user signed in. RLS requires the user's JWT role. A
+  FastAPI service role bypasses it. RLS itself leaves the check-then-write race under
+  READ COMMITTED. Use Then in place of where. Expect 403 if the requester was removed,
+  or 422 or 409 if another party was removed. Missing concurrency test. Given A is a
+  member, When A's removal and settlement insert race on two DB connections with a
+  barrier, Then no insert succeeds after A is no longer a member. Repeat 100 times.
+  Same key 10 times concurrently -> exactly one row. Explain unprompted how key,
+  uniqueness, and replay fit together, why check-then-write needs a DB constraint, row
+  lock, or SERIALIZABLE and their trade-offs, and why the DB authorizes while a JWT
+  only proves identity. Lock modes and error codes are bonus detail. Evidence: no
+  implementation in his prior role. Side projects implemented RLS for a safety policy
+  and an idempotency key for agent conversations. Pessimistic locks (`FOR SHARE` /
+  `FOR UPDATE`), composite FKs, and concurrency tests remain concept-only. This is
+  design-level assessed practice only, with no new professional evidence. Next
+  practice: build the settlement endpoint in a side project with `FOR SHARE` or a
+  composite FK and write the barrier-based concurrency test.
+
 ## One reusable proof-building exercise
 
 Use one existing English Learning or expense-app flow rather than starting another application.
