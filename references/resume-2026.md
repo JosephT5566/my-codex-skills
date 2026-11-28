@@ -9,7 +9,7 @@ Software Engineer focused on frontend and full-stack product development, with e
 
 At Houzz, delivered search and browse improvements, Prismic-powered landing and event pages, GraphQL schema/resolver work, A/B-tested product changes, and frontend integrations across Marketplace, Lead Nurture, and 3D teams. Comfortable working through ambiguous product requirements with PM, design, backend, platform, personalization, and data stakeholders. Also experienced in large production codebases, tracing issues across frontend flows, API integrations, feature switches, logs, and analytics tools.
 
-Currently a software engineer at Compal, working on a fleet-management web application for delivery robots.
+Currently a senior software engineer at Compal, working on a fleet-management web application for delivery robots.
 
 ## Technical Skills
 
@@ -21,7 +21,7 @@ Currently a software engineer at Compal, working on a fleet-management web appli
 
 ## Professional Experience
 
-### Software Engineer
+### Senior Software Engineer
 
 **Compal** | Nov 2026 - Present
 
